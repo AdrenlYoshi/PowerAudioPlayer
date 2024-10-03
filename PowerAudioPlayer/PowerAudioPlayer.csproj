@@ -1,0 +1,95 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <UseWPF>True</UseWPF>
+        <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+        <ApplicationVisualStyles>true</ApplicationVisualStyles>
+        <ApplicationIcon>Resources\PowerAudioPlayer.ico</ApplicationIcon>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Remove="app.manifest" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Resources\PowerAudioPlayer.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MemoryPack" Version="1.21.3" />
+        <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="ObjectListView.Repack.Core3" Version="2.9.3" />
+        <PackageReference Include="radio42.Bass.Net.core" Version="2.4.17.5" />
+        <PackageReference Include="WindowsAPICodePack" Version="8.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Language\Strings.zh-CN.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Strings.zh-CN.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Resources.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Settings.Designer.cs">
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Update="Language\Strings.zh-CN.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Strings.zh-CN.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Lib\bass.dll">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+        <None Update="Lib\bass_fx.dll">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+        <None Update="Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Properties\" />
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="echo Copying files to $(OutDir).&#xD;&#xA;if not exist &quot;$(OutDir)Lib\Plugins&quot; (&#xD;&#xA; mkdir &quot;$(OutDir)Plugins&quot;&#xD;&#xA;)&#xD;&#xA;xcopy Lib\Plugins &quot;$(OutDir)Plugins&quot; /Y /Q&#xD;&#xA;copy Lib\bass.dll &quot;$(OutDir)&quot; /Y&#xD;&#xA;copy Lib\bass_fx.dll &quot;$(OutDir)&quot; /Y&#xD;&#xA;echo Success." />
+    </Target>
+
+    <ItemGroup>
+      <EditorConfigFiles Remove="D:\bc\NET\PowerAudioPlayer\PowerAudioPlayer\.editorconfig" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="D:\bc\NET\PowerAudioPlayer\PowerAudioPlayer\.editorconfig" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\WinFormsExtendedControls\WinFormsExtendedControls.csproj" />
+    </ItemGroup>
+
+</Project>

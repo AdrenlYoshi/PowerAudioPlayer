@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <UseWindowsForms>true</UseWindowsForms>
+      <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="ColorPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DrawPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="FontPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="HoteKeyView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="PeakMeterCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SelRangeTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="ToolStripRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

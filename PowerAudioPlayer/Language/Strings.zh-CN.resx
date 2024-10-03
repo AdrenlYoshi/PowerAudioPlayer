@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="ActivePlaylist" xml:space="preserve">
+    <value>活动播放列表</value>
+  </data>
+  <data name="Album" xml:space="preserve">
+    <value>专辑</value>
+  </data>
+  <data name="AllFiles" xml:space="preserve">
+    <value>所有文件</value>
+  </data>
+  <data name="AllSupportedFileFilter" xml:space="preserve">
+    <value>全部支持的文件</value>
+  </data>
+  <data name="Artist" xml:space="preserve">
+    <value>艺术家</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>注释</value>
+  </data>
+  <data name="Composer" xml:space="preserve">
+    <value>演奏者</value>
+  </data>
+  <data name="Conductor" xml:space="preserve">
+    <value>指挥</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>版权</value>
+  </data>
+  <data name="DarkColor" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="DefaultPlaylist" xml:space="preserve">
+    <value>[默认播放列表]</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>目录</value>
+  </data>
+  <data name="Disc" xml:space="preserve">
+    <value>唱片</value>
+  </data>
+  <data name="DisplayTitle" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="Erase" xml:space="preserve">
+    <value>擦除</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>----------Exception----------
+An exception ({0}) occurred.
+Message: {1}
+Data: {2}
+Stack Trace: {3}
+Source: {4}
+Target Site: {5}
+----------Environment Information----------
+.NET Runtime Version: {6}
+Command Line: {7}
+System Information: {8}</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="FilterAllFile" xml:space="preserve">
+    <value>所有文件|*.*</value>
+  </data>
+  <data name="FilterImage" xml:space="preserve">
+    <value>图片文件|*.jpg;*.jpeg;*.png;*.bmp;*.gif|所有文件|*.*</value>
+  </data>
+  <data name="FilterMIDISoundFont" xml:space="preserve">
+    <value>MIDI音色库文件|*.sf2;*.sf2pack;*.sf3|所有文件|*.*</value>
+  </data>
+  <data name="FilterPlaylist" xml:space="preserve">
+    <value>JSON播放列表文件|*.json|所有文件|*.*</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>文件夹</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>跟随系统</value>
+  </data>
+  <data name="FormTopMost" xml:space="preserve">
+    <value>窗口最前</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>流派</value>
+  </data>
+  <data name="HTMLPlaylistTemplate" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;{PlaylistName} - PowerAudioPlayer HTML 播放列表&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            background-color: #d7e5f3;
+            font-size: 14px;
+        }
+
+        h1 {
+            color: #002c6c;
+        }
+
+        hr {
+            border: 1px solid orange;
+        }
+
+        .plContent {
+            padding-left: 50px;
+        }
+
+        .plShow {
+            border: 1px solid black;
+        }
+
+        .tipsText {
+            color: #398fec;
+        }
+
+        .highLight {
+            color: orange;
+        }
+    &lt;/style&gt;
+    &lt;script&gt;
+        function ReplaceURL() {
+            document.getElementById("rc").setAttribute("href", window.location.href);
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="ReplaceURL()"&gt;
+    &lt;h1&gt;PowerAudioPlayer 播放列表&lt;/h1&gt;
+    &lt;p class="tipsText"&gt;有&lt;span class="highLight"&gt;{Count}&lt;/span&gt;个文件，总时长&lt;span
+            class="highLight"&gt;{TotalLength}&lt;/span&gt;&lt;br /&gt;&lt;a id="rc" href=""&gt;右键单击以保存此HTML文件&lt;/a&gt;&lt;/p&gt;
+    &lt;hr /&gt;
+    &lt;div class="plShow"&gt;
+        {PlaylistName} 的内容：
+        &lt;div class="plContent"&gt;
+            {PlaylistContent}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;hr /&gt;
+    &lt;p class="tipsText"&gt;于&lt;span class="highLight"&gt;{GenerateTime}&lt;/span&gt;生成&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</value>
+  </data>
+  <data name="ImageInformation" xml:space="preserve">
+    <value>{0}x{1}, {2}</value>
+  </data>
+  <data name="IncludingSubDir" xml:space="preserve">
+    <value>包括子文件夹</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="LastPlaybackTime" xml:space="preserve">
+    <value>最后播放时间</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>长度</value>
+  </data>
+  <data name="LightColor" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="Mood" xml:space="preserve">
+    <value>心情</value>
+  </data>
+  <data name="MsgAddingFiles" xml:space="preserve">
+    <value>正在添加文件......</value>
+  </data>
+  <data name="MsgAddPlaylist" xml:space="preserve">
+    <value>输入新播放列表名称：</value>
+  </data>
+  <data name="MsgAddURL" xml:space="preserve">
+    <value>输入URL：</value>
+  </data>
+  <data name="MsgCopyed" xml:space="preserve">
+    <value>已复制文本 - {0}</value>
+  </data>
+  <data name="MsgErrorRegisterHotKey" xml:space="preserve">
+    <value>注册快捷键失败！</value>
+  </data>
+  <data name="MsgInformationFormHelp" xml:space="preserve">
+    <value>要修改文件的某些信息，请使用第三方工具。本页面不提供修改功能。</value>
+  </data>
+  <data name="MsgListNameInvaildate" xml:space="preserve">
+    <value>操作失败。已有同名播放列表或有非法字符。</value>
+  </data>
+  <data name="MsgMustSelectFile" xml:space="preserve">
+    <value>必须选择一个文件。</value>
+  </data>
+  <data name="MsgPlayError" xml:space="preserve">
+    <value>播放失败</value>
+  </data>
+  <data name="MsgPlayErrorWithArg" xml:space="preserve">
+    <value>播放失败：{0}</value>
+  </data>
+  <data name="MsgReadingMediaInformation" xml:space="preserve">
+    <value>正在读取媒体信息 - 单击可取消</value>
+  </data>
+  <data name="MsgReady" xml:space="preserve">
+    <value>就绪</value>
+  </data>
+  <data name="MsgRefreshingMediaLibrary" xml:space="preserve">
+    <value>正在刷新媒体库</value>
+  </data>
+  <data name="MsgRenamePlaylist" xml:space="preserve">
+    <value>输入播放列表的新名称，当前名称：{0}</value>
+  </data>
+  <data name="MsgWelcomeMediaLibrary" xml:space="preserve">
+    <value>欢迎来到媒体库
+在左侧的树形框中选择你想管理的内容</value>
+  </data>
+  <data name="MsgWelcomePlaylist" xml:space="preserve">
+    <value>在此分支下，你可以管理你的播放列表，例如添加，删除，播放等</value>
+  </data>
+  <data name="NoAnotherPlaylist" xml:space="preserve">
+    <value>没有其他播放列表</value>
+  </data>
+  <data name="ProgramName" xml:space="preserve">
+    <value>PowerAudioPlayer</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>路径</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="PlayCount" xml:space="preserve">
+    <value>播放次数</value>
+  </data>
+  <data name="PlaylistEmpty" xml:space="preserve">
+    <value>播放列表无内容
+点击”添加文件“按钮或将文件拖放到此窗口上以添加文件</value>
+  </data>
+  <data name="Producter" xml:space="preserve">
+    <value>生产者</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>发布者</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="SearchHere" xml:space="preserve">
+    <value>在此键入搜索内容......</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>{0} 秒</value>
+  </data>
+  <data name="SelectedCount" xml:space="preserve">
+    <value>已选择{0}项</value>
+  </data>
+  <data name="SNext" xml:space="preserve">
+    <value>下一个</value>
+  </data>
+  <data name="SPrevious" xml:space="preserve">
+    <value>上一个</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="SupportedFormatsExt" xml:space="preserve">
+    <value>后缀名：</value>
+  </data>
+  <data name="SupportedFormatsName" xml:space="preserve">
+    <value>格式名称：</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="Track" xml:space="preserve">
+    <value>音轨号</value>
+  </data>
+  <data name="UnknowAlbum" xml:space="preserve">
+    <value>未知专辑</value>
+  </data>
+  <data name="UnknowArtist" xml:space="preserve">
+    <value>未知艺术家</value>
+  </data>
+  <data name="UnknowGenre" xml:space="preserve">
+    <value>未知流派</value>
+  </data>
+  <data name="UnknowTitle" xml:space="preserve">
+    <value>未知标题</value>
+  </data>
+  <data name="UnknowTrack" xml:space="preserve">
+    <value>未知音轨号</value>
+  </data>
+  <data name="UnknowYear" xml:space="preserve">
+    <value>未知年份</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本：</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年份</value>
+  </data>
+  <data name="MsgClearMediaLibrary" xml:space="preserve">
+    <value>整个媒体库将被清空。此操作无法撤销。继续？</value>
+  </data>
+  <data name="MsgCleanUpMediaLibrary" xml:space="preserve">
+    <value>这将清理媒体库的无用文件。继续？</value>
+  </data>
+  <data name="MsgCleanUpMediaLibraryOK" xml:space="preserve">
+    <value>清理完成，共清理{0}个项目。</value>
+  </data>
+  <data name="Buffering" xml:space="preserve">
+    <value>缓冲......</value>
+  </data>
+  <data name="BufferProgress" xml:space="preserve">
+    <value>缓冲中：{0}%......</value>
+  </data>
+  <data name="MsgSFError" xml:space="preserve">
+    <value>音色库未加载或者出现错误。</value>
+  </data>
+  <data name="MsgSFInfo" xml:space="preserve">
+    <value>------音色库 {0} 的信息------
+名称：{1}
+版权：{2}
+注释：{3}
+样本数量：{4}</value>
+  </data>
+  <data name="MsgAbout" xml:space="preserve">
+    <value>关于 {0}</value>
+  </data>
+  <data name="MsgVersion" xml:space="preserve">
+    <value>版本 {0}</value>
+  </data>
+  <data name="MsgDataFile" xml:space="preserve">
+    <value>由于PowerAudioPlayer以 {0} 用户身份运行，因此数据文件被储存在此处：{1}。</value>
+  </data>
+  <data name="DotNETVersion" xml:space="preserve">
+    <value>.NET {0}</value>
+  </data>
+  <data name="FilterZIP" xml:space="preserve">
+    <value>ZIP压缩文件|*.zip|所有文件|*.*</value>
+  </data>
+  <data name="MsgDataFileImportError" xml:space="preserve">
+    <value>数据文件导入失败。</value>
+  </data>
+  <data name="MsgDataFileImportOK" xml:space="preserve">
+    <value>数据文件导入成功。PowerAudioPlayer将立即重启。</value>
+  </data>
+  <data name="MsgWindowsVersionError" xml:space="preserve">
+    <value>PowerAudioPlayer只能运行在Windows 10（内部版本 10.0.17763.0）或更高版本的Microsoft Windows上，请升级你的Windows版本，然后重试。</value>
+  </data>
+</root>

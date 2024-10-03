@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerAudioPlayer", "PowerAudioPlayer\PowerAudioPlayer.csproj", "{E84C086C-C3BC-4778-9F35-FDB29B5E5488}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsExtendedControls", "WinFormsExtendedControls\WinFormsExtendedControls.csproj", "{31BA54DA-37DD-4E82-8CEB-F486C6569F70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E84C086C-C3BC-4778-9F35-FDB29B5E5488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E84C086C-C3BC-4778-9F35-FDB29B5E5488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E84C086C-C3BC-4778-9F35-FDB29B5E5488}.Release|Any CPU.ActiveCfg = Release|x64
+		{31BA54DA-37DD-4E82-8CEB-F486C6569F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BA54DA-37DD-4E82-8CEB-F486C6569F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BA54DA-37DD-4E82-8CEB-F486C6569F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BA54DA-37DD-4E82-8CEB-F486C6569F70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81D4FC01-2326-4BE9-BD93-585C530F379D}
+	EndGlobalSection
+EndGlobal
