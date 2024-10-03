@@ -11,6 +11,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
         <ImplicitUsings>enable</ImplicitUsings>
+        <Company>AdrenlYoshi</Company>
     </PropertyGroup>
 
     <ItemGroup>
