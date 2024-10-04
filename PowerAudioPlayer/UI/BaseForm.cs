@@ -1,6 +1,4 @@
-﻿using PowerAudioPlayer.Controllers.Helper;
-
-namespace PowerAudioPlayer.UI
+﻿namespace PowerAudioPlayer.UI
 {
     public class BaseForm : Form
     {

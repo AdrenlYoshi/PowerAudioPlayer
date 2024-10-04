@@ -10,7 +10,7 @@
         <ApplicationIcon>Resources\PowerAudioPlayer.ico</ApplicationIcon>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <ImplicitUsings>enable</ImplicitUsings>   
         <Company>AdrenlYoshi</Company>
     </PropertyGroup>
 

@@ -29,63 +29,30 @@ namespace PowerAudioPlayer.UI
         private void InitializeComponent()
         {
             logoPictureBox = new PictureBox();
-            labelProductName = new Label();
-            labelVersion = new Label();
-            labelCompanyName = new Label();
             okButton = new Button();
             rtbAcknowledgement = new RichTextBox();
-            labelDotNetVersion = new Label();
+            lblVersion = new Label();
+            lblCompany = new Label();
+            llblProgramName = new LinkLabel();
+            lbldotNETVersion = new Label();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
             // 
             // logoPictureBox
             // 
+            logoPictureBox.Dock = DockStyle.Top;
             logoPictureBox.Image = Resources.PowerAudioPlayerBig;
-            logoPictureBox.Location = new Point(4, 4);
-            logoPictureBox.Margin = new Padding(4);
+            logoPictureBox.Location = new Point(0, 0);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(48, 48);
+            logoPictureBox.Size = new Size(398, 48);
             logoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             logoPictureBox.TabIndex = 26;
             logoPictureBox.TabStop = false;
             // 
-            // labelProductName
-            // 
-            labelProductName.Location = new Point(63, 4);
-            labelProductName.Margin = new Padding(7, 0, 4, 0);
-            labelProductName.MaximumSize = new Size(0, 22);
-            labelProductName.Name = "labelProductName";
-            labelProductName.Size = new Size(321, 22);
-            labelProductName.TabIndex = 27;
-            labelProductName.Text = "产品名称";
-            labelProductName.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // labelVersion
-            // 
-            labelVersion.Location = new Point(63, 26);
-            labelVersion.Margin = new Padding(7, 0, 4, 0);
-            labelVersion.MaximumSize = new Size(0, 22);
-            labelVersion.Name = "labelVersion";
-            labelVersion.Size = new Size(321, 22);
-            labelVersion.TabIndex = 25;
-            labelVersion.Text = "版本";
-            labelVersion.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // labelCompanyName
-            // 
-            labelCompanyName.Location = new Point(63, 48);
-            labelCompanyName.Margin = new Padding(7, 0, 4, 0);
-            labelCompanyName.MaximumSize = new Size(0, 22);
-            labelCompanyName.Name = "labelCompanyName";
-            labelCompanyName.Size = new Size(321, 22);
-            labelCompanyName.TabIndex = 29;
-            labelCompanyName.Text = "公司名称";
-            labelCompanyName.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // okButton
             // 
             okButton.DialogResult = DialogResult.Cancel;
-            okButton.Location = new Point(297, 290);
+            okButton.Location = new Point(297, 311);
             okButton.Margin = new Padding(4);
             okButton.Name = "okButton";
             okButton.Size = new Size(88, 27);
@@ -94,59 +61,91 @@ namespace PowerAudioPlayer.UI
             // 
             // rtbAcknowledgement
             // 
-            rtbAcknowledgement.Location = new Point(13, 95);
+            rtbAcknowledgement.Dock = DockStyle.Top;
+            rtbAcknowledgement.Location = new Point(0, 116);
             rtbAcknowledgement.Name = "rtbAcknowledgement";
             rtbAcknowledgement.ReadOnly = true;
-            rtbAcknowledgement.Size = new Size(372, 188);
+            rtbAcknowledgement.Size = new Size(398, 188);
             rtbAcknowledgement.TabIndex = 32;
             rtbAcknowledgement.Text = "";
             rtbAcknowledgement.LinkClicked += rtbAcknowledgement_LinkClicked;
             // 
-            // labelDotNetVersion
+            // lblVersion
             // 
-            labelDotNetVersion.Location = new Point(63, 70);
-            labelDotNetVersion.Margin = new Padding(7, 0, 4, 0);
-            labelDotNetVersion.MaximumSize = new Size(0, 22);
-            labelDotNetVersion.Name = "labelDotNetVersion";
-            labelDotNetVersion.Size = new Size(321, 22);
-            labelDotNetVersion.TabIndex = 33;
-            labelDotNetVersion.Text = "公司名称";
-            labelDotNetVersion.TextAlign = ContentAlignment.MiddleLeft;
+            lblVersion.AutoSize = true;
+            lblVersion.Dock = DockStyle.Top;
+            lblVersion.Location = new Point(0, 65);
+            lblVersion.Name = "lblVersion";
+            lblVersion.Size = new Size(66, 17);
+            lblVersion.TabIndex = 34;
+            lblVersion.Text = "lblVersion";
+            // 
+            // lblCompany
+            // 
+            lblCompany.AutoSize = true;
+            lblCompany.Dock = DockStyle.Top;
+            lblCompany.Location = new Point(0, 82);
+            lblCompany.Name = "lblCompany";
+            lblCompany.Size = new Size(77, 17);
+            lblCompany.TabIndex = 35;
+            lblCompany.Text = "lblCompany";
+            // 
+            // llblProgramName
+            // 
+            llblProgramName.AutoSize = true;
+            llblProgramName.Dock = DockStyle.Top;
+            llblProgramName.Location = new Point(0, 48);
+            llblProgramName.Name = "llblProgramName";
+            llblProgramName.Size = new Size(111, 17);
+            llblProgramName.TabIndex = 36;
+            llblProgramName.TabStop = true;
+            llblProgramName.Text = "llblProgramName";
+            llblProgramName.LinkClicked += llblProgramName_LinkClicked;
+            // 
+            // lbldotNETVersion
+            // 
+            lbldotNETVersion.AutoSize = true;
+            lbldotNETVersion.Dock = DockStyle.Top;
+            lbldotNETVersion.Location = new Point(0, 99);
+            lbldotNETVersion.Name = "lbldotNETVersion";
+            lbldotNETVersion.Size = new Size(110, 17);
+            lbldotNETVersion.TabIndex = 37;
+            lbldotNETVersion.Text = "lbldotNETVersion";
             // 
             // AboutForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(398, 333);
-            Controls.Add(labelDotNetVersion);
+            ClientSize = new Size(398, 349);
             Controls.Add(rtbAcknowledgement);
+            Controls.Add(lbldotNETVersion);
+            Controls.Add(lblCompany);
+            Controls.Add(lblVersion);
+            Controls.Add(llblProgramName);
             Controls.Add(logoPictureBox);
-            Controls.Add(labelProductName);
-            Controls.Add(labelVersion);
-            Controls.Add(labelCompanyName);
             Controls.Add(okButton);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AboutForm";
-            Padding = new Padding(10, 12, 10, 12);
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
-            Text = "AboutBox1";
+            Text = "AboutBox";
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private PictureBox logoPictureBox;
-        private Label labelProductName;
-        private Label labelVersion;
-        private Label labelCompanyName;
         private Button okButton;
         private RichTextBox rtbAcknowledgement;
-        private Label labelDotNetVersion;
+        private Label lblVersion;
+        private Label lblCompany;
+        private LinkLabel llblProgramName;
+        private Label lbldotNETVersion;
     }
 }

@@ -12,15 +12,20 @@ namespace PowerAudioPlayer.UI
             AssemblyHelper assemblyHelper = new AssemblyHelper();
             rtbAcknowledgement.Rtf = Resources.Acknowledgement;
             Text = string.Format(Player.GetString("MsgAbout"), assemblyHelper.Title);
-            labelProductName.Text = assemblyHelper.Product.ToString();
-            labelVersion.Text = string.Format(Player.GetString("MsgVersion"), assemblyHelper.Version.ToString());
-            labelCompanyName.Text = assemblyHelper.Company;
-            labelDotNetVersion.Text = Player.GetString("DotNETVersion", Environment.Version.ToString());
+            llblProgramName.Text = assemblyHelper.Product.ToString();
+            lblVersion.Text = string.Format(Player.GetString("MsgVersion"), assemblyHelper.Version.ToString());
+            lblCompany.Text = assemblyHelper.Company;
+            lbldotNETVersion.Text = Player.GetString("DotNETVersion", Environment.Version.ToString());
         }
 
         private void rtbAcknowledgement_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.LinkText) { UseShellExecute = true });
+        }
+
+        private void llblProgramName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(Player.GetString("ProjectPageURL")) { UseShellExecute = true });
         }
     }
 }

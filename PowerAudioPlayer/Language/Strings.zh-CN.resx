@@ -473,4 +473,7 @@ System Information: {8}</value>
   <data name="MsgWindowsVersionError" xml:space="preserve">
     <value>PowerAudioPlayer只能运行在Windows 10（内部版本 10.0.17763.0）或更高版本的Microsoft Windows上，请升级你的Windows版本，然后重试。</value>
   </data>
+  <data name="ProjectPageURL" xml:space="preserve">
+    <value>https://github.com/AdrenlYoshi/PowerAudioPlayer</value>
+  </data>
 </root>
