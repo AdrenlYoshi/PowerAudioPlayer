@@ -5,8 +5,6 @@ using PowerAudioPlayer.Controllers.PlayerCore;
 using PowerAudioPlayer.Model;
 using PowerAudioPlayer.UI;
 using System.IO;
-using Un4seen.Bass;
-using Un4seen.Bass.AddOn.Tags;
 using Windows.Media;
 using Clipboard = System.Windows.Forms.Clipboard;
 using DataFormats = System.Windows.Forms.DataFormats;
@@ -20,8 +18,8 @@ namespace PowerAudioPlayer
 {
     public partial class PlayerForm : BaseForm
     {
-        private SYNCPROC endSync = new SYNCPROC((int handle, int channel, int data, IntPtr user) => { });
-        private SYNCPROC metaSync = new SYNCPROC((int handle, int channel, int data, IntPtr user) => { });
+        //private SYNCPROC endSync = new SYNCPROC((int handle, int channel, int data, IntPtr user) => { });
+        //private SYNCPROC metaSync = new SYNCPROC((int handle, int channel, int data, IntPtr user) => { });
         private readonly ThumbnailToolBarButton tbtnPrevious = new ThumbnailToolBarButton(Resources.Previousi, Player.GetString("SPrevious"));
         private readonly ThumbnailToolBarButton tbtnPlay = new ThumbnailToolBarButton(Resources.Playi, Player.GetString("Play"));
         private readonly ThumbnailToolBarButton tbtnPause = new ThumbnailToolBarButton(Resources.Pausei, Player.GetString("Pause"));
@@ -37,7 +35,6 @@ namespace PowerAudioPlayer
         public PlayerForm()
         {
             InitializeComponent();
-
             InitBinding();
             if (Settings.Default.UseSMTC)
             {
@@ -52,8 +49,8 @@ namespace PowerAudioPlayer
             }
             Size = Settings.Default.PlayerFormSize;
             Location = Settings.Default.PlayerFormLocation;
-            endSync = new SYNCPROC(EndSync);
-            metaSync = new SYNCPROC(MetaSync);
+            //endSync = new SYNCPROC(EndSync);
+            //metaSync = new SYNCPROC(MetaSync);
             tbtnPrevious.Click += (object? sender, ThumbnailButtonClickedEventArgs e) => { btnPrevious_Click(new object(), new EventArgs()); };
             tbtnPlay.Click += (object? sender, ThumbnailButtonClickedEventArgs e) => { btnPlay_Click(new object(), new EventArgs()); };
             tbtnPause.Click += (object? sender, ThumbnailButtonClickedEventArgs e) => { btnPause_Click(new object(), new EventArgs()); };
@@ -105,6 +102,7 @@ namespace PowerAudioPlayer
             {
                 return;
             }
+            lblStatus1.Text = Player.GetString("MsgReady");
             Player.ResetABRepeat();
             UpdateABRepeatToolTip();
             Player.Core.Open(PlaylistHelper.ActivePlaylist.Items[index].File);
@@ -121,6 +119,8 @@ namespace PowerAudioPlayer
                     return;
                 }
             }
+            if (!Player.Core.IsSoundFontLoaded())
+                lblStatus1.Text = Player.GetString("MsgMIDISoundFontNotSelected");
             Player.playIndex = index;
             Player.Core.Play();
             AudioInfo audioInfo = AudioInfoHelper.GetAudioInfo(PlaylistHelper.ActivePlaylist.Items[index].File);
@@ -146,7 +146,7 @@ namespace PowerAudioPlayer
                 smtc.DisplayUpdater.MusicProperties.Title = string.IsNullOrEmpty(smtc.DisplayUpdater.MusicProperties.Title) ? PlaylistHelper.ActivePlaylist.Items[index].DisplayTitle : smtc.DisplayUpdater.MusicProperties.Title;
                 smtc.DisplayUpdater.Update();
             }
-            lblStatus1.Text = Player.GetString("MsgReady");
+            
             tmrPlayer.Start();
             tmrSpectrum.Start();
             peakMeterCtrl.Start(1000 / 60);
@@ -164,63 +164,63 @@ namespace PowerAudioPlayer
             Play(PlaylistHelper.ActivePlaylist.Items.IndexOf(item));
         }
 
-        private void EndSync(int handle, int channel, int data, nint user)
-        {
-            Invoke(new Action(() =>
-            {
-                if ((PlayMode)Settings.Default.PlayMode == PlayMode.TrackLoop)
-                {
-                    Play(Player.playIndex);
-                    return;
-                }
-                tmrPlayer.Stop();
-                tmrSpectrum.Stop();
-                tmrLyrics.Stop();
-                peakMeterCtrl.Stop();
-                switch ((PlayMode)Settings.Default.PlayMode)
-                {
-                    case PlayMode.OrderPlay:
-                        if (Player.playIndex >= PlaylistHelper.ActivePlaylist.Count - 1)
-                        {
-                            Player.Core.Close();
-                            UpdateContols();
-                        }
-                        else
-                        {
-                            btnNext_Click(new object(), new EventArgs());
-                        }
-                        break;
-                    case PlayMode.TrackLoop:
+        //private void EndSync(int handle, int channel, int data, nint user)
+        //{
+        //    Invoke(new Action(() =>
+        //    {
+        //        if (Settings.Default.PlayMode == PlayMode.TrackLoop)
+        //        {
+        //            Play(Player.playIndex);
+        //            return;
+        //        }
+        //        tmrPlayer.Stop();
+        //        tmrSpectrum.Stop();
+        //        tmrLyrics.Stop();
+        //        peakMeterCtrl.Stop();
+        //        switch (Settings.Default.PlayMode)
+        //        {
+        //            case PlayMode.OrderPlay:
+        //                if (Player.playIndex >= PlaylistHelper.ActivePlaylist.Count - 1)
+        //                {
+        //                    Player.Core.Close();
+        //                    UpdateContols();
+        //                }
+        //                else
+        //                {
+        //                    btnNext_Click(new object(), new EventArgs());
+        //                }
+        //                break;
+        //            case PlayMode.TrackLoop:
 
-                        break;
-                    case PlayMode.PlaylistLoop:
-                        if (Player.playIndex >= PlaylistHelper.ActivePlaylist.Count - 1)
-                            Play(0);
-                        else
-                            btnNext_Click(new object(), new EventArgs());
-                        break;
-                    case PlayMode.ShufflePlay:
-                        Play(new Random().Next(0, PlaylistHelper.ActivePlaylist.Count));
-                        break;
-                }
-            }));
-        }
+        //                break;
+        //            case PlayMode.PlaylistLoop:
+        //                if (Player.playIndex >= PlaylistHelper.ActivePlaylist.Count - 1)
+        //                    Play(0);
+        //                else
+        //                    btnNext_Click(new object(), new EventArgs());
+        //                break;
+        //            case PlayMode.ShufflePlay:
+        //                Play(new Random().Next(0, PlaylistHelper.ActivePlaylist.Count));
+        //                break;
+        //        }
+        //    }));
+        //}
 
-        private void MetaSync(int handle, int channel, int data, nint user)
-        {
-            TAG_INFO _tagInfo = new TAG_INFO(Bass.BASS_ChannelGetInfo(channel).filename);
-            if (_tagInfo.UpdateFromMETA(Bass.BASS_ChannelGetTags(channel, BASSTag.BASS_TAG_META), false, true))
-            {
-                Invoke(() =>
-                {
-                    lblTitle.Text = !string.IsNullOrEmpty(_tagInfo.title) ? _tagInfo.title : "";
-                    lblArtist.Text = !string.IsNullOrEmpty(_tagInfo.artist) ? _tagInfo.artist : "";
-                    lblAlbum.Text = !string.IsNullOrEmpty(_tagInfo.album) ? _tagInfo.album : "";
-                    lblInfo.Text = Player.Core.GetChannelInfo().ToString();
-                    lblDisplayTitle.Text = AudioInfoHelper.GetDisplayTitle(AudioInfoHelper.BassTagInfo2AudioInfo(_tagInfo, _tagInfo.filename));
-                });
-            }
-        }
+        //private void MetaSync(int handle, int channel, int data, nint user)
+        //{
+        //    TAG_INFO _tagInfo = new TAG_INFO(Bass.BASS_ChannelGetInfo(channel).filename);
+        //    if (_tagInfo.UpdateFromMETA(Bass.BASS_ChannelGetTags(channel, BASSTag.BASS_TAG_META), false, true))
+        //    {
+        //        Invoke(() =>
+        //        {
+        //            lblTitle.Text = !string.IsNullOrEmpty(_tagInfo.title) ? _tagInfo.title : "";
+        //            lblArtist.Text = !string.IsNullOrEmpty(_tagInfo.artist) ? _tagInfo.artist : "";
+        //            lblAlbum.Text = !string.IsNullOrEmpty(_tagInfo.album) ? _tagInfo.album : "";
+        //            lblInfo.Text = Player.Core.GetChannelInfo().ToString();
+        //            lblDisplayTitle.Text = AudioInfoHelper.GetDisplayTitle(AudioInfoHelper.BassTagInfo2AudioInfo(_tagInfo, _tagInfo.filename));
+        //        });
+        //    }
+        //}
 
         private void Stop()
         {
@@ -383,32 +383,6 @@ namespace PowerAudioPlayer
                 int[] FFTFall = Array.ConvertAll<float, int>(Player.Core.GetFFTData(), delegate (float f) { return (int)Math.Abs(f * 1500); });
                 peakMeterCtrl.SetData(FFTFall, 0, FFTFall.Length);
             }
-            //try
-            //{
-            //    if (!Settings.Default.SpectrumDisable && WindowState != FormWindowState.Minimized)
-            //    {
-            //        Color color = Settings.Default.SpectrumColor;
-            //        int width = picSpectrum.Width + 1;
-            //        int height = picSpectrum.Height;
-            //        switch (Settings.Default.SpectrumType)
-            //        {
-            //            default:
-            //                picSpectrum.Image = BassCore.visModified.CreateSpectrum(BassCore.hStream, width, height, color, color, Color.Transparent, Settings.Default.SpectrumLinear, Settings.Default.SpectrumFull, Settings.Default.SpectrumHighQuality);
-            //                break;
-            //            case 1:
-            //                picSpectrum.Image = BassCore.visModified.CreateWaveForm(BassCore.hStream, width, height, color, color, color, Color.Transparent, 1, Settings.Default.SpectrumFull, BassCore.ChannelFlags(BASSFlag.BASS_SAMPLE_MONO, 0) == BASSFlag.BASS_SAMPLE_MONO, Settings.Default.SpectrumHighQuality);
-            //                break;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        picSpectrum.Image = null;
-            //    }
-            //}
-            //catch
-            //{
-            //    picSpectrum.Image = null;
-            //}
         }
 
         private void tmrPlayer_Tick(object sender, EventArgs e)

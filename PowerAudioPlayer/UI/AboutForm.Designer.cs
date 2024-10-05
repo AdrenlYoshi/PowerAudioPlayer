@@ -35,6 +35,7 @@ namespace PowerAudioPlayer.UI
             lblCompany = new Label();
             llblProgramName = new LinkLabel();
             lbldotNETVersion = new Label();
+            lblLastCompileTime = new Label();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +43,7 @@ namespace PowerAudioPlayer.UI
             // 
             logoPictureBox.Dock = DockStyle.Top;
             logoPictureBox.Image = Resources.PowerAudioPlayerBig;
-            logoPictureBox.Location = new Point(0, 0);
+            logoPictureBox.Location = new Point(0, 17);
             logoPictureBox.Name = "logoPictureBox";
             logoPictureBox.Size = new Size(398, 48);
             logoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -52,7 +53,7 @@ namespace PowerAudioPlayer.UI
             // okButton
             // 
             okButton.DialogResult = DialogResult.Cancel;
-            okButton.Location = new Point(297, 311);
+            okButton.Location = new Point(297, 338);
             okButton.Margin = new Padding(4);
             okButton.Name = "okButton";
             okButton.Size = new Size(88, 27);
@@ -62,7 +63,7 @@ namespace PowerAudioPlayer.UI
             // rtbAcknowledgement
             // 
             rtbAcknowledgement.Dock = DockStyle.Top;
-            rtbAcknowledgement.Location = new Point(0, 116);
+            rtbAcknowledgement.Location = new Point(0, 133);
             rtbAcknowledgement.Name = "rtbAcknowledgement";
             rtbAcknowledgement.ReadOnly = true;
             rtbAcknowledgement.Size = new Size(398, 188);
@@ -92,14 +93,14 @@ namespace PowerAudioPlayer.UI
             // 
             // llblProgramName
             // 
-            llblProgramName.AutoSize = true;
             llblProgramName.Dock = DockStyle.Top;
-            llblProgramName.Location = new Point(0, 48);
+            llblProgramName.Location = new Point(0, 0);
             llblProgramName.Name = "llblProgramName";
-            llblProgramName.Size = new Size(111, 17);
+            llblProgramName.Size = new Size(398, 17);
             llblProgramName.TabIndex = 36;
             llblProgramName.TabStop = true;
             llblProgramName.Text = "llblProgramName";
+            llblProgramName.TextAlign = ContentAlignment.MiddleCenter;
             llblProgramName.LinkClicked += llblProgramName_LinkClicked;
             // 
             // lbldotNETVersion
@@ -112,18 +113,29 @@ namespace PowerAudioPlayer.UI
             lbldotNETVersion.TabIndex = 37;
             lbldotNETVersion.Text = "lbldotNETVersion";
             // 
+            // lblLastCompileTime
+            // 
+            lblLastCompileTime.AutoSize = true;
+            lblLastCompileTime.Dock = DockStyle.Top;
+            lblLastCompileTime.Location = new Point(0, 116);
+            lblLastCompileTime.Name = "lblLastCompileTime";
+            lblLastCompileTime.Size = new Size(121, 17);
+            lblLastCompileTime.TabIndex = 38;
+            lblLastCompileTime.Text = "lblLastCompileTime";
+            // 
             // AboutForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(398, 349);
+            ClientSize = new Size(398, 378);
             Controls.Add(rtbAcknowledgement);
+            Controls.Add(lblLastCompileTime);
             Controls.Add(lbldotNETVersion);
             Controls.Add(lblCompany);
             Controls.Add(lblVersion);
-            Controls.Add(llblProgramName);
             Controls.Add(logoPictureBox);
             Controls.Add(okButton);
+            Controls.Add(llblProgramName);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(4);
             MaximizeBox = false;
@@ -147,5 +159,6 @@ namespace PowerAudioPlayer.UI
         private Label lblCompany;
         private LinkLabel llblProgramName;
         private Label lbldotNETVersion;
+        private Label lblLastCompileTime;
     }
 }

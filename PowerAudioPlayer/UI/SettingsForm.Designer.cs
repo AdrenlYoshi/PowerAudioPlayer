@@ -38,7 +38,7 @@
             tabPage4 = new TabPage();
             controlSettingsPage2 = new CustomControls.SettingsPages.ControlSettingsPage();
             tabPage5 = new TabPage();
-            dataSettingsPage1 = new CustomControls.SettingsPages.DataSettingsPage();
+            dataSettingsPage1 = new CustomControls.SettingsPages.DataFileSettingsPage();
             label1 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -211,6 +211,6 @@
         private CustomControls.SettingsPages.ControlSettingsPage controlSettingsPage2;
         private CustomControls.SettingsPages.MediaLibrarySettingsPage mediaLibrarySettingsPage1;
         private TabPage tabPage5;
-        private CustomControls.SettingsPages.DataSettingsPage dataSettingsPage1;
+        private CustomControls.SettingsPages.DataFileSettingsPage dataSettingsPage1;
     }
 }

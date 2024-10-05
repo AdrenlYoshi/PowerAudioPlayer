@@ -433,16 +433,10 @@ System Information: {8}</value>
   <data name="MsgCleanUpMediaLibraryOK" xml:space="preserve">
     <value>清理完成，共清理{0}个项目。</value>
   </data>
-  <data name="Buffering" xml:space="preserve">
-    <value>缓冲......</value>
-  </data>
-  <data name="BufferProgress" xml:space="preserve">
-    <value>缓冲中：{0}%......</value>
-  </data>
-  <data name="MsgSFError" xml:space="preserve">
+  <data name="MsgSoundFontError" xml:space="preserve">
     <value>音色库未加载或者出现错误。</value>
   </data>
-  <data name="MsgSFInfo" xml:space="preserve">
+  <data name="MsgSoundFontInfo" xml:space="preserve">
     <value>------音色库 {0} 的信息------
 名称：{1}
 版权：{2}
@@ -475,5 +469,17 @@ System Information: {8}</value>
   </data>
   <data name="ProjectPageURL" xml:space="preserve">
     <value>https://github.com/AdrenlYoshi/PowerAudioPlayer</value>
+  </data>
+  <data name="MsgMIDISoundFontNotSelected" xml:space="preserve">
+    <value>你正在播放MIDI文件，但未选择音色库。你将无法听到任何声音。</value>
+  </data>
+  <data name="MsgClearDataFile" xml:space="preserve">
+    <value>用户 {0} 的数据文件将被清空。继续？</value>
+  </data>
+  <data name="MsgClearDataFileOK" xml:space="preserve">
+    <value>数据文件清空成功。PowerAudioPlayer将立即重启。</value>
+  </data>
+  <data name="MsgLastCompileTime" xml:space="preserve">
+    <value>最后编译时间：{0}</value>
   </data>
 </root>

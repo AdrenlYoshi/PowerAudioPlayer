@@ -24,6 +24,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("80")]
         public int Volume {
@@ -36,6 +37,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("OrderPlay")]
         public global::PowerAudioPlayer.Controllers.PlayMode PlayMode {
@@ -48,6 +50,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string MIDISoundFont {
@@ -60,6 +63,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("zh-CN")]
         public string Language {
@@ -72,6 +76,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("44100")]
         public int OutputSampleRate {
@@ -84,6 +89,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1")]
         public int OutputDevice {
@@ -96,6 +102,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool SpectrumDisable {
@@ -108,6 +115,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool StopPlayingWhenError {
@@ -120,6 +128,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool EnableTrackbarProgress {
@@ -132,6 +141,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool EnableTrackbarControlButton {
@@ -144,6 +154,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ShowStatusInTaskbarIcon {
@@ -156,6 +167,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int SoundEffectGain {
@@ -168,6 +180,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool EnableEqualizer {
@@ -180,6 +193,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("923, 631")]
         public global::System.Drawing.Size PlayerFormSize {
@@ -192,6 +206,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PlayerFormLocation {
@@ -204,6 +219,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ResponseAppCommand {
@@ -216,6 +232,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HotKeyNext {
@@ -228,6 +245,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HotKeyPrevious {
@@ -240,6 +258,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HotKeyVolUp {
@@ -252,6 +271,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HotKeyVolDown {
@@ -264,6 +284,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HotKeyPlayPause {
@@ -276,6 +297,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HotKeyStop {
@@ -288,6 +310,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HotKeyExit {
@@ -300,6 +323,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool EnableHotKey {
@@ -312,6 +336,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("255, 128, 0")]
         public global::System.Drawing.Color LyricsHighlightColor {
@@ -324,6 +349,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int LyricsItemsMargin {
@@ -336,6 +362,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Collections.Generic.List<PowerAudioPlayer.Controllers.MediaLibraryDirectory> MediaLibraryDirectories {
             get {
@@ -347,6 +374,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public int[] Equalizer {
             get {
@@ -358,6 +386,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool MediaLibraryStartUpUpdate {
@@ -370,6 +399,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool MediaLibraryAutoRemove {
@@ -382,6 +412,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool PlaylistEditorShowFileNameColumn {
@@ -394,6 +425,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool RecordPlayHistroy {
@@ -406,6 +438,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5000")]
         public int NetTimeOut {
@@ -418,6 +451,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5000")]
         public int NetBuffer {
@@ -430,6 +464,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("500")]
         public int PlayBuffer {
@@ -442,6 +477,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int MIDIVoices {
@@ -454,6 +490,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ThemeColorFollowingSystem {
@@ -466,6 +503,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("128, 255, 128")]
         public global::System.Drawing.Color ThemeColor {
@@ -478,6 +516,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool UseSMTC {
@@ -490,6 +529,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200")]
         public int PlayerControlInterval {
@@ -502,6 +542,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("BASS")]
         public global::PowerAudioPlayer.Controllers.PlayerCores PlayerCore {
@@ -514,6 +555,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool SpectrumWithGrid {
@@ -526,6 +568,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Red")]
         public global::System.Drawing.Color SpectrumColorHigh {
@@ -538,6 +581,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Yellow")]
         public global::System.Drawing.Color SpectrumColorMedium {
@@ -550,6 +594,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Green")]
         public global::System.Drawing.Color SpectrumColorNormal {
@@ -562,6 +607,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Gainsboro")]
         public global::System.Drawing.Color SpectrumColorGrid {
@@ -574,6 +620,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool SpectrumFalloff {
@@ -586,6 +633,7 @@ namespace PowerAudioPlayer {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Gray")]
         public global::System.Drawing.Color SpectrumColorFalloff {

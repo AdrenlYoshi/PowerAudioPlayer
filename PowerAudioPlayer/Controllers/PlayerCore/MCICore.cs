@@ -216,5 +216,10 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
         {
             return "";
         }
+
+        public bool IsSoundFontLoaded()
+        {
+            return true;
+        }
     }
 }

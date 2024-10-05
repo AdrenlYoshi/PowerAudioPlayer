@@ -237,7 +237,11 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
         public void SetMIDISoundFont(string file)
         {
             if (!File.Exists(file))
+            {
+                BassMidi.BASS_MIDI_FontFree(hSoundFont);
+                hSoundFont = 0;
                 return;
+            }
             int newfont = BassMidi.BASS_MIDI_FontInit(file);
             if (newfont != 0)
             {
@@ -351,6 +355,11 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
                 }
             }
             return lrc;
+        }
+
+        public bool IsSoundFontLoaded()
+        {
+            return hSoundFont != 0;
         }
     }
 }

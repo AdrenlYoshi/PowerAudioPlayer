@@ -1,6 +1,7 @@
 ﻿using PowerAudioPlayer.Controllers.Helper;
 using PowerAudioPlayer.Controllers.PlayerCore;
 using System.IO;
+using WinRT;
 
 namespace PowerAudioPlayer.Controllers
 {

@@ -1,6 +1,6 @@
 ﻿namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
 {
-    partial class DataSettingsPage
+    partial class DataFileSettingsPage
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -33,6 +33,7 @@
             btnExploreFolder = new Button();
             btnExport = new Button();
             btnImport = new Button();
+            btnClearCurrentUser = new Button();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,10 +61,11 @@
             // 
             // btnExploreFolder
             // 
+            btnExploreFolder.AutoSize = true;
             btnExploreFolder.Dock = DockStyle.Top;
             btnExploreFolder.Location = new Point(0, 17);
             btnExploreFolder.Name = "btnExploreFolder";
-            btnExploreFolder.Size = new Size(374, 23);
+            btnExploreFolder.Size = new Size(374, 27);
             btnExploreFolder.TabIndex = 1;
             btnExploreFolder.Text = "浏览文件夹";
             btnExploreFolder.UseVisualStyleBackColor = true;
@@ -71,10 +73,11 @@
             // 
             // btnExport
             // 
+            btnExport.AutoSize = true;
             btnExport.Dock = DockStyle.Top;
-            btnExport.Location = new Point(0, 40);
+            btnExport.Location = new Point(0, 44);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(374, 23);
+            btnExport.Size = new Size(374, 27);
             btnExport.TabIndex = 2;
             btnExport.Text = "导出数据文件";
             btnExport.UseVisualStyleBackColor = true;
@@ -82,24 +85,38 @@
             // 
             // btnImport
             // 
+            btnImport.AutoSize = true;
             btnImport.Dock = DockStyle.Top;
-            btnImport.Location = new Point(0, 63);
+            btnImport.Location = new Point(0, 71);
             btnImport.Name = "btnImport";
-            btnImport.Size = new Size(374, 23);
+            btnImport.Size = new Size(374, 27);
             btnImport.TabIndex = 3;
             btnImport.Text = "导入数据文件";
             btnImport.UseVisualStyleBackColor = true;
             btnImport.Click += btnImport_Click;
             // 
-            // DataSettingsPage
+            // btnClearCurrentUser
+            // 
+            btnClearCurrentUser.AutoSize = true;
+            btnClearCurrentUser.Dock = DockStyle.Top;
+            btnClearCurrentUser.Location = new Point(0, 98);
+            btnClearCurrentUser.Name = "btnClearCurrentUser";
+            btnClearCurrentUser.Size = new Size(374, 27);
+            btnClearCurrentUser.TabIndex = 4;
+            btnClearCurrentUser.Text = "清空当前用户数据文件";
+            btnClearCurrentUser.UseVisualStyleBackColor = true;
+            btnClearCurrentUser.Click += btnClearCurrentUser_Click;
+            // 
+            // DataFileSettingsPage
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnClearCurrentUser);
             Controls.Add(btnImport);
             Controls.Add(btnExport);
             Controls.Add(btnExploreFolder);
             Controls.Add(flowLayoutPanel1);
-            Name = "DataSettingsPage";
+            Name = "DataFileSettingsPage";
             Size = new Size(374, 402);
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
@@ -114,5 +131,6 @@
         private Button btnExploreFolder;
         private Button btnExport;
         private Button btnImport;
+        private Button btnClearCurrentUser;
     }
 }

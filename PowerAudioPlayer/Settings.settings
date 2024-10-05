@@ -2,148 +2,148 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PowerAudioPlayer" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Volume" Type="System.Int32" Scope="User">
+    <Setting Name="Volume" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">80</Value>
     </Setting>
-    <Setting Name="PlayMode" Type="PowerAudioPlayer.Controllers.PlayMode" Scope="User">
+    <Setting Name="PlayMode" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="PowerAudioPlayer.Controllers.PlayMode" Scope="User">
       <Value Profile="(Default)">OrderPlay</Value>
     </Setting>
-    <Setting Name="MIDISoundFont" Type="System.String" Scope="User">
+    <Setting Name="MIDISoundFont" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Language" Type="System.String" Scope="User">
+    <Setting Name="Language" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)">zh-CN</Value>
     </Setting>
-    <Setting Name="OutputSampleRate" Type="System.Int32" Scope="User">
+    <Setting Name="OutputSampleRate" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">44100</Value>
     </Setting>
-    <Setting Name="OutputDevice" Type="System.Int32" Scope="User">
+    <Setting Name="OutputDevice" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">-1</Value>
     </Setting>
-    <Setting Name="SpectrumDisable" Type="System.Boolean" Scope="User">
+    <Setting Name="SpectrumDisable" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="StopPlayingWhenError" Type="System.Boolean" Scope="User">
+    <Setting Name="StopPlayingWhenError" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="EnableTrackbarProgress" Type="System.Boolean" Scope="User">
+    <Setting Name="EnableTrackbarProgress" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="EnableTrackbarControlButton" Type="System.Boolean" Scope="User">
+    <Setting Name="EnableTrackbarControlButton" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ShowStatusInTaskbarIcon" Type="System.Boolean" Scope="User">
+    <Setting Name="ShowStatusInTaskbarIcon" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SoundEffectGain" Type="System.Int32" Scope="User">
+    <Setting Name="SoundEffectGain" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="EnableEqualizer" Type="System.Boolean" Scope="User">
+    <Setting Name="EnableEqualizer" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="PlayerFormSize" Type="System.Drawing.Size" Scope="User">
+    <Setting Name="PlayerFormSize" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">923, 631</Value>
     </Setting>
-    <Setting Name="PlayerFormLocation" Type="System.Drawing.Point" Scope="User">
+    <Setting Name="PlayerFormLocation" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">100, 100</Value>
     </Setting>
-    <Setting Name="ResponseAppCommand" Type="System.Boolean" Scope="User">
+    <Setting Name="ResponseAppCommand" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="HotKeyNext" Type="System.String" Scope="User">
+    <Setting Name="HotKeyNext" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="HotKeyPrevious" Type="System.String" Scope="User">
+    <Setting Name="HotKeyPrevious" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="HotKeyVolUp" Type="System.String" Scope="User">
+    <Setting Name="HotKeyVolUp" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="HotKeyVolDown" Type="System.String" Scope="User">
+    <Setting Name="HotKeyVolDown" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="HotKeyPlayPause" Type="System.String" Scope="User">
+    <Setting Name="HotKeyPlayPause" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="HotKeyStop" Type="System.String" Scope="User">
+    <Setting Name="HotKeyStop" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="HotKeyExit" Type="System.String" Scope="User">
+    <Setting Name="HotKeyExit" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="EnableHotKey" Type="System.Boolean" Scope="User">
+    <Setting Name="EnableHotKey" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="LyricsHighlightColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="LyricsHighlightColor" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 128, 0</Value>
     </Setting>
-    <Setting Name="LyricsItemsMargin" Type="System.Int32" Scope="User">
+    <Setting Name="LyricsItemsMargin" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10</Value>
     </Setting>
-    <Setting Name="MediaLibraryDirectories" Type="System.Collections.Generic.List&lt;PowerAudioPlayer.Controllers.MediaLibraryDirectory&gt;" Scope="User">
+    <Setting Name="MediaLibraryDirectories" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Collections.Generic.List&lt;PowerAudioPlayer.Controllers.MediaLibraryDirectory&gt;" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Equalizer" Type="System.Int32[]" Scope="User">
+    <Setting Name="Equalizer" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32[]" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="MediaLibraryStartUpUpdate" Type="System.Boolean" Scope="User">
+    <Setting Name="MediaLibraryStartUpUpdate" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MediaLibraryAutoRemove" Type="System.Boolean" Scope="User">
+    <Setting Name="MediaLibraryAutoRemove" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="PlaylistEditorShowFileNameColumn" Type="System.Boolean" Scope="User">
+    <Setting Name="PlaylistEditorShowFileNameColumn" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="RecordPlayHistroy" Type="System.Boolean" Scope="User">
+    <Setting Name="RecordPlayHistroy" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="NetTimeOut" Type="System.Int32" Scope="User">
+    <Setting Name="NetTimeOut" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5000</Value>
     </Setting>
-    <Setting Name="NetBuffer" Type="System.Int32" Scope="User">
+    <Setting Name="NetBuffer" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5000</Value>
     </Setting>
-    <Setting Name="PlayBuffer" Type="System.Int32" Scope="User">
+    <Setting Name="PlayBuffer" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">500</Value>
     </Setting>
-    <Setting Name="MIDIVoices" Type="System.Int32" Scope="User">
+    <Setting Name="MIDIVoices" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">100</Value>
     </Setting>
-    <Setting Name="ThemeColorFollowingSystem" Type="System.Boolean" Scope="User">
+    <Setting Name="ThemeColorFollowingSystem" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ThemeColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="ThemeColor" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">128, 255, 128</Value>
     </Setting>
-    <Setting Name="UseSMTC" Type="System.Boolean" Scope="User">
+    <Setting Name="UseSMTC" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="PlayerControlInterval" Type="System.Int32" Scope="User">
+    <Setting Name="PlayerControlInterval" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
-    <Setting Name="PlayerCore" Type="PowerAudioPlayer.Controllers.PlayerCores" Scope="User">
+    <Setting Name="PlayerCore" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="PowerAudioPlayer.Controllers.PlayerCores" Scope="User">
       <Value Profile="(Default)">BASS</Value>
     </Setting>
-    <Setting Name="SpectrumWithGrid" Type="System.Boolean" Scope="User">
+    <Setting Name="SpectrumWithGrid" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SpectrumColorHigh" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="SpectrumColorHigh" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Red</Value>
     </Setting>
-    <Setting Name="SpectrumColorMedium" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="SpectrumColorMedium" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Yellow</Value>
     </Setting>
-    <Setting Name="SpectrumColorNormal" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="SpectrumColorNormal" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Green</Value>
     </Setting>
-    <Setting Name="SpectrumColorGrid" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="SpectrumColorGrid" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Gainsboro</Value>
     </Setting>
-    <Setting Name="SpectrumFalloff" Type="System.Boolean" Scope="User">
+    <Setting Name="SpectrumFalloff" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SpectrumColorFalloff" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="SpectrumColorFalloff" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Gray</Value>
     </Setting>
   </Settings>

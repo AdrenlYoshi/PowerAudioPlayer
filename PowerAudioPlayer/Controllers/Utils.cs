@@ -6,9 +6,6 @@ using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Windows.Storage.Streams;
-using System.Drawing.Imaging;
-using System;
 
 namespace PowerAudioPlayer.Controllers
 {
@@ -365,20 +362,18 @@ namespace PowerAudioPlayer.Controllers
         {
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), Assembly.GetExecutingAssembly().GetName().Name.ToString());
         }
-        public static void DeleteDirectory(string path)
+
+        public static void AddShieldToButton(Button btn)
         {
-            DirectoryInfo dir = new DirectoryInfo(path);
-            if (dir.Exists)
-            {
-                DirectoryInfo[] childs = dir.GetDirectories();
-                foreach (DirectoryInfo child in childs)
-                {
-                    child.Delete(true);
-                }
-                dir.Delete(true);
-            }
+            btn.FlatStyle = FlatStyle.System;
+            NativeAPI.SendMessage(btn.Handle, NativeAPI.BCM_SETSHIELD, 0, 255);
         }
 
+        public static void DeleteShieldFromButton(Button btn)
+        {
+            btn.FlatStyle = FlatStyle.System;
+            NativeAPI.SendMessage(btn.Handle, NativeAPI.BCM_SETSHIELD, 0, 0);
+        }
     }
 }
 

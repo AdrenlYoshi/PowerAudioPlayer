@@ -26,6 +26,8 @@ namespace PowerAudioPlayer.Controllers
         public const int WM_GETMINMAXINFO = 0x0024;
         public const int WM_APPCOMMAND = 0x319;
         public const int WM_COPYDATA = 0x004A;
+        public const int BCM_FIRST = 0x1600;
+        public const int BCM_SETSHIELD = BCM_FIRST + 0x000C;
 
         public const int APPCOMMAND_VOLUME_DOWN = 9;
         public const int APPCOMMAND_VOLUME_UP = 10;
@@ -38,49 +40,7 @@ namespace PowerAudioPlayer.Controllers
         public const int APPCOMMAND_MEDIA_CHANNEL_UP = 51;
         public const int APPCOMMAND_MEDIA_CHANNEL_DOWN = 52;
 
-        [StructLayout(LayoutKind.Sequential)]
-        public struct RECT
-        {
-            public int Left;
-            public int Top;
-            public int Right;
-            public int Bottom;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct POINT
-        {
-            public int x;
-            public int y;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct MINMAXINFO
-        {
-            public POINT ptReserved;
-            public POINT ptMaxSize;
-            public POINT ptMaxPosition;
-            public POINT ptMinTrackSize;
-            public POINT ptMaxTrackSize;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct NMHDR
-        {
-            public IntPtr hwndFrom;
-            public IntPtr idFrom;
-            public int code;
-        }
-
-        [Flags]
-        public enum KeyModifiers 
-        { 
-            None = 0, 
-            Alt = 1, 
-            Ctrl = 2, 
-            Shift = 4, 
-            WindowsKey = 8 
-        }
+        
 
         [StructLayout(LayoutKind.Sequential)]
         public struct SHELLEXECUTEINFO
@@ -114,7 +74,6 @@ namespace PowerAudioPlayer.Controllers
             [MarshalAs(UnmanagedType.LPStr)]
             public string lpData;
         }
-
         [DllImport("shell32.dll")]
         public static extern bool ShellExecuteEx(ref SHELLEXECUTEINFO lpExecInfo);
 
@@ -143,42 +102,12 @@ namespace PowerAudioPlayer.Controllers
         public static extern int SendMessage(IntPtr hwnd, int wMsg, int wParam, ref COPYDATASTRUCT lParam);
 
         [DllImport("user32.dll")]
-        public static extern int PostMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
-
-        [DllImport("user32.dll")]
-        public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-
-        [DllImport("user32.dll")]
-        public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
-
-        [DllImport("user32.dll")]
-        public static extern bool ShowScrollBar(IntPtr hWnd, int wBar, bool bShow);
-
-        [DllImport("user32.dll")]
-        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
-
-        [DllImport("user32.dll")]
-        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern bool SystemParametersInfo(uint uAction, uint uParam, StringBuilder lpvParam, uint init);
-
-        [DllImport("User32.dll")]
         public static extern bool ShowWindowAsync(nint hWnd, int cmdShow);
 
-        [DllImport("User32.dll")]
+        [DllImport("user32.dll")]
         public static extern bool SetForegroundWindow(nint hWnd);
-
-        [DllImport("uxtheme.dll")]
-        public static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
 
         [DllImport("winmm.dll", CharSet = CharSet.Unicode)]
         public static extern ulong mciSendString(string command, string? buffer, int bufferSize, IntPtr callback);
-
-        [DllImport("winmm.dll", CharSet = CharSet.Unicode)]
-        public static extern bool mciExecute(string command);
-
-        [DllImport("winmm.dll", CharSet = CharSet.Unicode)]
-        public static extern ulong mciSendCommand(uint deviceId, uint uMsg, IntPtr fdwCommand, IntPtr dwParam);
     }
 }

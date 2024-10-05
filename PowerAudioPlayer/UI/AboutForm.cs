@@ -1,6 +1,7 @@
 ﻿using PowerAudioPlayer.Controllers;
 using PowerAudioPlayer.Controllers.Helper;
 using System.Diagnostics;
+using System.IO;
 
 namespace PowerAudioPlayer.UI
 {
@@ -16,6 +17,7 @@ namespace PowerAudioPlayer.UI
             lblVersion.Text = string.Format(Player.GetString("MsgVersion"), assemblyHelper.Version.ToString());
             lblCompany.Text = assemblyHelper.Company;
             lbldotNETVersion.Text = Player.GetString("DotNETVersion", Environment.Version.ToString());
+            lblLastCompileTime.Text = Player.GetString("MsgLastCompileTime", File.GetLastWriteTime(GetType().Assembly.Location).ToString());
         }
 
         private void rtbAcknowledgement_LinkClicked(object sender, LinkClickedEventArgs e)

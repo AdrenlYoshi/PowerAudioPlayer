@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
             cbEnableEQ = new CheckBox();
             label11 = new Label();
             trbGain = new TrackBar();
@@ -55,10 +53,8 @@
             trbEQ3 = new TrackBar();
             trbEQ2 = new TrackBar();
             trbEQ1 = new TrackBar();
-            tabPage2 = new TabPage();
             toolTip = new ToolTip(components);
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            tableLayoutPanel1 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)trbGain).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ9).BeginInit();
@@ -70,59 +66,17 @@
             ((System.ComponentModel.ISupportInitialize)trbEQ3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ1).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(575, 357);
-            tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(cbEnableEQ);
-            tabPage1.Controls.Add(label11);
-            tabPage1.Controls.Add(trbGain);
-            tabPage1.Controls.Add(btnResetEQ);
-            tabPage1.Controls.Add(label10);
-            tabPage1.Controls.Add(label9);
-            tabPage1.Controls.Add(label8);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(label6);
-            tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(label1);
-            tabPage1.Controls.Add(trbEQ10);
-            tabPage1.Controls.Add(trbEQ9);
-            tabPage1.Controls.Add(trbEQ8);
-            tabPage1.Controls.Add(trbEQ7);
-            tabPage1.Controls.Add(trbEQ6);
-            tabPage1.Controls.Add(trbEQ5);
-            tabPage1.Controls.Add(trbEQ4);
-            tabPage1.Controls.Add(trbEQ3);
-            tabPage1.Controls.Add(trbEQ2);
-            tabPage1.Controls.Add(trbEQ1);
-            tabPage1.Location = new Point(4, 26);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(567, 327);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "均衡器";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // cbEnableEQ
             // 
             cbEnableEQ.AutoSize = true;
-            cbEnableEQ.Location = new Point(3, 300);
+            tableLayoutPanel1.SetColumnSpan(cbEnableEQ, 3);
+            cbEnableEQ.Dock = DockStyle.Fill;
+            cbEnableEQ.Location = new Point(3, 277);
             cbEnableEQ.Name = "cbEnableEQ";
-            cbEnableEQ.Size = new Size(51, 21);
+            cbEnableEQ.Size = new Size(147, 29);
             cbEnableEQ.TabIndex = 23;
             cbEnableEQ.Text = "启用";
             cbEnableEQ.UseVisualStyleBackColor = true;
@@ -131,7 +85,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(523, 271);
+            label11.Location = new Point(513, 257);
             label11.Name = "label11";
             label11.Size = new Size(32, 17);
             label11.TabIndex = 22;
@@ -139,12 +93,13 @@
             // 
             // trbGain
             // 
-            trbGain.Location = new Point(516, 6);
+            trbGain.Dock = DockStyle.Fill;
+            trbGain.Location = new Point(513, 3);
             trbGain.Maximum = 400;
             trbGain.Minimum = -400;
             trbGain.Name = "trbGain";
             trbGain.Orientation = Orientation.Vertical;
-            trbGain.Size = new Size(45, 262);
+            trbGain.Size = new Size(49, 251);
             trbGain.TabIndex = 21;
             trbGain.Tag = "9";
             trbGain.TickFrequency = 5;
@@ -154,9 +109,11 @@
             // 
             // btnResetEQ
             // 
-            btnResetEQ.Location = new Point(508, 291);
+            tableLayoutPanel1.SetColumnSpan(btnResetEQ, 3);
+            btnResetEQ.Dock = DockStyle.Fill;
+            btnResetEQ.Location = new Point(156, 277);
             btnResetEQ.Name = "btnResetEQ";
-            btnResetEQ.Size = new Size(53, 29);
+            btnResetEQ.Size = new Size(147, 29);
             btnResetEQ.TabIndex = 20;
             btnResetEQ.Text = "重置";
             btnResetEQ.UseVisualStyleBackColor = true;
@@ -165,7 +122,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(472, 271);
+            label10.Location = new Point(462, 257);
             label10.Name = "label10";
             label10.Size = new Size(30, 17);
             label10.TabIndex = 19;
@@ -174,7 +131,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(425, 271);
+            label9.Location = new Point(411, 257);
             label9.Name = "label9";
             label9.Size = new Size(23, 17);
             label9.TabIndex = 18;
@@ -183,7 +140,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(374, 271);
+            label8.Location = new Point(360, 257);
             label8.Name = "label8";
             label8.Size = new Size(23, 17);
             label8.TabIndex = 17;
@@ -192,7 +149,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(323, 271);
+            label7.Location = new Point(309, 257);
             label7.Name = "label7";
             label7.Size = new Size(23, 17);
             label7.TabIndex = 16;
@@ -201,7 +158,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(267, 271);
+            label6.Location = new Point(258, 257);
             label6.Name = "label6";
             label6.Size = new Size(33, 17);
             label6.TabIndex = 15;
@@ -210,7 +167,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(221, 271);
+            label5.Location = new Point(207, 257);
             label5.Name = "label5";
             label5.Size = new Size(23, 17);
             label5.TabIndex = 14;
@@ -219,7 +176,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(167, 271);
+            label4.Location = new Point(156, 257);
             label4.Name = "label4";
             label4.Size = new Size(29, 17);
             label4.TabIndex = 13;
@@ -228,7 +185,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(116, 271);
+            label3.Location = new Point(105, 257);
             label3.Name = "label3";
             label3.Size = new Size(29, 17);
             label3.TabIndex = 12;
@@ -237,7 +194,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(65, 271);
+            label2.Location = new Point(54, 257);
             label2.Name = "label2";
             label2.Size = new Size(29, 17);
             label2.TabIndex = 11;
@@ -246,7 +203,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(17, 271);
+            label1.Location = new Point(3, 257);
             label1.Name = "label1";
             label1.Size = new Size(22, 17);
             label1.TabIndex = 10;
@@ -254,12 +211,13 @@
             // 
             // trbEQ10
             // 
-            trbEQ10.Location = new Point(465, 6);
+            trbEQ10.Dock = DockStyle.Fill;
+            trbEQ10.Location = new Point(462, 3);
             trbEQ10.Maximum = 130;
             trbEQ10.Minimum = -130;
             trbEQ10.Name = "trbEQ10";
             trbEQ10.Orientation = Orientation.Vertical;
-            trbEQ10.Size = new Size(45, 262);
+            trbEQ10.Size = new Size(45, 251);
             trbEQ10.TabIndex = 9;
             trbEQ10.Tag = "9";
             trbEQ10.TickFrequency = 3;
@@ -269,12 +227,13 @@
             // 
             // trbEQ9
             // 
-            trbEQ9.Location = new Point(414, 6);
+            trbEQ9.Dock = DockStyle.Fill;
+            trbEQ9.Location = new Point(411, 3);
             trbEQ9.Maximum = 130;
             trbEQ9.Minimum = -130;
             trbEQ9.Name = "trbEQ9";
             trbEQ9.Orientation = Orientation.Vertical;
-            trbEQ9.Size = new Size(45, 262);
+            trbEQ9.Size = new Size(45, 251);
             trbEQ9.TabIndex = 8;
             trbEQ9.Tag = "8";
             trbEQ9.TickFrequency = 3;
@@ -284,12 +243,13 @@
             // 
             // trbEQ8
             // 
-            trbEQ8.Location = new Point(363, 6);
+            trbEQ8.Dock = DockStyle.Fill;
+            trbEQ8.Location = new Point(360, 3);
             trbEQ8.Maximum = 130;
             trbEQ8.Minimum = -130;
             trbEQ8.Name = "trbEQ8";
             trbEQ8.Orientation = Orientation.Vertical;
-            trbEQ8.Size = new Size(45, 262);
+            trbEQ8.Size = new Size(45, 251);
             trbEQ8.TabIndex = 7;
             trbEQ8.Tag = "7";
             trbEQ8.TickFrequency = 3;
@@ -299,12 +259,13 @@
             // 
             // trbEQ7
             // 
-            trbEQ7.Location = new Point(312, 6);
+            trbEQ7.Dock = DockStyle.Fill;
+            trbEQ7.Location = new Point(309, 3);
             trbEQ7.Maximum = 130;
             trbEQ7.Minimum = -130;
             trbEQ7.Name = "trbEQ7";
             trbEQ7.Orientation = Orientation.Vertical;
-            trbEQ7.Size = new Size(45, 262);
+            trbEQ7.Size = new Size(45, 251);
             trbEQ7.TabIndex = 6;
             trbEQ7.Tag = "6";
             trbEQ7.TickFrequency = 3;
@@ -314,12 +275,13 @@
             // 
             // trbEQ6
             // 
-            trbEQ6.Location = new Point(261, 6);
+            trbEQ6.Dock = DockStyle.Fill;
+            trbEQ6.Location = new Point(258, 3);
             trbEQ6.Maximum = 130;
             trbEQ6.Minimum = -130;
             trbEQ6.Name = "trbEQ6";
             trbEQ6.Orientation = Orientation.Vertical;
-            trbEQ6.Size = new Size(45, 262);
+            trbEQ6.Size = new Size(45, 251);
             trbEQ6.TabIndex = 5;
             trbEQ6.Tag = "5";
             trbEQ6.TickFrequency = 3;
@@ -329,12 +291,13 @@
             // 
             // trbEQ5
             // 
-            trbEQ5.Location = new Point(210, 6);
+            trbEQ5.Dock = DockStyle.Fill;
+            trbEQ5.Location = new Point(207, 3);
             trbEQ5.Maximum = 130;
             trbEQ5.Minimum = -130;
             trbEQ5.Name = "trbEQ5";
             trbEQ5.Orientation = Orientation.Vertical;
-            trbEQ5.Size = new Size(45, 262);
+            trbEQ5.Size = new Size(45, 251);
             trbEQ5.TabIndex = 4;
             trbEQ5.Tag = "4";
             trbEQ5.TickFrequency = 3;
@@ -344,12 +307,13 @@
             // 
             // trbEQ4
             // 
-            trbEQ4.Location = new Point(159, 6);
+            trbEQ4.Dock = DockStyle.Fill;
+            trbEQ4.Location = new Point(156, 3);
             trbEQ4.Maximum = 130;
             trbEQ4.Minimum = -130;
             trbEQ4.Name = "trbEQ4";
             trbEQ4.Orientation = Orientation.Vertical;
-            trbEQ4.Size = new Size(45, 262);
+            trbEQ4.Size = new Size(45, 251);
             trbEQ4.TabIndex = 3;
             trbEQ4.Tag = "3";
             trbEQ4.TickFrequency = 3;
@@ -359,12 +323,13 @@
             // 
             // trbEQ3
             // 
-            trbEQ3.Location = new Point(108, 6);
+            trbEQ3.Dock = DockStyle.Fill;
+            trbEQ3.Location = new Point(105, 3);
             trbEQ3.Maximum = 130;
             trbEQ3.Minimum = -130;
             trbEQ3.Name = "trbEQ3";
             trbEQ3.Orientation = Orientation.Vertical;
-            trbEQ3.Size = new Size(45, 262);
+            trbEQ3.Size = new Size(45, 251);
             trbEQ3.TabIndex = 2;
             trbEQ3.Tag = "2";
             trbEQ3.TickFrequency = 3;
@@ -374,12 +339,13 @@
             // 
             // trbEQ2
             // 
-            trbEQ2.Location = new Point(57, 6);
+            trbEQ2.Dock = DockStyle.Fill;
+            trbEQ2.Location = new Point(54, 3);
             trbEQ2.Maximum = 130;
             trbEQ2.Minimum = -130;
             trbEQ2.Name = "trbEQ2";
             trbEQ2.Orientation = Orientation.Vertical;
-            trbEQ2.Size = new Size(45, 262);
+            trbEQ2.Size = new Size(45, 251);
             trbEQ2.TabIndex = 1;
             trbEQ2.Tag = "1";
             trbEQ2.TickFrequency = 3;
@@ -389,12 +355,13 @@
             // 
             // trbEQ1
             // 
-            trbEQ1.Location = new Point(6, 6);
+            trbEQ1.Dock = DockStyle.Fill;
+            trbEQ1.Location = new Point(3, 3);
             trbEQ1.Maximum = 130;
             trbEQ1.Minimum = -130;
             trbEQ1.Name = "trbEQ1";
             trbEQ1.Orientation = Orientation.Vertical;
-            trbEQ1.Size = new Size(45, 262);
+            trbEQ1.Size = new Size(45, 251);
             trbEQ1.TabIndex = 0;
             trbEQ1.Tag = "0";
             trbEQ1.TickFrequency = 3;
@@ -402,23 +369,61 @@
             trbEQ1.Scroll += EqTrackBar_Scroll;
             trbEQ1.ValueChanged += trb_ValueChanged;
             // 
-            // tabPage2
+            // tableLayoutPanel1
             // 
-            tabPage2.Location = new Point(4, 26);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(567, 327);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "额外效果";
-            tabPage2.UseVisualStyleBackColor = true;
+            tableLayoutPanel1.ColumnCount = 11;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.Controls.Add(trbEQ1, 0, 0);
+            tableLayoutPanel1.Controls.Add(cbEnableEQ, 0, 2);
+            tableLayoutPanel1.Controls.Add(trbEQ2, 1, 0);
+            tableLayoutPanel1.Controls.Add(label11, 10, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ3, 2, 0);
+            tableLayoutPanel1.Controls.Add(trbGain, 10, 0);
+            tableLayoutPanel1.Controls.Add(label10, 9, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ4, 3, 0);
+            tableLayoutPanel1.Controls.Add(label9, 8, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ5, 4, 0);
+            tableLayoutPanel1.Controls.Add(label8, 7, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ6, 5, 0);
+            tableLayoutPanel1.Controls.Add(label7, 6, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ7, 6, 0);
+            tableLayoutPanel1.Controls.Add(label6, 5, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ8, 7, 0);
+            tableLayoutPanel1.Controls.Add(label5, 4, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ9, 8, 0);
+            tableLayoutPanel1.Controls.Add(label4, 3, 1);
+            tableLayoutPanel1.Controls.Add(trbEQ10, 9, 0);
+            tableLayoutPanel1.Controls.Add(label3, 2, 1);
+            tableLayoutPanel1.Controls.Add(label1, 0, 1);
+            tableLayoutPanel1.Controls.Add(label2, 1, 1);
+            tableLayoutPanel1.Controls.Add(btnResetEQ, 3, 2);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(565, 309);
+            tableLayoutPanel1.TabIndex = 24;
             // 
             // SoundEffectForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(575, 357);
-            Controls.Add(tabControl1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            ClientSize = new Size(565, 309);
+            Controls.Add(tableLayoutPanel1);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "SoundEffectForm";
@@ -426,9 +431,6 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "声音效果";
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trbGain).EndInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ10).EndInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ9).EndInit();
@@ -440,13 +442,12 @@
             ((System.ComponentModel.ISupportInitialize)trbEQ3).EndInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ2).EndInit();
             ((System.ComponentModel.ISupportInitialize)trbEQ1).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TabControl tabControl1;
-        private TabPage tabPage1;
         private TrackBar trbEQ1;
         private TrackBar trbEQ10;
         private TrackBar trbEQ9;
@@ -472,6 +473,6 @@
         private TrackBar trbGain;
         private CheckBox cbEnableEQ;
         private ToolTip toolTip;
-        private TabPage tabPage2;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

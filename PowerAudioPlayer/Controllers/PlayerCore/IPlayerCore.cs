@@ -88,5 +88,9 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
         float[] GetFFTData();
 
         string GetMIDILyrics();
+
+        bool IsSoundFontLoaded();
+
+
     }
 }
