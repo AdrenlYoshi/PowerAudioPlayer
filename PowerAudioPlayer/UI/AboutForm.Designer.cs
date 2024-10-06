@@ -45,7 +45,7 @@ namespace PowerAudioPlayer.UI
             logoPictureBox.Image = Resources.PowerAudioPlayerBig;
             logoPictureBox.Location = new Point(0, 17);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(398, 48);
+            logoPictureBox.Size = new Size(398, 45);
             logoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             logoPictureBox.TabIndex = 26;
             logoPictureBox.TabStop = false;
@@ -63,10 +63,10 @@ namespace PowerAudioPlayer.UI
             // rtbAcknowledgement
             // 
             rtbAcknowledgement.Dock = DockStyle.Top;
-            rtbAcknowledgement.Location = new Point(0, 133);
+            rtbAcknowledgement.Location = new Point(0, 130);
             rtbAcknowledgement.Name = "rtbAcknowledgement";
             rtbAcknowledgement.ReadOnly = true;
-            rtbAcknowledgement.Size = new Size(398, 188);
+            rtbAcknowledgement.Size = new Size(398, 201);
             rtbAcknowledgement.TabIndex = 32;
             rtbAcknowledgement.Text = "";
             rtbAcknowledgement.LinkClicked += rtbAcknowledgement_LinkClicked;
@@ -75,7 +75,7 @@ namespace PowerAudioPlayer.UI
             // 
             lblVersion.AutoSize = true;
             lblVersion.Dock = DockStyle.Top;
-            lblVersion.Location = new Point(0, 65);
+            lblVersion.Location = new Point(0, 62);
             lblVersion.Name = "lblVersion";
             lblVersion.Size = new Size(66, 17);
             lblVersion.TabIndex = 34;
@@ -85,7 +85,7 @@ namespace PowerAudioPlayer.UI
             // 
             lblCompany.AutoSize = true;
             lblCompany.Dock = DockStyle.Top;
-            lblCompany.Location = new Point(0, 82);
+            lblCompany.Location = new Point(0, 79);
             lblCompany.Name = "lblCompany";
             lblCompany.Size = new Size(77, 17);
             lblCompany.TabIndex = 35;
@@ -107,7 +107,7 @@ namespace PowerAudioPlayer.UI
             // 
             lbldotNETVersion.AutoSize = true;
             lbldotNETVersion.Dock = DockStyle.Top;
-            lbldotNETVersion.Location = new Point(0, 99);
+            lbldotNETVersion.Location = new Point(0, 96);
             lbldotNETVersion.Name = "lbldotNETVersion";
             lbldotNETVersion.Size = new Size(110, 17);
             lbldotNETVersion.TabIndex = 37;
@@ -117,7 +117,7 @@ namespace PowerAudioPlayer.UI
             // 
             lblLastCompileTime.AutoSize = true;
             lblLastCompileTime.Dock = DockStyle.Top;
-            lblLastCompileTime.Location = new Point(0, 116);
+            lblLastCompileTime.Location = new Point(0, 113);
             lblLastCompileTime.Name = "lblLastCompileTime";
             lblLastCompileTime.Size = new Size(121, 17);
             lblLastCompileTime.TabIndex = 38;
