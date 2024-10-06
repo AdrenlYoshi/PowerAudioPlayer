@@ -79,23 +79,13 @@ namespace PowerAudioPlayer.Controllers.Helper
 
         public static bool IsInMediaLibraryDirectories(string file)
         {
-            foreach(var d in Settings.Default.MediaLibraryDirectories)
+            foreach (var d in Settings.Default.MediaLibraryDirectories)
             {
                 string path = Path.GetDirectoryName(file);
-                if(d.IncludeSubDir)
-                {
-                    if (Utils.IsSubDirectoryOf(path, d.Directory))
-                        return true;
-                    else
-                        return false;
-                }
+                if (Utils.IsSubDirectoryOf(path, d.Directory))
+                    return true;
                 else
-                {
-                    if (file.Equals(file))
-                        return true;
-                    else
-                        return false;
-                }
+                    return false;
             }
             return false;
         }
@@ -111,8 +101,8 @@ namespace PowerAudioPlayer.Controllers.Helper
             {
                 return false;
             }
-        }        
-        
+        }
+
         public static bool Add(string file)
         {
             try
@@ -120,7 +110,7 @@ namespace PowerAudioPlayer.Controllers.Helper
                 _library.Add(file, AudioInfoHelper.GetAudioInfo(file));
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -135,7 +125,7 @@ namespace PowerAudioPlayer.Controllers.Helper
         {
             foreach (MediaLibraryDirectory dir in Settings.Default.MediaLibraryDirectories)
             {
-                var files = Utils.SearchFiles(dir.Directory, Player.Core.GetAllSupportedFileArray(), dir.IncludeSubDir);
+                var files = Utils.SearchFiles(dir.Directory, Player.Core.GetAllSupportedFileArray(), true);
                 foreach (var file in files)
                 {
                     Add(file);
@@ -167,8 +157,8 @@ namespace PowerAudioPlayer.Controllers.Helper
                     break;
             }
             return list;
-        }        
-        
+        }
+
         public static Dictionary<string, AudioInfo> GetView(ViewType type, string keyWord)
         {
             Dictionary<string, AudioInfo> dic = new Dictionary<string, AudioInfo>();

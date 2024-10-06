@@ -1,5 +1,7 @@
 ﻿using PowerAudioPlayer.Controllers;
 using PowerAudioPlayer.Controllers.Helper;
+using PowerAudioPlayer.Model;
+using System;
 using System.Diagnostics;
 using System.IO;
 using Un4seen.Bass;
@@ -53,12 +55,10 @@ namespace PowerAudioPlayer.UI
                     tbDisc.Text = tag.disc;
                     tbYear.Text = tag.year;
                     tbTrack.Text = tag.track;
-                    //Image image = tag.PictureGetImage(0);
-                    //if (image != null)
-                    //{
-                    //    pictureBox.Image = image;
-                    //    lblImage.Text = Player.GetString("ImageInformation", image.Width, image.Height, tag.PictureGet(0).MIMEType);
-                    //}
+
+                    pictureBox.Image = AudioInfoHelper.GetAudioPicture(file);
+                    if(pictureBox.Image != null )
+                        lblImage.Text = Player.GetString("ImageInformation", pictureBox.Image.Width, pictureBox.Image.Height, tag.PictureGet(0).MIMEType);
                 }
             }
         }

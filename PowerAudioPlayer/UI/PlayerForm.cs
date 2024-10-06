@@ -272,7 +272,7 @@ namespace PowerAudioPlayer
                 lblArtist.Text = string.Empty;
                 lblTitle.Text = string.Empty;
                 lblDisplayTitle.Text = Player.GetString("ProgramName");
-                lblInfo.Text = "0 kBps";
+                lblInfo.Text = string.Empty;
                 picAlbum.Image = null;
                 lblStatus.Text = Player.GetString("Stop");
                 SetTaskbarOverlayIcon(null, lblStatus.Text);

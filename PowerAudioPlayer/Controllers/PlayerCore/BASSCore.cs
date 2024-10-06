@@ -260,7 +260,8 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
 
         public void SetPositionMillisecond(int pos)
         {
-            Bass.BASS_ChannelSetPosition(hStream, Bass.BASS_ChannelSeconds2Bytes(hStream, (pos / 1000)));
+            long p = Bass.BASS_ChannelSeconds2Bytes(hStream, pos / 1000);
+            Bass.BASS_ChannelSetPosition(hStream, p);
         }
 
         public void SetVolume(int vol)
@@ -350,8 +351,7 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
                             }
                         }
                     }
-                    lrc = Utils.Windows1254ToGB2312(lrc);
-                    lrc = lrc.Replace('\\', new char());
+                    lrc = Utils.Windows1254ToGB2312(lrc).Replace('\\', new char()).Replace("\0", " ");
                 }
             }
             return lrc;

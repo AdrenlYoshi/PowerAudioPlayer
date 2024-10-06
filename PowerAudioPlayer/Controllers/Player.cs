@@ -39,11 +39,8 @@ namespace PowerAudioPlayer.Controllers
     {
         public string Directory { get; set; } = string.Empty;
 
-        public bool IncludeSubDir { get; set; } = true;
 
         public MediaLibraryDirectory(string dir) { Directory = dir; }
-
-        public MediaLibraryDirectory(string dir, bool includeSubDir) { Directory = dir; IncludeSubDir = includeSubDir; }
 
         public MediaLibraryDirectory() { }
     }
@@ -176,7 +173,7 @@ namespace PowerAudioPlayer.Controllers
         {
             if(abRepeatMode == ABRepeatMode.ABRepeat)
             {
-                if(Core.GetPositionMillisecond() > bRepeatPos || Core.GetPositionMillisecond() < aRepeatPos)
+                if(Core.GetPositionMillisecond() > bRepeatPos || Core.GetPositionMillisecond() < aRepeatPos - 2000)
                     Core.SetPositionMillisecond(aRepeatPos);
                 return true;
             }

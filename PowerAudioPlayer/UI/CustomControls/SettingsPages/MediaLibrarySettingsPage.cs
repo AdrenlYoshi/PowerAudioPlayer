@@ -9,8 +9,8 @@ namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
     public partial class MediaLibrarySettingsPage : UserControl
     {
         OLVColumn olvColumn1 = new OLVColumn(Player.GetString("Directory"), "Directory");
-        OLVColumn olvColumn2 = new OLVColumn(Player.GetString("IncludingSubDir"), "IncludeSubDir") { CheckBoxes = true, TextAlign = HorizontalAlignment.Center };
-        OLVColumn olvColumn3 = new OLVColumn(Player.GetString("Action"), "") { ButtonSizing = OLVColumn.ButtonSizingMode.CellBounds, IsButton = true, AspectGetter = delegate (object rowObject) { return Player.GetString("Delete"); } };
+        //OLVColumn olvColumn2 = new OLVColumn(Player.GetString("IncludingSubDir"), "IncludeSubDir") { CheckBoxes = true, TextAlign = HorizontalAlignment.Center };
+        OLVColumn olvColumn2 = new OLVColumn(Player.GetString("Action"), "") { ButtonSizing = OLVColumn.ButtonSizingMode.CellBounds, IsButton = true, AspectGetter = delegate (object rowObject) { return Player.GetString("Delete"); } };
 
         public Form? Owner
         {
@@ -27,7 +27,7 @@ namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
             cbRecordPlayHistroy.DataBindings.Add("Checked", Settings.Default, "RecordPlayHistroy", true, DataSourceUpdateMode.OnPropertyChanged);
 
 
-            lvMediaLibraryDirs.Columns.AddRange([olvColumn1, olvColumn2, olvColumn3]);
+            lvMediaLibraryDirs.Columns.AddRange([olvColumn1, olvColumn2]);
             if (!Utils.IsDesignMode())
                 lvMediaLibraryDirs.SetObjects(Settings.Default.MediaLibraryDirectories);
         }
@@ -42,7 +42,7 @@ namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
             if (commonOpenFileDialog.ShowDialog() == CommonFileDialogResult.Ok && commonOpenFileDialog.FileName != null)
             {
                 if (!Settings.Default.MediaLibraryDirectories.Exists(x => x.Directory.Equals(commonOpenFileDialog.FileName)))
-                    Settings.Default.MediaLibraryDirectories.Add(new MediaLibraryDirectory(commonOpenFileDialog.FileName, checkBox.IsChecked));
+                    Settings.Default.MediaLibraryDirectories.Add(new MediaLibraryDirectory(commonOpenFileDialog.FileName));
                 lvMediaLibraryDirs.SetObjects(Settings.Default.MediaLibraryDirectories);
             }
         }

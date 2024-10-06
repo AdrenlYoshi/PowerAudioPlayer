@@ -412,9 +412,8 @@ namespace PowerAudioPlayer
             lblInfo.Location = new Point(3, 3);
             lblInfo.Margin = new Padding(3);
             lblInfo.Name = "lblInfo";
-            lblInfo.Size = new Size(34, 17);
+            lblInfo.Size = new Size(0, 17);
             lblInfo.TabIndex = 0;
-            lblInfo.Text = "0 Hz";
             lblInfo.UseMnemonic = false;
             lblInfo.DoubleClick += lbl_DoubleClick;
             // 

@@ -223,6 +223,7 @@ namespace PowerAudioPlayer.UI.CustomControls
                                 break;
                             }
                             PlaylistHelper.Playlists[workingPlaylistIndex].Add(file);
+                            
                         }
                     }
                 };
