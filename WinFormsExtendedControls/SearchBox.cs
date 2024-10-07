@@ -63,9 +63,15 @@ namespace SearchBoxWithDelayTest
         {
             SearchTextChanged?.Invoke(this, e);
             if (tbSearch.Text == string.Empty)
+            {
                 btnClear.Visible = false;
+                btnSearch_Click(this, e);
+                return;
+            }
             else
+            {
                 btnClear.Visible = true;
+            }
             if (tmr.Enabled)
             {
                 tmr.Stop();
