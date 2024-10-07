@@ -66,7 +66,7 @@
             tsmiMediaExplorer = new ToolStripMenuItem();
             tsmiFileInfo = new ToolStripMenuItem();
             tsmiRemoveSelected1 = new ToolStripMenuItem();
-            tbFilter = new TextBox();
+            sbFilter = new SearchBoxWithDelayTest.SearchBox();
             msPl.SuspendLayout();
             statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)lvPlaylist).BeginInit();
@@ -279,14 +279,14 @@
             lvPlaylist.EmptyListMsg = "无文件。使用菜单添加一些文件或将文件拖放到此处。";
             lvPlaylist.FullRowSelect = true;
             lvPlaylist.GridLines = true;
-            lvPlaylist.Location = new Point(0, 47);
+            lvPlaylist.Location = new Point(0, 54);
             lvPlaylist.Name = "lvPlaylist";
             lvPlaylist.OverlayText.Text = "";
             lvPlaylist.SelectColumnsOnRightClick = false;
             lvPlaylist.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
             lvPlaylist.ShowCommandMenuOnRightClick = true;
             lvPlaylist.ShowGroups = false;
-            lvPlaylist.Size = new Size(560, 463);
+            lvPlaylist.Size = new Size(560, 456);
             lvPlaylist.TabIndex = 31;
             lvPlaylist.UseFiltering = true;
             lvPlaylist.View = View.Details;
@@ -356,15 +356,17 @@
             tsmiRemoveSelected1.Text = "移除选中项目(&R)";
             tsmiRemoveSelected1.Click += tsmiRemoveSelected_Click;
             // 
-            // tbFilter
+            // sbFilter
             // 
-            tbFilter.Dock = DockStyle.Top;
-            tbFilter.Location = new Point(0, 24);
-            tbFilter.Name = "tbFilter";
-            tbFilter.PlaceholderText = "在此键入搜索关键词";
-            tbFilter.Size = new Size(560, 23);
-            tbFilter.TabIndex = 33;
-            tbFilter.TextChanged += tbFilter_TextChanged;
+            sbFilter.Dock = DockStyle.Top;
+            sbFilter.Location = new Point(0, 24);
+            sbFilter.MaxLength = 32767;
+            sbFilter.Name = "sbFilter";
+            sbFilter.PlaceHolderText = "键入搜索内容";
+            sbFilter.Size = new Size(560, 30);
+            sbFilter.TabIndex = 33;
+            sbFilter.TextAlign = HorizontalAlignment.Left;
+            sbFilter.SearchStart += sbFilter_SearchStart;
             // 
             // PlaylistEditor
             // 
@@ -372,7 +374,7 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lvPlaylist);
-            Controls.Add(tbFilter);
+            Controls.Add(sbFilter);
             Controls.Add(msPl);
             Controls.Add(statusStrip);
             Margin = new Padding(4, 3, 4, 3);
@@ -429,6 +431,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem tsmiMediaExplorer;
         private ToolStripMenuItem tsmiFileInfo;
-        private TextBox tbFilter;
+        private SearchBoxWithDelayTest.SearchBox sbFilter;
     }
 }

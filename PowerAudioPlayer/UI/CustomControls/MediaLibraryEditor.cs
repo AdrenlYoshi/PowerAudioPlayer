@@ -57,8 +57,8 @@ namespace PowerAudioPlayer.UI.CustomControls
             _allMode = allMode;
             lvKeyWord.AdditionalFilter = null;
             lvResult.AdditionalFilter = null;
-            tbFilterKey.Text = string.Empty;
-            tbFilterResult.Text = string.Empty;
+            sbFilterKey.Text = string.Empty;
+            sbFilterResult.Text = string.Empty;
             if (allMode)
             {
                 splitContainer1.Panel1Collapsed = true;
@@ -238,32 +238,6 @@ namespace PowerAudioPlayer.UI.CustomControls
             new InformationForm() { Tag = ((AudioInfo)lvResult.SelectedObject).File }.ShowDialog();
         }
 
-        private void tbFilterKey_TextChanged(object sender, EventArgs e)
-        {
-            TextMatchFilter? filter = null;
-            if (!string.IsNullOrEmpty(tbFilterKey.Text))
-            {
-                filter = TextMatchFilter.Contains(lvKeyWord, tbFilterKey.Text);
-                if (lvKeyWord.DefaultRenderer == null)
-                    lvKeyWord.DefaultRenderer = new HighlightTextRenderer(filter);
-
-            }
-            lvKeyWord.AdditionalFilter = filter;
-        }
-
-        private void tbFilterResult_TextChanged(object sender, EventArgs e)
-        {
-            TextMatchFilter? filter = null;
-            if (!string.IsNullOrEmpty(tbFilterResult.Text))
-            {
-                filter = TextMatchFilter.Contains(lvResult, tbFilterResult.Text);
-                if (lvResult.DefaultRenderer == null)
-                    lvResult.DefaultRenderer = new HighlightTextRenderer(filter);
-
-            }
-            lvResult.AdditionalFilter = filter;
-        }
-
         private void lvResult_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvResult.SelectedIndex != -1)
@@ -280,6 +254,32 @@ namespace PowerAudioPlayer.UI.CustomControls
             {
                 label1.BringToFront();
             }
+        }
+
+        private void sbFilterKey_SearchStart(object sender, EventArgs e)
+        {
+            TextMatchFilter? filter = null;
+            if (!string.IsNullOrEmpty(sbFilterKey.Text))
+            {
+                filter = TextMatchFilter.Contains(lvKeyWord, sbFilterKey.Text);
+                if (lvKeyWord.DefaultRenderer == null)
+                    lvKeyWord.DefaultRenderer = new HighlightTextRenderer(filter);
+
+            }
+            lvKeyWord.AdditionalFilter = filter;
+        }
+
+        private void sbFilterResult_SearchStart(object sender, EventArgs e)
+        {
+            TextMatchFilter? filter = null;
+            if (!string.IsNullOrEmpty(sbFilterResult.Text))
+            {
+                filter = TextMatchFilter.Contains(lvResult, sbFilterResult.Text);
+                if (lvResult.DefaultRenderer == null)
+                    lvResult.DefaultRenderer = new HighlightTextRenderer(filter);
+
+            }
+            lvResult.AdditionalFilter = filter;
         }
     }
 }

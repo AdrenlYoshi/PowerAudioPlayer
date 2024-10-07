@@ -7,6 +7,7 @@ namespace WinFormsExtendedControls
     {
         public event EventHandler? ColorChanged;
         private Color _color = Color.White;
+
         public Color Color
         {
             get { return _color; }

@@ -81,12 +81,8 @@ namespace PowerAudioPlayer {
         }
         
         /// <summary>
-        ///   查找类似 {\rtf1\ansi\ansicpg54936\deff0\nouicompat\deflang1033\deflangfe2052{\fonttbl{\f0\fnil\fcharset134 \&apos;cb\&apos;ce\&apos;cc\&apos;e5;}}
-        ///{\colortbl ;\red0\green0\blue255;}
-        ///{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
-        ///\pard\sl240\slmult1\f0\fs20\lang2052\&apos;b1\&apos;be\&apos;b3\&apos;cc\&apos;d0\&apos;f2\&apos;ca\&apos;b9\&apos;d3\&apos;c3\&apos;d2\&apos;d4\&apos;cf\&apos;c2\&apos;bf\&apos;e2\&apos;a3\&apos;ba\par
-        ///Bass\&apos;a3\&apos;a8{{\field{\*\fldinst{HYPERLINK https://un4seen.com }}{\fldrslt{https://un4seen.com\ul0\cf0}}}}\f0\fs20\&apos;a3\&apos;a9\par
-        ///Bass.NET\&apos;a3\&apos;a8{{\field{\*\fldinst{HYPERLINK http://www.bass.rad [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///   查找类似 {\rtf1\adeflang1025\ansi\ansicpg936\uc2\adeff0\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi0\deflang1033\deflangfe2052\themelang1033\themelangfe2052\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria Math;}
+        ///{\f36\fbidi \fnil\fcharset134\fprq2{\*\panose 02010600030101010101}\&apos;b5\&apos;c8\&apos;cf\&apos;df{\*\falt DengXian};}{\f44\fbidi \fswiss\fcharset134\fprq2{\*\panose 00000000000 [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string Acknowledgement {
             get {
@@ -507,6 +503,16 @@ namespace PowerAudioPlayer {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Toolbox {
+            get {
+                object obj = ResourceManager.GetObject("Toolbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap TrackLoop {
             get {
                 object obj = ResourceManager.GetObject("TrackLoop", resourceCulture);
@@ -517,9 +523,9 @@ namespace PowerAudioPlayer {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap WindowsForm {
+        internal static System.Drawing.Bitmap WindowsForms {
             get {
-                object obj = ResourceManager.GetObject("WindowsForm", resourceCulture);
+                object obj = ResourceManager.GetObject("WindowsForms", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

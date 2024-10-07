@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            tbFilterKey = new TextBox();
-            tbFilterResult = new TextBox();
             lvKeyWord = new BrightIdeasSoftware.FastObjectListView();
             cmsKeyWord = new ContextMenuStrip(components);
             tsmiPlayKeyWord = new ToolStripMenuItem();
@@ -58,7 +56,9 @@
             lblTotalLength = new ToolStripStatusLabel();
             lblStatus = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
+            sbFilterKey = new SearchBoxWithDelayTest.SearchBox();
             splitContainer2 = new SplitContainer();
+            sbFilterResult = new SearchBoxWithDelayTest.SearchBox();
             label1 = new Label();
             splitContainer3 = new SplitContainer();
             pbAlbumPicture = new PictureBox();
@@ -90,28 +90,6 @@
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // tbFilterKey
-            // 
-            tbFilterKey.Dock = DockStyle.Top;
-            tbFilterKey.Location = new Point(0, 0);
-            tbFilterKey.Margin = new Padding(4, 3, 4, 3);
-            tbFilterKey.Name = "tbFilterKey";
-            tbFilterKey.PlaceholderText = "在此键入搜索关键词";
-            tbFilterKey.Size = new Size(175, 23);
-            tbFilterKey.TabIndex = 38;
-            tbFilterKey.TextChanged += tbFilterKey_TextChanged;
-            // 
-            // tbFilterResult
-            // 
-            tbFilterResult.Dock = DockStyle.Top;
-            tbFilterResult.Location = new Point(0, 0);
-            tbFilterResult.Margin = new Padding(4, 3, 4, 3);
-            tbFilterResult.Name = "tbFilterResult";
-            tbFilterResult.PlaceholderText = "在此键入搜索关键词";
-            tbFilterResult.Size = new Size(464, 23);
-            tbFilterResult.TabIndex = 39;
-            tbFilterResult.TextChanged += tbFilterResult_TextChanged;
-            // 
             // lvKeyWord
             // 
             lvKeyWord.ContextMenuStrip = cmsKeyWord;
@@ -119,12 +97,12 @@
             lvKeyWord.FullRowSelect = true;
             lvKeyWord.GridLines = true;
             lvKeyWord.HeaderStyle = ColumnHeaderStyle.None;
-            lvKeyWord.Location = new Point(0, 23);
+            lvKeyWord.Location = new Point(0, 30);
             lvKeyWord.Margin = new Padding(4, 3, 4, 3);
             lvKeyWord.MultiSelect = false;
             lvKeyWord.Name = "lvKeyWord";
             lvKeyWord.ShowGroups = false;
-            lvKeyWord.Size = new Size(175, 396);
+            lvKeyWord.Size = new Size(175, 389);
             lvKeyWord.TabIndex = 35;
             lvKeyWord.UseFiltering = true;
             lvKeyWord.View = View.Details;
@@ -183,12 +161,12 @@
             lvResult.Dock = DockStyle.Fill;
             lvResult.FullRowSelect = true;
             lvResult.GridLines = true;
-            lvResult.Location = new Point(0, 0);
+            lvResult.Location = new Point(0, 30);
             lvResult.Margin = new Padding(4, 3, 4, 3);
             lvResult.Name = "lvResult";
             lvResult.ShowCommandMenuOnRightClick = true;
             lvResult.ShowGroups = false;
-            lvResult.Size = new Size(464, 290);
+            lvResult.Size = new Size(464, 283);
             lvResult.TabIndex = 36;
             lvResult.UseFiltering = true;
             lvResult.View = View.Details;
@@ -324,36 +302,60 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.Controls.Add(lvKeyWord);
-            splitContainer1.Panel1.Controls.Add(tbFilterKey);
+            splitContainer1.Panel1.Controls.Add(sbFilterKey);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Panel2.Controls.Add(tbFilterResult);
             splitContainer1.Size = new Size(643, 419);
             splitContainer1.SplitterDistance = 175;
             splitContainer1.TabIndex = 40;
+            // 
+            // sbFilterKey
+            // 
+            sbFilterKey.Dock = DockStyle.Top;
+            sbFilterKey.Location = new Point(0, 0);
+            sbFilterKey.MaxLength = 32767;
+            sbFilterKey.Name = "sbFilterKey";
+            sbFilterKey.PlaceHolderText = "键入搜索内容";
+            sbFilterKey.Size = new Size(175, 30);
+            sbFilterKey.TabIndex = 36;
+            sbFilterKey.TextAlign = HorizontalAlignment.Left;
+            sbFilterKey.SearchStart += sbFilterKey_SearchStart;
             // 
             // splitContainer2
             // 
             splitContainer2.Dock = DockStyle.Fill;
             splitContainer2.FixedPanel = FixedPanel.Panel2;
-            splitContainer2.Location = new Point(0, 23);
+            splitContainer2.Location = new Point(0, 0);
             splitContainer2.Name = "splitContainer2";
             splitContainer2.Orientation = Orientation.Horizontal;
             // 
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.Controls.Add(lvResult);
+            splitContainer2.Panel1.Controls.Add(sbFilterResult);
             // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.AutoScroll = true;
             splitContainer2.Panel2.Controls.Add(label1);
             splitContainer2.Panel2.Controls.Add(splitContainer3);
-            splitContainer2.Size = new Size(464, 396);
-            splitContainer2.SplitterDistance = 290;
+            splitContainer2.Size = new Size(464, 419);
+            splitContainer2.SplitterDistance = 313;
             splitContainer2.TabIndex = 40;
+            // 
+            // sbFilterResult
+            // 
+            sbFilterResult.Dock = DockStyle.Top;
+            sbFilterResult.Location = new Point(0, 0);
+            sbFilterResult.MaxLength = 32767;
+            sbFilterResult.Name = "sbFilterResult";
+            sbFilterResult.PlaceHolderText = "键入搜索内容";
+            sbFilterResult.Size = new Size(464, 30);
+            sbFilterResult.TabIndex = 37;
+            sbFilterResult.TextAlign = HorizontalAlignment.Left;
+            sbFilterResult.SearchStart += sbFilterResult_SearchStart;
             // 
             // label1
             // 
@@ -479,9 +481,7 @@
             statusStrip.ResumeLayout(false);
             statusStrip.PerformLayout();
             splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
-            splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             splitContainer2.Panel1.ResumeLayout(false);
@@ -501,9 +501,6 @@
         }
 
         #endregion
-
-        private TextBox tbFilterKey;
-        private TextBox tbFilterResult;
         private BrightIdeasSoftware.FastObjectListView lvKeyWord;
         private ContextMenuStrip cmsKeyWord;
         private ToolStripMenuItem tsmiPlayKeyWord;
@@ -542,5 +539,7 @@
         private Label lblTitle;
         private SplitContainer splitContainer3;
         private Label label1;
+        private SearchBoxWithDelayTest.SearchBox sbFilterKey;
+        private SearchBoxWithDelayTest.SearchBox sbFilterResult;
     }
 }

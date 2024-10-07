@@ -113,7 +113,7 @@ namespace PowerAudioPlayer.UI.CustomControls
                 backgroundWorker.CancelAsync();
             }
             lvPlaylist.AdditionalFilter = null;
-            tbFilter.Text = string.Empty;
+            sbFilter.Text = string.Empty;
             lvPlaylist.SetObjects(PlaylistHelper.Playlists[_editPlaylistIndex].Items);
             lvPlaylist.Refresh();
             RefreshStatus();
@@ -142,7 +142,7 @@ namespace PowerAudioPlayer.UI.CustomControls
         {
             lvPlaylist.Enabled = enable;
             msPl.Enabled = enable;
-            tbFilter.Enabled = enable;
+            sbFilter.Enabled = enable;
         }
 
         private void lvPlaylist_DoubleClick(object sender, EventArgs e)
@@ -223,7 +223,7 @@ namespace PowerAudioPlayer.UI.CustomControls
                                 break;
                             }
                             PlaylistHelper.Playlists[workingPlaylistIndex].Add(file);
-                            
+
                         }
                     }
                 };
@@ -370,12 +370,12 @@ namespace PowerAudioPlayer.UI.CustomControls
             }
         }
 
-        private void tbFilter_TextChanged(object sender, EventArgs e)
+        private void sbFilter_SearchStart(object sender, EventArgs e)
         {
             TextMatchFilter? filter = null;
-            if (!string.IsNullOrEmpty(tbFilter.Text))
+            if (!string.IsNullOrEmpty(sbFilter.Text))
             {
-                filter = TextMatchFilter.Contains(lvPlaylist, tbFilter.Text);
+                filter = TextMatchFilter.Contains(lvPlaylist, sbFilter.Text);
                 if (lvPlaylist.DefaultRenderer == null)
                     lvPlaylist.DefaultRenderer = new HighlightTextRenderer(filter);
 
