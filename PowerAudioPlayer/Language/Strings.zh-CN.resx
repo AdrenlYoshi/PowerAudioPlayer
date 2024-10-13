@@ -302,9 +302,6 @@ System Information: {8}</value>
   <data name="MsgCopyed" xml:space="preserve">
     <value>已复制文本 - {0}</value>
   </data>
-  <data name="MsgErrorRegisterHotKey" xml:space="preserve">
-    <value>注册快捷键失败！</value>
-  </data>
   <data name="MsgInformationFormHelp" xml:space="preserve">
     <value>要修改文件的某些信息，请使用第三方工具。本页面不提供修改功能。</value>
   </data>
@@ -335,12 +332,6 @@ System Information: {8}</value>
   <data name="MsgWelcomeMediaLibrary" xml:space="preserve">
     <value>欢迎来到媒体库
 在左侧的树形框中选择你想管理的内容</value>
-  </data>
-  <data name="MsgWelcomePlaylist" xml:space="preserve">
-    <value>在此分支下，你可以管理你的播放列表，例如添加，删除，播放等</value>
-  </data>
-  <data name="NoAnotherPlaylist" xml:space="preserve">
-    <value>没有其他播放列表</value>
   </data>
   <data name="ProgramName" xml:space="preserve">
     <value>PowerAudioPlayer</value>
@@ -463,9 +454,6 @@ System Information: {8}</value>
   </data>
   <data name="MsgDataFileImportOK" xml:space="preserve">
     <value>数据文件导入成功。PowerAudioPlayer将立即重启。</value>
-  </data>
-  <data name="MsgWindowsVersionError" xml:space="preserve">
-    <value>PowerAudioPlayer只能运行在Windows 10（内部版本 10.0.17763.0）或更高版本的Microsoft Windows上，请升级你的Windows版本，然后重试。</value>
   </data>
   <data name="ProjectPageURL" xml:space="preserve">
     <value>https://github.com/AdrenlYoshi/PowerAudioPlayer</value>

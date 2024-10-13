@@ -25,23 +25,16 @@ namespace PowerAudioPlayer
 #endif
             ApplicationConfiguration.Initialize();
             CultureInfo.DefaultThreadCurrentUICulture = defaultCultureInfo;
-            if (Environment.OSVersion.Version < new Version(10, 0, 17763, 0)) //Windows 10.0.17763.0
+            Process? instance = RunningInstance();
+            if (instance == null)
             {
-                MessageBox.Show(Player.GetString("MsgWindowsVersionError"), Player.GetString("ProgramName"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Player.Init();
+                Application.Run(new PlayerForm());
+                Player.UnInit();
             }
             else
             {
-                Process? instance = RunningInstance();
-                if (instance == null)
-                {
-                    Player.Init();
-                    Application.Run(new PlayerForm());
-                    Player.UnInit();
-                }
-                else
-                {
-                    HandleRunningInstance(instance);
-                }
+                HandleRunningInstance(instance);
             }
         }
 
