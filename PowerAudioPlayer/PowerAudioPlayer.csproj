@@ -10,12 +10,14 @@
         <ApplicationIcon>Resources\PowerAudioPlayer.ico</ApplicationIcon>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
-        <ImplicitUsings>enable</ImplicitUsings>   
+        <ImplicitUsings>enable</ImplicitUsings>
         <Company>AdrenlYoshi</Company>
+        <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
+        <_SuppressWpfTrimError>true</_SuppressWpfTrimError>
     </PropertyGroup>
-
+    
     <ItemGroup>
-        <AdditionalFiles Remove="app.manifest" />
+      <AdditionalFiles Remove="app.manifest" />
     </ItemGroup>
 
     <ItemGroup>
