@@ -11,28 +11,28 @@ namespace WinFormsExtendedControls
     public partial class LabeledTextBox : UserControl
     {
         private readonly int textBoxLeftMargin, textBoxRightMargin;
-        private Control ptrActiveControl;
+        private Control? ptrActiveControl;
 
         /// <summary>
         /// Event raised when text changed.
         /// </summary>
         [Browsable(true)]
         [Description("Occurs when value of text box changed.")]
-        public new event EventHandler TextChanged;
+        public new event EventHandler? TextChanged;
 
         /// <summary>
         /// Event raised when check box is checked / unchecked.
         /// </summary>
         [Browsable(true)]
         [Description("Occurs when the Check property is changed.")]
-        public event EventHandler CheckedChanged;
+        public event EventHandler? CheckedChanged;
 
         /// <summary>
         /// Event raised when dropdown selected index had been changed.
         /// </summary>
         [Browsable(true)]
         [Description("Occurs when dropdown selected index had been changed.")]
-        public event EventHandler SelectedIndexChanged;
+        public event EventHandler? SelectedIndexChanged;
 
         /// <summary>
         /// Constructor
@@ -255,7 +255,7 @@ namespace WinFormsExtendedControls
 
         private void textbox_TextChanged(object sender, EventArgs e)
         {
-            TextChanged?.Invoke(this, null);
+            TextChanged?.Invoke(this, new EventArgs());
         }
 
         private void textbox_DragDrop(object sender, DragEventArgs e)
@@ -292,12 +292,12 @@ namespace WinFormsExtendedControls
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextChanged?.Invoke(this, null);
+            TextChanged?.Invoke(this, new EventArgs());
         }
 
         private void chkBox_CheckedChanged(object sender, EventArgs e)
         {
-            CheckedChanged?.Invoke(this, null);
+            CheckedChanged?.Invoke(this, new EventArgs());
             textbox.Enabled = chkBox.Checked;
             comboBox.Enabled = chkBox.Checked;
         }
@@ -307,7 +307,7 @@ namespace WinFormsExtendedControls
             SelectedIndexChanged?.Invoke(sender, e);
         }
 
-        private void Label_SizeChanged(object sender, EventArgs e)
+        private void Label_SizeChanged(object? sender, EventArgs? e)
         {
             RecalculateTextBoxSize();
         }

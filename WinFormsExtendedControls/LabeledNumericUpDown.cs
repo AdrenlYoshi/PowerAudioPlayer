@@ -8,28 +8,28 @@ namespace WinFormsExtendedControls
     public partial class LabeledNumericUpDown : UserControl
     {
         private readonly int textBoxLeftMargin, textBoxRightMargin;
-        private Control ptrActiveControl;
+        private Control? ptrActiveControl;
 
         /// <summary>
         /// Event raised when text changed.
         /// </summary>
         [Browsable(true)]
         [Description("Occurs when value of text box changed.")]
-        public new event EventHandler TextChanged;
+        public new event EventHandler? TextChanged;
 
         /// <summary>
         /// Event raised when check box is checked / unchecked.
         /// </summary>
         [Browsable(true)]
         [Description("Occurs when the Check property is changed.")]
-        public event EventHandler CheckedChanged;
+        public event EventHandler? CheckedChanged;
 
         /// <summary>
         /// Event raised when dropdown selected index had been changed.
         /// </summary>
         [Browsable(true)]
         [Description("Occurs when dropdown selected index had been changed.")]
-        public event EventHandler SelectedIndexChanged;
+        public event EventHandler? SelectedIndexChanged;
 
         /// <summary>
         /// Constructor
@@ -190,7 +190,7 @@ namespace WinFormsExtendedControls
 
         private bool isDropDownList = false;
 
-        private void textbox_TextChanged(object sender, EventArgs e)
+        private void textbox_TextChanged(object? sender, EventArgs? e)
         {
             TextChanged?.Invoke(this, null);
         }
@@ -212,7 +212,7 @@ namespace WinFormsExtendedControls
 
         internal virtual bool ValidateDropData(string filePath) { return true; }
 
-        private void LabeledTextBox_VisibleChanged(object sender, EventArgs e)
+        private void LabeledTextBox_VisibleChanged(object? sender, EventArgs? e)
         {
             RecalculateTextBoxSize();
         }
@@ -227,12 +227,12 @@ namespace WinFormsExtendedControls
             OnKeyDown(e); //Forward event to parent class
         }
 
-        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_SelectedIndexChanged(object? sender, EventArgs? e)
         {
             TextChanged?.Invoke(this, null);
         }
 
-        private void chkBox_CheckedChanged(object sender, EventArgs e)
+        private void chkBox_CheckedChanged(object? sender, EventArgs? e)
         {
             CheckedChanged?.Invoke(this, null);
             textbox.Enabled = chkBox.Checked;
@@ -243,12 +243,12 @@ namespace WinFormsExtendedControls
             SelectedIndexChanged?.Invoke(sender, e);
         }
 
-        private void Label_SizeChanged(object sender, EventArgs e)
+        private void Label_SizeChanged(object? sender, EventArgs? e)
         {
             RecalculateTextBoxSize();
         }
 
-        private void LabeledTextBox_SizeChanged(object sender, EventArgs e)
+        private void LabeledTextBox_SizeChanged(object? sender, EventArgs? e)
         {
             RecalculateTextBoxSize();
         }

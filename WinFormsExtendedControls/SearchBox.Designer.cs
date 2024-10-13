@@ -41,7 +41,7 @@
             tbSearch.Dock = DockStyle.Top;
             tbSearch.Location = new Point(3, 3);
             tbSearch.Name = "tbSearch";
-            tbSearch.Size = new Size(161, 23);
+            tbSearch.Size = new Size(157, 23);
             tbSearch.TabIndex = 0;
             tbSearch.TextChanged += tbSearch_TextChanged;
             tbSearch.KeyDown += tbSearch_KeyDown;
@@ -66,26 +66,28 @@
             // 
             // btnSearch
             // 
+            btnSearch.AutoSize = true;
             btnSearch.Dock = DockStyle.Top;
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
-            btnSearch.Location = new Point(196, 3);
+            btnSearch.Location = new Point(194, 3);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(20, 20);
+            btnSearch.Size = new Size(22, 22);
             btnSearch.TabIndex = 2;
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
             // btnClear
             // 
+            btnClear.AutoSize = true;
             btnClear.Dock = DockStyle.Top;
             btnClear.FlatAppearance.BorderSize = 0;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Image = (Image)resources.GetObject("btnClear.Image");
-            btnClear.Location = new Point(170, 3);
+            btnClear.Location = new Point(166, 3);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(20, 20);
+            btnClear.Size = new Size(22, 22);
             btnClear.TabIndex = 1;
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Visible = false;
