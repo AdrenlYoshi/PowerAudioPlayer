@@ -70,13 +70,12 @@ namespace PowerAudioPlayer
 
         private IDictionary ReadSettingsFromFile(string sectionName)
         {
-            IDictionary settings = new Hashtable();
+            Hashtable settings = new Hashtable();
 
             var sectionGroup = configuration.GetSectionGroup(UserSettingsGroupName);
             if (sectionGroup != null)
             {
-                var section = sectionGroup.Sections[sectionName] as ClientSettingsSection;
-                if (section != null)
+                if (sectionGroup.Sections[sectionName] is ClientSettingsSection section)
                 {
                     foreach (SettingElement setting in section.Settings)
                     {
@@ -107,7 +106,7 @@ namespace PowerAudioPlayer
         public override void SetPropertyValues(SettingsContext context, SettingsPropertyValueCollection collection)
         {
             string sectionName = GetSectionName(context);
-            IDictionary userSettings = new Hashtable();
+            Hashtable userSettings = new Hashtable();
             foreach (SettingsPropertyValue value in collection)
             {
                 SettingsProperty setting = value.Property;
@@ -212,7 +211,7 @@ namespace PowerAudioPlayer
             }
         }
 
-        private XmlNode SerializeToXmlElement(SettingsProperty setting, SettingsPropertyValue value)
+        private XmlElement SerializeToXmlElement(SettingsProperty setting, SettingsPropertyValue value)
         {
             XmlDocument doc = new XmlDocument();
             XmlElement valueXml = doc.CreateElement("value");
@@ -224,17 +223,13 @@ namespace PowerAudioPlayer
                 // SettingsPropertyValue returns a byte[] in the binary serialization case. We need to
                 // encode this - we use base64 since SettingsPropertyValue understands it and we won't have
                 // to special case while deserializing.
-                byte[] buf = value.SerializedValue as byte[];
-                if (buf != null)
+                if (value.SerializedValue is byte[] buf)
                 {
                     serializedValue = Convert.ToBase64String(buf);
                 }
             }
 
-            if (serializedValue == null)
-            {
-                serializedValue = String.Empty;
-            }
+            serializedValue ??= string.Empty;
 
             // We need to escape string serialized values
             if (setting.SerializeAs == SettingsSerializeAs.String)
@@ -245,7 +240,7 @@ namespace PowerAudioPlayer
             valueXml.InnerXml = serializedValue;
 
             // Hack to remove the XmlDeclaration that the XmlSerializer adds. 
-            XmlNode unwanted = null;
+            XmlNode? unwanted = null;
             foreach (XmlNode child in valueXml.ChildNodes)
             {
                 if (child.NodeType == XmlNodeType.XmlDeclaration)
@@ -297,14 +292,9 @@ namespace PowerAudioPlayer
         }
     }
 
-    internal class StoredSetting
+    internal class StoredSetting(SettingsSerializeAs serializeAs, XmlNode xmlNode)
     {
-        public StoredSetting(SettingsSerializeAs serializeAs, XmlNode xmlNode)
-        {
-            this.serializeAs = serializeAs;
-            this.xmlNode = xmlNode;
-        }
-        internal SettingsSerializeAs serializeAs;
-        internal XmlNode xmlNode;
+        internal SettingsSerializeAs serializeAs = serializeAs;
+        internal XmlNode xmlNode = xmlNode;
     }
 }
