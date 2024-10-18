@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             groupBox5 = new GroupBox();
-            cbUseSMTC = new CheckBox();
             cbEnableTrackbarProgress = new CheckBox();
             cbShowStatusInTaskbarIcon = new CheckBox();
             cbEnableTrackbarControlButton = new CheckBox();
@@ -42,28 +41,16 @@
             // groupBox5
             // 
             groupBox5.AutoSize = true;
-            groupBox5.Controls.Add(cbUseSMTC);
             groupBox5.Controls.Add(cbEnableTrackbarProgress);
             groupBox5.Controls.Add(cbShowStatusInTaskbarIcon);
             groupBox5.Controls.Add(cbEnableTrackbarControlButton);
             groupBox5.Dock = DockStyle.Top;
             groupBox5.Location = new Point(0, 0);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(602, 106);
+            groupBox5.Size = new Size(602, 85);
             groupBox5.TabIndex = 3;
             groupBox5.TabStop = false;
             groupBox5.Text = "控制";
-            // 
-            // cbUseSMTC
-            // 
-            cbUseSMTC.AutoSize = true;
-            cbUseSMTC.Dock = DockStyle.Top;
-            cbUseSMTC.Location = new Point(3, 82);
-            cbUseSMTC.Name = "cbUseSMTC";
-            cbUseSMTC.Size = new Size(596, 21);
-            cbUseSMTC.TabIndex = 15;
-            cbUseSMTC.Text = "*使用SMTC（系统媒体传输控件）";
-            cbUseSMTC.UseVisualStyleBackColor = true;
             // 
             // cbEnableTrackbarProgress
             // 
@@ -103,7 +90,7 @@
             groupBox1.AutoSize = true;
             groupBox1.Controls.Add(cbResponseAppCommand);
             groupBox1.Dock = DockStyle.Top;
-            groupBox1.Location = new Point(0, 106);
+            groupBox1.Location = new Point(0, 85);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(602, 43);
             groupBox1.TabIndex = 4;
@@ -146,6 +133,5 @@
         private CheckBox cbEnableTrackbarControlButton;
         private GroupBox groupBox1;
         private CheckBox cbResponseAppCommand;
-        private CheckBox cbUseSMTC;
     }
 }

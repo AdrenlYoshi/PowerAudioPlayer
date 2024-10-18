@@ -5,7 +5,6 @@ using PowerAudioPlayer.Controllers.PlayerCore;
 using PowerAudioPlayer.Model;
 using PowerAudioPlayer.UI;
 using System.IO;
-using Windows.Media;
 using Clipboard = System.Windows.Forms.Clipboard;
 using DataFormats = System.Windows.Forms.DataFormats;
 using DragDropEffects = System.Windows.Forms.DragDropEffects;
@@ -25,8 +24,6 @@ namespace PowerAudioPlayer
         private readonly ThumbnailToolBarButton tbtnPause = new ThumbnailToolBarButton(Resources.Pausei, Player.GetString("Pause"));
         private readonly ThumbnailToolBarButton tbtnStop = new ThumbnailToolBarButton(Resources.Stopi, Player.GetString("Stop"));
         private readonly ThumbnailToolBarButton tbtnNext = new ThumbnailToolBarButton(Resources.Nexti, Player.GetString("SNext"));
-        private readonly Windows.Media.Playback.MediaPlayer wmplayer = new();
-        private readonly SystemMediaTransportControls? smtc = null;
         private SoundEffectForm? soundEffectForm = null;
         private MediaLibraryForm mediaLibraryForm = new MediaLibraryForm();
         private PlaylistEditorForm playlistEditorForm = new PlaylistEditorForm();
@@ -36,17 +33,6 @@ namespace PowerAudioPlayer
         {
             InitializeComponent();
             InitBinding();
-            if (Settings.Default.UseSMTC)
-            {
-                wmplayer.CommandManager.IsEnabled = false;
-                smtc = wmplayer.SystemMediaTransportControls;
-                smtc.IsEnabled = true;
-                smtc.IsPlayEnabled = true;
-                smtc.IsPauseEnabled = true;
-                smtc.IsNextEnabled = true;
-                smtc.IsPreviousEnabled = true;
-                smtc.ButtonPressed += Smtc_ButtonPressed;
-            }
             Size = Settings.Default.PlayerFormSize;
             Location = Settings.Default.PlayerFormLocation;
             //endSync = new SYNCPROC(EndSync);
@@ -131,21 +117,8 @@ namespace PowerAudioPlayer
                 lblArtist.Text = !string.IsNullOrEmpty(audioInfo.Tag.Artist) ? audioInfo.Tag.Artist : string.Empty;
                 lblAlbum.Text = !string.IsNullOrEmpty(audioInfo.Tag.Album) ? audioInfo.Tag.Album : string.Empty;
                 lblInfo.Text = Player.Core.GetChannelInfo().ToString();
-                if (smtc != null)
-                {
-                    smtc.DisplayUpdater.AppMediaId = "PowerAudioPlayerSMTC";
-                    smtc.DisplayUpdater.Type = MediaPlaybackType.Music;
-                    smtc.DisplayUpdater.MusicProperties.Artist = !string.IsNullOrEmpty(audioInfo.Tag.Artist) ? audioInfo.Tag.Artist : string.Empty;
-                    smtc.DisplayUpdater.MusicProperties.AlbumTitle = !string.IsNullOrEmpty(audioInfo.Tag.Album) ? audioInfo.Tag.Album : string.Empty;
-                    smtc.DisplayUpdater.MusicProperties.Title = !string.IsNullOrEmpty(audioInfo.Tag.Title) ? audioInfo.Tag.Title : string.Empty;
-                }
             }
             lblDisplayTitle.Text = PlaylistHelper.ActivePlaylist.Items[index].DisplayTitle;
-            if (smtc != null)
-            {
-                smtc.DisplayUpdater.MusicProperties.Title = string.IsNullOrEmpty(smtc.DisplayUpdater.MusicProperties.Title) ? PlaylistHelper.ActivePlaylist.Items[index].DisplayTitle : smtc.DisplayUpdater.MusicProperties.Title;
-                smtc.DisplayUpdater.Update();
-            }
             
             tmrPlayer.Start();
             tmrSpectrum.Start();
@@ -277,8 +250,6 @@ namespace PowerAudioPlayer
                 lblStatus.Text = Player.GetString("Stop");
                 SetTaskbarOverlayIcon(null, lblStatus.Text);
                 SetTaskbarProgressState(TaskbarProgressBarState.NoProgress);
-                if (smtc != null)
-                    smtc.PlaybackStatus = MediaPlaybackStatus.Stopped;
             }
             else
             {
@@ -298,8 +269,6 @@ namespace PowerAudioPlayer
                     lblStatus.Text = Player.GetString("Play");
                     SetTaskbarOverlayIcon(Resources.Playi, lblStatus.Text);
                     SetTaskbarProgressState(TaskbarProgressBarState.Normal);
-                    if (smtc != null)
-                        smtc.PlaybackStatus = MediaPlaybackStatus.Playing;
                 }
                 else
                 {
@@ -307,8 +276,6 @@ namespace PowerAudioPlayer
                     lblStatus.Text = Player.GetString("Pause");
                     SetTaskbarOverlayIcon(Resources.Pausei, lblStatus.Text);
                     SetTaskbarProgressState(TaskbarProgressBarState.Paused);
-                    if (smtc != null)
-                        smtc.PlaybackStatus = MediaPlaybackStatus.Paused;
                 }
                 Text = $"[{lblStatus.Text}]{lblDisplayTitle.Text} - {Player.GetString("ProgramName")}";
                 try
@@ -787,26 +754,7 @@ namespace PowerAudioPlayer
         private void tsbtnPlayMode_Click(object sender, EventArgs e)
         {
             Settings.Default.PlayMode = (PlayMode)Enum.Parse(typeof(PlayMode), (string)((WinFormsExtendedControls.ToolStripRadioButton)sender).Tag);
-        }
-
-        private void Smtc_ButtonPressed(SystemMediaTransportControls sender, SystemMediaTransportControlsButtonPressedEventArgs args)
-        {
-            switch (args.Button)
-            {
-                case SystemMediaTransportControlsButton.Play:
-                    Invoke(() => btnPlay_Click(sender, new()));
-                    break;
-                case SystemMediaTransportControlsButton.Pause:
-                    Invoke(() => btnPause_Click(sender, new()));
-                    break;
-                case SystemMediaTransportControlsButton.Next:
-                    Invoke(() => btnNext_Click(sender, new()));
-                    break;
-                case SystemMediaTransportControlsButton.Previous:
-                    Invoke(() => btnPrevious_Click(sender, new()));
-                    break;
-            }
-        }        
+        }   
         
         private void tsbtnAboutPowerAudioPlayer_Click(object sender, EventArgs e)
         {

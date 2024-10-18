@@ -116,9 +116,6 @@
     <Setting Name="ThemeColor" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">128, 255, 128</Value>
     </Setting>
-    <Setting Name="UseSMTC" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="PlayerControlInterval" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
