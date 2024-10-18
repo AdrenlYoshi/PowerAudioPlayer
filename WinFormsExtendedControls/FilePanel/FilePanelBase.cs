@@ -14,12 +14,12 @@ namespace WinFormsExtendedControls.FilePanel
         /// Event raised when text changed.
         /// </summary>
         [Browsable(true)]
-        public new event EventHandler TextChanged;
+        public new event EventHandler? TextChanged;
 
         /// <summary>
         /// Internal callback when textbox value changed
         /// </summary>
-        protected Action ValueChangedCallback;
+        protected Action? ValueChangedCallback;
 
         /// <summary>
         /// Constructor

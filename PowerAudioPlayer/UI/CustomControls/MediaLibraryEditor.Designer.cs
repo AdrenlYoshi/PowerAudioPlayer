@@ -56,9 +56,9 @@
             lblTotalLength = new ToolStripStatusLabel();
             lblStatus = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
-            sbFilterKey = new SearchBoxWithDelayTest.SearchBox();
+            sbFilterKey = new WinFormsExtendedControls.SearchBox();
             splitContainer2 = new SplitContainer();
-            sbFilterResult = new SearchBoxWithDelayTest.SearchBox();
+            sbFilterResult = new WinFormsExtendedControls.SearchBox();
             label1 = new Label();
             splitContainer3 = new SplitContainer();
             pbAlbumPicture = new PictureBox();
@@ -539,7 +539,7 @@
         private Label lblTitle;
         private SplitContainer splitContainer3;
         private Label label1;
-        private SearchBoxWithDelayTest.SearchBox sbFilterKey;
-        private SearchBoxWithDelayTest.SearchBox sbFilterResult;
+        private WinFormsExtendedControls.SearchBox sbFilterKey;
+        private WinFormsExtendedControls.SearchBox sbFilterResult;
     }
 }

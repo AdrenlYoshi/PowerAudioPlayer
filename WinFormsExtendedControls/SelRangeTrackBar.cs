@@ -1,4 +1,6 @@
-﻿namespace WinFormsExtendedControls
+﻿using System.Windows.Forms;
+
+namespace WinFormsExtendedControls
 {
     public class SelRangeTrackBar : TrackBar
     {

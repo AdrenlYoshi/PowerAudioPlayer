@@ -18,12 +18,14 @@ namespace PowerAudioPlayer
         [STAThread]
         static void Main()
         {
+#pragma warning disable WFO5001
 #if !DEBUG
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 #endif
             ApplicationConfiguration.Initialize();
+            Application.SetColorMode(SystemColorMode.Dark);
             CultureInfo.DefaultThreadCurrentUICulture = defaultCultureInfo;
             Process? instance = RunningInstance();
             if (instance == null)

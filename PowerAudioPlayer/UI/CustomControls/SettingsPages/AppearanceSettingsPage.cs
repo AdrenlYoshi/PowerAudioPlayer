@@ -1,9 +1,11 @@
 ﻿using PowerAudioPlayer.Controllers;
+using System.ComponentModel;
 
 namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
 {
     public partial class AppearanceSettingsPage : UserControl
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Form? Owner
         {
             get; set;

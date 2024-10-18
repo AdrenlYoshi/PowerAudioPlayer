@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
-namespace SearchBoxWithDelayTest
+namespace WinFormsExtendedControls
 {
     [DefaultEvent("SearchStart")]
     public partial class SearchBox : UserControl

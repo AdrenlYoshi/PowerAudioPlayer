@@ -1,47 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net6.0-windows</TargetFramework>
       <UseWindowsForms>true</UseWindowsForms>
+      <ImplicitUsings>enable</ImplicitUsings>
       <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+      <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Update="ColorPicker.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="DrawPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="FontPicker.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="HoteKeyView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="PeakMeterCtrl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="SelRangeTrackBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="ToolStripRadioButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
 
 </Project>

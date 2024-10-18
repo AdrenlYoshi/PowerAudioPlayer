@@ -3,6 +3,7 @@ using Microsoft.WindowsAPICodePack.Dialogs.Controls;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using PowerAudioPlayer.Controllers;
 using PowerAudioPlayer.Controllers.Helper;
+using System.ComponentModel;
 
 namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
 {
@@ -12,6 +13,7 @@ namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
         //OLVColumn olvColumn2 = new OLVColumn(Player.GetString("IncludingSubDir"), "IncludeSubDir") { CheckBoxes = true, TextAlign = HorizontalAlignment.Center };
         OLVColumn olvColumn2 = new OLVColumn(Player.GetString("Action"), "") { ButtonSizing = OLVColumn.ButtonSizingMode.CellBounds, IsButton = true, AspectGetter = delegate (object rowObject) { return Player.GetString("Delete"); } };
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Form? Owner
         {
             get; set;

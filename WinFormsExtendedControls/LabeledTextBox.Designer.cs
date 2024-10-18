@@ -1,4 +1,7 @@
-﻿namespace WinFormsExtendedControls
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace WinFormsExtendedControls
 {
     partial class LabeledTextBox
     {

@@ -28,6 +28,7 @@ namespace PowerAudioPlayer.UI.CustomControls
         }
 
         private bool _isEditActivePlaylist = false;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsEditActivePlaylist
         {
             get
@@ -58,6 +59,7 @@ namespace PowerAudioPlayer.UI.CustomControls
 
         private int _editPlaylistIndex = 0;
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int EditPlaylistIndex
         {
             get { return _editPlaylistIndex; }
@@ -84,21 +86,17 @@ namespace PowerAudioPlayer.UI.CustomControls
         public PlaylistEditor()
         {
             InitializeComponent();
+            if (Settings.Default.PlaylistEditorShowFileNameColumn)
+                lvPlaylist.Columns.AddRange([olvColumn1, olvColumn2, olvColumn3]);
+            else
+                lvPlaylist.Columns.AddRange([olvColumn1, olvColumn2]);
             TextOverlay? textOverlay = lvPlaylist.EmptyListMsgOverlay as TextOverlay;
             if (textOverlay != null)
             {
-                textOverlay.BackColor = Color.Transparent;
+                textOverlay.BackColor = BackColor;
                 textOverlay.TextColor = ForeColor;
                 textOverlay.Font = Font;
                 textOverlay.BorderColor = Color.Transparent;
-            }
-            if (Settings.Default.PlaylistEditorShowFileNameColumn)
-            {
-                lvPlaylist.Columns.AddRange([olvColumn1, olvColumn2, olvColumn3]);
-            }
-            else
-            {
-                lvPlaylist.Columns.AddRange([olvColumn1, olvColumn2]);
             }
             if (!DesignMode)
             {
@@ -117,6 +115,7 @@ namespace PowerAudioPlayer.UI.CustomControls
             lvPlaylist.SetObjects(PlaylistHelper.Playlists[_editPlaylistIndex].Items);
             lvPlaylist.Refresh();
             RefreshStatus();
+
         }
 
         public void RefreshStatus()
@@ -381,6 +380,8 @@ namespace PowerAudioPlayer.UI.CustomControls
 
             }
             lvPlaylist.AdditionalFilter = filter;
+
+
         }
     }
 }

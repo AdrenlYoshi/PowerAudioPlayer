@@ -19,7 +19,11 @@
 //
 // 3. This notice may not be removed or altered from any source distribution.
 ///////////////////////////////////////////////////////////////////////////////
+using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.Threading;
+using System.Windows.Forms;
 
 
 namespace WinFormsExtendedControls

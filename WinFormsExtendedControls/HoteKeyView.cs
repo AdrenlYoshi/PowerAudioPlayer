@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Text;
+using System.Windows.Forms;
 
 namespace WinFormsExtendedControls
 {

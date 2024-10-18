@@ -66,7 +66,7 @@
             tsmiMediaExplorer = new ToolStripMenuItem();
             tsmiFileInfo = new ToolStripMenuItem();
             tsmiRemoveSelected1 = new ToolStripMenuItem();
-            sbFilter = new SearchBoxWithDelayTest.SearchBox();
+            sbFilter = new WinFormsExtendedControls.SearchBox();
             msPl.SuspendLayout();
             statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)lvPlaylist).BeginInit();
@@ -431,6 +431,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem tsmiMediaExplorer;
         private ToolStripMenuItem tsmiFileInfo;
-        private SearchBoxWithDelayTest.SearchBox sbFilter;
+        private WinFormsExtendedControls.SearchBox sbFilter;
     }
 }

@@ -3,11 +3,13 @@ using PowerAudioPlayer.Controllers.Helper;
 using System.Diagnostics;
 using System.IO;
 using System.Media;
+using System.ComponentModel;
 
 namespace PowerAudioPlayer.UI
 {
     public partial class ExceptionForm : BaseForm
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Exception exception { set; get; } = new Exception();
 
         public ExceptionForm()

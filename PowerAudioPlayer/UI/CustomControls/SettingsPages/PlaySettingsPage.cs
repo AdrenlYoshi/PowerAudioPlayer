@@ -3,11 +3,13 @@ using PowerAudioPlayer.Controllers;
 using Utils = PowerAudioPlayer.Controllers.Utils;
 using System.IO;
 using PowerAudioPlayer.Controllers.PlayerCore;
+using System.ComponentModel;
 
 namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
 {
     public partial class PlaySettingsPage : UserControl
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Form? Owner
         {
             get; set;
