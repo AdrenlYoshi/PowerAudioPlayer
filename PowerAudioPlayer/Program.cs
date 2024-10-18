@@ -25,7 +25,6 @@ namespace PowerAudioPlayer
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 #endif
             ApplicationConfiguration.Initialize();
-            Application.SetColorMode(SystemColorMode.Dark);
             CultureInfo.DefaultThreadCurrentUICulture = defaultCultureInfo;
             Process? instance = RunningInstance();
             if (instance == null)
