@@ -96,7 +96,9 @@ namespace PowerAudioPlayer.UI.CustomControls
                 textOverlay.BackColor = BackColor;
                 textOverlay.TextColor = ForeColor;
                 textOverlay.Font = Font;
-                textOverlay.BorderColor = Color.Transparent;
+                textOverlay.BorderColor = Color.Empty;
+                textOverlay.BorderWidth = 0;
+                textOverlay.CornerRounding = 0;
             }
             if (!DesignMode)
             {
@@ -238,7 +240,7 @@ namespace PowerAudioPlayer.UI.CustomControls
 
         private void tsmiAddURL_Click(object sender, EventArgs e)
         {
-            string url = Interaction.InputBox(Player.GetString("MsgAddURL"), Player.GetString("ProgramName"));
+            string url = Interaction.InputBox(Player.GetString("MsgAddURL"), Application.ProductName);
             if (url.Length > 0)
             {
                 PlaylistHelper.Playlists[_editPlaylistIndex].Add(url);

@@ -1,9 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 
 namespace WinFormsExtendedControls
 {
@@ -18,7 +13,7 @@ namespace WinFormsExtendedControls
 
         public ToolStripRadioButton()
         {
-            this.CheckOnClick = true;
+            CheckOnClick = true;
         }
 
 
@@ -38,35 +33,22 @@ namespace WinFormsExtendedControls
             }
         }
 
-        [Category("Appearance")]
-        public Color CheckedColor1
-        {
-            get { return checkedColor1; }
-            set { checkedColor1 = value; }
-        }
-
-        [Category("Appearance")]
-        public Color CheckedColor2
-        {
-            get { return checkedColor2; }
-            set { checkedColor2 = value; }
-        }
 
         // Set check value without updating (disabling) other radio buttons in the group
         private void SetCheckValue(bool checkValue)
         {
             updateButtonGroup = false;
-            this.Checked = checkValue;
+            Checked = checkValue;
             updateButtonGroup = true;
         }
 
         // To make sure no two radio buttons are checked at the same time
         private void UpdateGroup()
         {
-            if (this.Parent != null)
+            if (Parent != null)
             {
                 // Get number of checked radio buttons in group
-                int checkedCount = this.Parent.Items.OfType<ToolStripRadioButton>().Count(x => x.RadioButtonGroupId == RadioButtonGroupId && x.Checked);
+                int checkedCount = Parent.Items.OfType<ToolStripRadioButton>().Count(x => x.RadioButtonGroupId == RadioButtonGroupId && x.Checked);
 
                 if (checkedCount > 1)
                 {
@@ -83,27 +65,16 @@ namespace WinFormsExtendedControls
 
         protected override void OnCheckedChanged(EventArgs e)
         {
-            if (this.Parent != null && updateButtonGroup)
+            if (Parent != null && updateButtonGroup)
             {
-                foreach (ToolStripRadioButton radioButton in this.Parent.Items.OfType<ToolStripRadioButton>())
+                foreach (ToolStripRadioButton radioButton in Parent.Items.OfType<ToolStripRadioButton>())
                 {
-                    if (radioButton != this && radioButton.RadioButtonGroupId == this.RadioButtonGroupId)
+                    if (radioButton != this && radioButton.RadioButtonGroupId == RadioButtonGroupId)
                     {
                         radioButton.SetCheckValue(false);
                     }
                 }
             }
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            if (this.Checked)
-            {
-                var checkedBackgroundBrush = new LinearGradientBrush(new Point(0, 0), new Point(0, this.Height), CheckedColor1, CheckedColor2);
-                e.Graphics.FillRectangle(checkedBackgroundBrush, new Rectangle(new Point(0, 0), this.Size));
-            }
-
-            base.OnPaint(e);
         }
     }
 }

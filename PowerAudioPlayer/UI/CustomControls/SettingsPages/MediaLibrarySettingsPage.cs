@@ -63,10 +63,10 @@ namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
 
         private void btnCleanUpMediaLibrary_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Player.GetString("MsgCleanUpMediaLibrary"), Player.GetString("ProgramName"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show(Player.GetString("MsgCleanUpMediaLibrary"), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 int removeCount = MediaLibraryHelper.CleanUpMediaLibrary();
-                MessageBox.Show(Player.GetString("MsgCleanUpMediaLibraryOK", removeCount), Player.GetString("ProgramName"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Player.GetString("MsgCleanUpMediaLibraryOK", removeCount), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -77,7 +77,7 @@ namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
 
         private void btnClearMediaLibrary_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Player.GetString("MsgClearMediaLibrary"), Player.GetString("ProgramName"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show(Player.GetString("MsgClearMediaLibrary"), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                MediaLibraryHelper.ClearMediaLibrary();
             }

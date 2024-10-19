@@ -256,8 +256,6 @@ namespace PowerAudioPlayer
             // 
             // tsbtnOrderPlay
             // 
-            tsbtnOrderPlay.CheckedColor1 = Color.Transparent;
-            tsbtnOrderPlay.CheckedColor2 = Color.Transparent;
             tsbtnOrderPlay.CheckOnClick = true;
             tsbtnOrderPlay.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbtnOrderPlay.Image = Resources.OrderPlay;
@@ -265,14 +263,12 @@ namespace PowerAudioPlayer
             tsbtnOrderPlay.Name = "tsbtnOrderPlay";
             tsbtnOrderPlay.RadioButtonGroupId = 0;
             tsbtnOrderPlay.Size = new Size(23, 22);
-            tsbtnOrderPlay.Tag = "OrderPlay";
+            tsbtnOrderPlay.Tag = "OrderPlay|IgnoreColorize";
             tsbtnOrderPlay.Text = "顺序播放";
             tsbtnOrderPlay.Click += tsbtnPlayMode_Click;
             // 
             // tsbtnShufflePlay
             // 
-            tsbtnShufflePlay.CheckedColor1 = Color.Transparent;
-            tsbtnShufflePlay.CheckedColor2 = Color.Transparent;
             tsbtnShufflePlay.CheckOnClick = true;
             tsbtnShufflePlay.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbtnShufflePlay.Image = Resources.ShufflePlay;
@@ -280,14 +276,12 @@ namespace PowerAudioPlayer
             tsbtnShufflePlay.Name = "tsbtnShufflePlay";
             tsbtnShufflePlay.RadioButtonGroupId = 0;
             tsbtnShufflePlay.Size = new Size(23, 22);
-            tsbtnShufflePlay.Tag = "ShufflePlay";
+            tsbtnShufflePlay.Tag = "ShufflePlay|IgnoreColorize";
             tsbtnShufflePlay.Text = "随机播放";
             tsbtnShufflePlay.Click += tsbtnPlayMode_Click;
             // 
             // tsbtnTrackLoop
             // 
-            tsbtnTrackLoop.CheckedColor1 = Color.Transparent;
-            tsbtnTrackLoop.CheckedColor2 = Color.Transparent;
             tsbtnTrackLoop.CheckOnClick = true;
             tsbtnTrackLoop.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbtnTrackLoop.Image = Resources.TrackLoop;
@@ -295,14 +289,12 @@ namespace PowerAudioPlayer
             tsbtnTrackLoop.Name = "tsbtnTrackLoop";
             tsbtnTrackLoop.RadioButtonGroupId = 0;
             tsbtnTrackLoop.Size = new Size(23, 22);
-            tsbtnTrackLoop.Tag = "TrackLoop";
+            tsbtnTrackLoop.Tag = "TrackLoop|IgnoreColorize";
             tsbtnTrackLoop.Text = "单曲循环";
             tsbtnTrackLoop.Click += tsbtnPlayMode_Click;
             // 
             // tsbtnPlaylistLoop
             // 
-            tsbtnPlaylistLoop.CheckedColor1 = Color.Transparent;
-            tsbtnPlaylistLoop.CheckedColor2 = Color.Transparent;
             tsbtnPlaylistLoop.CheckOnClick = true;
             tsbtnPlaylistLoop.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbtnPlaylistLoop.Image = Resources.PlaylistLoop;
@@ -310,7 +302,7 @@ namespace PowerAudioPlayer
             tsbtnPlaylistLoop.Name = "tsbtnPlaylistLoop";
             tsbtnPlaylistLoop.RadioButtonGroupId = 0;
             tsbtnPlaylistLoop.Size = new Size(23, 22);
-            tsbtnPlaylistLoop.Tag = "PlaylistLoop";
+            tsbtnPlaylistLoop.Tag = "PlaylistLoop|IgnoreColorize";
             tsbtnPlaylistLoop.Text = "列表循环";
             tsbtnPlaylistLoop.Click += tsbtnPlayMode_Click;
             // 
@@ -370,6 +362,7 @@ namespace PowerAudioPlayer
             tsbtnAboutPowerAudioPlayer.Image = Resources.PowerAudioPlayer;
             tsbtnAboutPowerAudioPlayer.Name = "tsbtnAboutPowerAudioPlayer";
             tsbtnAboutPowerAudioPlayer.Size = new Size(23, 22);
+            tsbtnAboutPowerAudioPlayer.Tag = "IgnoreColorize";
             tsbtnAboutPowerAudioPlayer.Text = "关于";
             tsbtnAboutPowerAudioPlayer.Click += tsbtnAboutPowerAudioPlayer_Click;
             // 

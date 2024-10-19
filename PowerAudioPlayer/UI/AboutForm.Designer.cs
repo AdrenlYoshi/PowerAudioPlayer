@@ -33,7 +33,7 @@ namespace PowerAudioPlayer.UI
             rtbAcknowledgement = new RichTextBox();
             lblVersion = new Label();
             lblCompany = new Label();
-            llblProgramName = new LinkLabel();
+            llblProductName = new LinkLabel();
             lbldotNETVersion = new Label();
             lblLastCompileTime = new Label();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
@@ -91,17 +91,17 @@ namespace PowerAudioPlayer.UI
             lblCompany.TabIndex = 35;
             lblCompany.Text = "lblCompany";
             // 
-            // llblProgramName
+            // llblProductName
             // 
-            llblProgramName.Dock = DockStyle.Top;
-            llblProgramName.Location = new Point(0, 0);
-            llblProgramName.Name = "llblProgramName";
-            llblProgramName.Size = new Size(398, 17);
-            llblProgramName.TabIndex = 36;
-            llblProgramName.TabStop = true;
-            llblProgramName.Text = "llblProgramName";
-            llblProgramName.TextAlign = ContentAlignment.MiddleCenter;
-            llblProgramName.LinkClicked += llblProgramName_LinkClicked;
+            llblProductName.Dock = DockStyle.Top;
+            llblProductName.Location = new Point(0, 0);
+            llblProductName.Name = "llblProductName";
+            llblProductName.Size = new Size(398, 17);
+            llblProductName.TabIndex = 36;
+            llblProductName.TabStop = true;
+            llblProductName.Text = "llblProductName";
+            llblProductName.TextAlign = ContentAlignment.MiddleCenter;
+            llblProductName.LinkClicked += llblProgramName_LinkClicked;
             // 
             // lbldotNETVersion
             // 
@@ -135,7 +135,7 @@ namespace PowerAudioPlayer.UI
             Controls.Add(lblVersion);
             Controls.Add(logoPictureBox);
             Controls.Add(okButton);
-            Controls.Add(llblProgramName);
+            Controls.Add(llblProductName);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(4);
             MaximizeBox = false;
@@ -157,7 +157,7 @@ namespace PowerAudioPlayer.UI
         private RichTextBox rtbAcknowledgement;
         private Label lblVersion;
         private Label lblCompany;
-        private LinkLabel llblProgramName;
+        private LinkLabel llblProductName;
         private Label lbldotNETVersion;
         private Label lblLastCompileTime;
     }

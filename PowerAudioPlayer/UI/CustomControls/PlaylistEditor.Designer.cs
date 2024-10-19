@@ -285,7 +285,6 @@
             lvPlaylist.SelectColumnsOnRightClick = false;
             lvPlaylist.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
             lvPlaylist.ShowCommandMenuOnRightClick = true;
-            lvPlaylist.ShowGroups = false;
             lvPlaylist.Size = new Size(560, 456);
             lvPlaylist.TabIndex = 31;
             lvPlaylist.UseFiltering = true;

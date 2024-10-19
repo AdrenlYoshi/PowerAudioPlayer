@@ -1,0 +1,6 @@
+BASS (https://un4seen.com/bass.html）
+BASS.NET (http://www.bass.radio42.com)
+ObjectListView (https://objectlistview.sourceforge.net)
+MemoryPack (https://github.com/Cysharp/MemoryPack)
+Newtonsoft.Json (https://www.newtonsoft.com/json)
+WindowsAPICodePack (https://github.com/Wagnerp/Windows-API-CodePack-NET)

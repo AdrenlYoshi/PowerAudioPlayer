@@ -2,6 +2,7 @@
 using PowerAudioPlayer.Controllers.Helper;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 
 namespace PowerAudioPlayer.UI
 {
@@ -10,12 +11,11 @@ namespace PowerAudioPlayer.UI
         public AboutForm()
         {
             InitializeComponent();
-            AssemblyHelper assemblyHelper = new AssemblyHelper();
-            rtbAcknowledgement.Rtf = Resources.Acknowledgement;
-            Text = string.Format(Player.GetString("MsgAbout"), assemblyHelper.Title);
-            llblProgramName.Text = assemblyHelper.Product.ToString();
-            lblVersion.Text = string.Format(Player.GetString("MsgVersion"), assemblyHelper.Version.ToString());
-            lblCompany.Text = assemblyHelper.Company;
+            rtbAcknowledgement.Text = Resources.Acknowledgement;
+            Text = string.Format(Player.GetString("MsgAbout"), Application.ProductName);
+            llblProductName.Text = Application.ProductName;
+            lblVersion.Text = string.Format(Player.GetString("MsgVersion"), Assembly.GetExecutingAssembly().GetName().Version);
+            lblCompany.Text = Application.CompanyName;
             lbldotNETVersion.Text = Player.GetString("DotNETVersion", Environment.Version.ToString());
             lblLastCompileTime.Text = Player.GetString("MsgLastCompileTime", File.GetLastWriteTime(GetType().Assembly.Location).ToString());
         }

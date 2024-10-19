@@ -144,7 +144,7 @@ namespace PowerAudioPlayer.UI.CustomControls
         {
             if (result.Count != 0)
             {
-                string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Player.GetString("ProgramName"));
+                string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Application.ProductName);
                 if (name != "")
                 {
                     if (PlaylistHelper.Add(new Playlist(name) { Items = ConvertHelper.ConvertMediaLibraryItemListToPlaylistItemList(result) }) != -1)
@@ -190,7 +190,7 @@ namespace PowerAudioPlayer.UI.CustomControls
         {
             if (result.Count != 0)
             {
-                string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Player.GetString("ProgramName"));
+                string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Application.ProductName);
                 if (name != "")
                 {
                     if (PlaylistHelper.Add(new Playlist(name) { Items = ConvertHelper.ConvertAudioInfoListToPlaylistItemList(lvResult.SelectedObjects.Cast<AudioInfo>().ToList()) }) != -1)

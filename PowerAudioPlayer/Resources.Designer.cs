@@ -81,8 +81,12 @@ namespace PowerAudioPlayer {
         }
         
         /// <summary>
-        ///   查找类似 {\rtf1\adeflang1025\ansi\ansicpg936\uc2\adeff0\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi0\deflang1033\deflangfe2052\themelang1033\themelangfe2052\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria Math;}
-        ///{\f36\fbidi \fnil\fcharset134\fprq2{\*\panose 02010600030101010101}\&apos;b5\&apos;c8\&apos;cf\&apos;df{\*\falt DengXian};}{\f44\fbidi \fswiss\fcharset134\fprq2{\*\panose 00000000000 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///   查找类似 BASS (https://un4seen.com/bass.html）
+        ///BASS.NET (http://www.bass.radio42.com)
+        ///ObjectListView (https://objectlistview.sourceforge.net)
+        ///MemoryPack (https://github.com/Cysharp/MemoryPack)
+        ///Newtonsoft.Json (https://www.newtonsoft.com/json)
+        ///WindowsAPICodePack (https://github.com/Wagnerp/Windows-API-CodePack-NET) 的本地化字符串。
         /// </summary>
         internal static string Acknowledgement {
             get {

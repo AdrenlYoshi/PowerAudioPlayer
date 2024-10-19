@@ -137,7 +137,7 @@ namespace PowerAudioPlayer.UI
 
         private void tsmiNewPlaylist_Click(object sender, EventArgs e)
         {
-            string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Player.GetString("ProgramName"));
+            string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Application.ProductName);
             if (name != "")
             {
                 if (PlaylistHelper.Add(new Playlist(name)) != -1)
@@ -153,7 +153,7 @@ namespace PowerAudioPlayer.UI
             int playlistIndex = Convert.ToInt32(node.Tag);
             if (node.Parent.Name == "nodePlaylist" || node.Level == 1)
             {
-                string name = Interaction.InputBox(Player.GetString("MsgRenamePlaylist", PlaylistHelper.Playlists[playlistIndex].Name), Player.GetString("ProgramName"));
+                string name = Interaction.InputBox(Player.GetString("MsgRenamePlaylist", PlaylistHelper.Playlists[playlistIndex].Name), Application.ProductName);
                 if (name != "")
                 {
                     if (PlaylistHelper.Rename(name, playlistIndex))
@@ -206,7 +206,7 @@ namespace PowerAudioPlayer.UI
         {
             if (PlaylistHelper.ActivePlaylist.Count != 0)
             {
-                string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Player.GetString("ProgramName"));
+                string name = Interaction.InputBox(Player.GetString("MsgAddPlaylist"), Application.ProductName);
                 if (name != "")
                 {
                     if (PlaylistHelper.Add(new Playlist(name) { Items = PlaylistHelper.ActivePlaylist.Items }) != -1)

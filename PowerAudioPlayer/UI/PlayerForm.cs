@@ -56,7 +56,7 @@ namespace PowerAudioPlayer
             lyricsForm.Show();
             mediaLibraryForm.Owner = this;
             if (Settings.Default.MediaLibraryStartUpUpdate && mediaLibraryForm != null)
-                NativeAPI.SendMessage(mediaLibraryForm.Handle, Player.WM_REFRESHMEDIALIBRARY, 0, 0);
+                NativeAPI.SendMessage(mediaLibraryForm.Handle, Player.WM_REFRESHMEDIALIBRARY, 0, 0); 
         }
 
         #region Player Control Method
@@ -237,14 +237,14 @@ namespace PowerAudioPlayer
         {
             if (Player.Core.GetChannelStatus() == PlayerChannelStatus.Stopped || !Player.Core.IsOpened())
             {
-                Text = Player.GetString("ProgramName");
+                Text = Application.ProductName;
                 lblPosition.Text = "00:00 / 00:00";
                 trbPosition.Enabled = false;
                 trbPosition.Maximum = 0;
                 lblAlbum.Text = string.Empty;
                 lblArtist.Text = string.Empty;
                 lblTitle.Text = string.Empty;
-                lblDisplayTitle.Text = Player.GetString("ProgramName");
+                lblDisplayTitle.Text = Application.ProductName;
                 lblInfo.Text = string.Empty;
                 picAlbum.Image = null;
                 lblStatus.Text = Player.GetString("Stop");
@@ -277,7 +277,7 @@ namespace PowerAudioPlayer
                     SetTaskbarOverlayIcon(Resources.Pausei, lblStatus.Text);
                     SetTaskbarProgressState(TaskbarProgressBarState.Paused);
                 }
-                Text = $"[{lblStatus.Text}]{lblDisplayTitle.Text} - {Player.GetString("ProgramName")}";
+                Text = $"[{lblStatus.Text}]{lblDisplayTitle.Text} - {Application.ProductName}";
                 try
                 {
                     SetTaskbarProgressValue(trbPosition.Value, trbPosition.Maximum);
@@ -722,7 +722,7 @@ namespace PowerAudioPlayer
         private void lbl_DoubleClick(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(((Label)sender).Text);
-            MessageBox.Show(Player.GetString("MsgCopyed", ((Label)sender).Text), Player.GetString("ProgramName"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Player.GetString("MsgCopyed", ((Label)sender).Text), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void tsbtnMediaLibraryForm_Click(object sender, EventArgs e)
@@ -753,7 +753,7 @@ namespace PowerAudioPlayer
 
         private void tsbtnPlayMode_Click(object sender, EventArgs e)
         {
-            Settings.Default.PlayMode = (PlayMode)Enum.Parse(typeof(PlayMode), (string)((WinFormsExtendedControls.ToolStripRadioButton)sender).Tag);
+            Settings.Default.PlayMode = (PlayMode)Enum.Parse(typeof(PlayMode), ((string)((WinFormsExtendedControls.ToolStripRadioButton)sender).Tag).Split('|')[0]);
         }   
         
         private void tsbtnAboutPowerAudioPlayer_Click(object sender, EventArgs e)

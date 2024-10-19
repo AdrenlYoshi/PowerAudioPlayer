@@ -42,23 +42,23 @@ namespace PowerAudioPlayer.UI.CustomControls.SettingsPages
                     Directory.Delete(Utils.GetProgramLocalAppDataPath(), true);
                     Directory.CreateDirectory(Utils.GetProgramLocalAppDataPath());
                     ZipFile.ExtractToDirectory(openFileDialog.FileName, Utils.GetProgramLocalAppDataPath());
-                    MessageBox.Show(Player.GetString("MsgDataFileImportOK"), Player.GetString("ProgramName"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Player.GetString("MsgDataFileImportOK"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Restart();
                     Process.GetCurrentProcess().Kill();
                 }
                 catch
                 {
-                    MessageBox.Show(Player.GetString("MsgDataFileImportError"), Player.GetString("ProgramName"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Player.GetString("MsgDataFileImportError"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void btnClearCurrentUser_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show(Player.GetString("MsgClearDataFile", Environment.UserName), Player.GetString("ProgramName"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if(MessageBox.Show(Player.GetString("MsgClearDataFile", Environment.UserName), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Directory.Delete(Utils.GetProgramLocalAppDataPath(), true);
-                MessageBox.Show(Player.GetString("MsgClearDataFileOK"), Player.GetString("ProgramName"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Player.GetString("MsgClearDataFileOK"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Restart();
                 Process.GetCurrentProcess().Kill();
             }

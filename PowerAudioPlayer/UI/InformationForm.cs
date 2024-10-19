@@ -89,7 +89,7 @@ namespace PowerAudioPlayer.UI
 
         private void InformationForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBox.Show(Player.GetString("MsgInformationFormHelp"), Player.GetString("ProgramName"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Player.GetString("MsgInformationFormHelp"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             e.Cancel = true;
         }
 

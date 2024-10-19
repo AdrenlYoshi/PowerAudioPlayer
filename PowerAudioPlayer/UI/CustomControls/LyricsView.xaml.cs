@@ -1,10 +1,10 @@
 ﻿using PowerAudioPlayer.Controllers;
 using System.ComponentModel;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using static System.Net.Mime.MediaTypeNames;
 using Color = System.Windows.Media.Color;
 using MessageBox = System.Windows.MessageBox;
 using Point = System.Windows.Point;
@@ -156,7 +156,7 @@ namespace PowerAudioPlayer
                     {
                         string copyStr = ((TextBlock)sender).Text.Replace("\0",  " ");
                         System.Windows.Clipboard.SetDataObject(copyStr);
-                        MessageBox.Show(Player.GetString("MsgCopyed", copyStr), Player.GetString("ProgramName"), MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show(Player.GetString("MsgCopyed", copyStr), Assembly.GetExecutingAssembly().GetName().Name, MessageBoxButton.OK, MessageBoxImage.Information);
                     };
                     c_lrcbk.Text = lrc;
                     c_lrcbk.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
