@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerAudioPlayer", "PowerAudioPlayer\PowerAudioPlayer.csproj", "{E84C086C-C3BC-4778-9F35-FDB29B5E5488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsExtendedControls", "WinFormsExtendedControls\WinFormsExtendedControls.csproj", "{AAAC4849-84F0-42C6-872A-7ADE2FDA63CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsExtendedControls", "WinFormsExtendedControls\WinFormsExtendedControls.csproj", "{AAAC4849-84F0-42C6-872A-7ADE2FDA63CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

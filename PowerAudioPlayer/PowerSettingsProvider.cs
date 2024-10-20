@@ -11,7 +11,7 @@ namespace PowerAudioPlayer
     public class PowerSettingsProvider : SettingsProvider
     {
         private const string UserSettingsGroupName = "userSettings";
-        private string _applicationName;
+        private string _applicationName = "";
         public override string ApplicationName { get => _applicationName; set => _applicationName = value; }
 
         public override void Initialize(string name, NameValueCollection values)
@@ -21,7 +21,6 @@ namespace PowerAudioPlayer
             {
                 name = "CustomProvider";
             }
-
             base.Initialize(name, values);
         }
 
@@ -138,7 +137,7 @@ namespace PowerAudioPlayer
                         sec.Add(se);
                     }
 
-                    StoredSetting ss = (StoredSetting)entry.Value;
+                    StoredSetting? ss = (StoredSetting)entry.Value;
                     se.SerializeAs = ss.serializeAs;
                     se.Value.ValueXml = ss.xmlNode;
                 }
@@ -163,7 +162,7 @@ namespace PowerAudioPlayer
         {
             Configuration config = configuration;
             string fullSectionName = UserSettingsGroupName + "/" + sectionName;
-            ClientSettingsSection section = null;
+            ClientSettingsSection? section = null;
 
             if (config != null)
             {
@@ -216,8 +215,7 @@ namespace PowerAudioPlayer
             XmlDocument doc = new XmlDocument();
             XmlElement valueXml = doc.CreateElement("value");
 
-            string serializedValue = value.SerializedValue as string;
-
+            string? serializedValue = value.SerializedValue as string;
             if (serializedValue == null && setting.SerializeAs == SettingsSerializeAs.Binary)
             {
                 // SettingsPropertyValue returns a byte[] in the binary serialization case. We need to

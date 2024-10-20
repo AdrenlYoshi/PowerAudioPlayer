@@ -6,6 +6,8 @@ using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using IWshRuntimeLibrary;
+using File = System.IO.File;
 
 namespace PowerAudioPlayer.Controllers
 {
@@ -373,6 +375,18 @@ namespace PowerAudioPlayer.Controllers
         {
             btn.FlatStyle = FlatStyle.System;
             NativeAPI.SendMessage(btn.Handle, NativeAPI.BCM_SETSHIELD, 0, 0);
+        }
+
+
+        public static void CreateShortcut(string lnkFilePath, string targetPath, string workDir, string args = "")
+        {
+            var shellType = Type.GetTypeFromProgID("WScript.Shell");
+            dynamic shell = Activator.CreateInstance(shellType);
+            var shortcut = shell.CreateShortcut(lnkFilePath);
+            shortcut.TargetPath = targetPath;
+            shortcut.Arguments = args;
+            shortcut.WorkingDirectory = workDir;
+            shortcut.Save();
         }
     }
 }

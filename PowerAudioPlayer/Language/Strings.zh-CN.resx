@@ -470,4 +470,10 @@ System Information: {8}</value>
   <data name="MsgLastCompileTime" xml:space="preserve">
     <value>最后编译时间：{0}</value>
   </data>
+  <data name="Describe" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>扩展名</value>
+  </data>
 </root>

@@ -361,5 +361,21 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
         {
             return hSoundFont != 0;
         }
+
+        public List<SupportrdFormat> GetSupportrdFormatArray()
+        {
+            List<SupportrdFormat> s = new List<SupportrdFormat>();
+            foreach (var p in loadedPlugins)
+            {
+                var pinfo = Bass.BASS_PluginGetInfo(p.Key);
+
+                for (int i = 0; i < pinfo.formatc; i++)
+                {
+                    var f = pinfo.formats[i];
+                    s.Add(new SupportrdFormat(f.name, f.exts));
+                }
+            }
+            return s;
+        }
     }
 }

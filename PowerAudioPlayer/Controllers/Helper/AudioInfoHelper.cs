@@ -1,9 +1,7 @@
-﻿using PowerAudioPlayer.Controllers;
-using PowerAudioPlayer.Model;
+﻿using PowerAudioPlayer.Model;
 using System.IO;
 using Un4seen.Bass;
 using Un4seen.Bass.AddOn.Tags;
-using Utils = PowerAudioPlayer.Controllers.Utils;
 
 namespace PowerAudioPlayer.Controllers.Helper
 {

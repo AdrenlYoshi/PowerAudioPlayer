@@ -56,7 +56,7 @@ namespace PowerAudioPlayer
             lyricsForm.Show();
             mediaLibraryForm.Owner = this;
             if (Settings.Default.MediaLibraryStartUpUpdate && mediaLibraryForm != null)
-                NativeAPI.SendMessage(mediaLibraryForm.Handle, Player.WM_REFRESHMEDIALIBRARY, 0, 0); 
+                NativeAPI.SendMessage(mediaLibraryForm.Handle, Player.WM_REFRESHMEDIALIBRARY, 0, 0);
         }
 
         #region Player Control Method
@@ -119,7 +119,7 @@ namespace PowerAudioPlayer
                 lblInfo.Text = Player.Core.GetChannelInfo().ToString();
             }
             lblDisplayTitle.Text = PlaylistHelper.ActivePlaylist.Items[index].DisplayTitle;
-            
+
             tmrPlayer.Start();
             tmrSpectrum.Start();
             peakMeterCtrl.Start(1000 / 60);
@@ -754,14 +754,22 @@ namespace PowerAudioPlayer
         private void tsbtnPlayMode_Click(object sender, EventArgs e)
         {
             Settings.Default.PlayMode = (PlayMode)Enum.Parse(typeof(PlayMode), ((string)((WinFormsExtendedControls.ToolStripRadioButton)sender).Tag).Split('|')[0]);
-        }   
-        
-        private void tsbtnAboutPowerAudioPlayer_Click(object sender, EventArgs e)
+        }
+
+        private void tsmiAbout_Click(object sender, EventArgs e)
         {
             new AboutForm().ShowDialog();
         }
+
+        private void tsmiSupportedFormat_Click(object sender, EventArgs e)
+        {
+            new SupportrdFormatForm().ShowDialog();
+        }
+
+        private void tsmiCreateDesktopShortcut_Click(object sender, EventArgs e)
+        {
+            Utils.CreateShortcut(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Application.ProductName + ".lnk"), Application.ExecutablePath, "");
+        }
         #endregion
-
-
     }
 }

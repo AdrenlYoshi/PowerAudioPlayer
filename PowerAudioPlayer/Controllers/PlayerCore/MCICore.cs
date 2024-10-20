@@ -221,5 +221,10 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
         {
             return true;
         }
+
+        public List<SupportrdFormat> GetSupportrdFormatArray()
+        {
+            return new List<SupportrdFormat>();
+        }
     }
 }

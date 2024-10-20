@@ -59,7 +59,9 @@ namespace PowerAudioPlayer
             tsbtnSettings = new ToolStripButton();
             tsbtnSoundEffect = new ToolStripButton();
             tsbtnMediaLibraryForm = new ToolStripButton();
-            tsbtnAboutPowerAudioPlayer = new ToolStripButton();
+            tsddbToolbox = new ToolStripDropDownButton();
+            tsmiSupportedFormat = new ToolStripMenuItem();
+            tsmiAbout = new ToolStripMenuItem();
             lblTitle = new Label();
             lblAlbum = new Label();
             lblArtist = new Label();
@@ -77,6 +79,7 @@ namespace PowerAudioPlayer
             plLyrics = new Panel();
             tmrSpectrum = new System.Windows.Forms.Timer(components);
             splitContainer1 = new SplitContainer();
+            tsmiCreateDesktopShortcut = new ToolStripMenuItem();
             statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAlbum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trbPosition).BeginInit();
@@ -248,7 +251,7 @@ namespace PowerAudioPlayer
             // toolStrip
             // 
             toolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            toolStrip.Items.AddRange(new ToolStripItem[] { tsbtnOrderPlay, tsbtnShufflePlay, tsbtnTrackLoop, tsbtnPlaylistLoop, toolStripSeparator2, tsbtnAPRepeat, toolStripSeparator1, tsbtnSettings, tsbtnSoundEffect, tsbtnMediaLibraryForm, tsbtnAboutPowerAudioPlayer });
+            toolStrip.Items.AddRange(new ToolStripItem[] { tsbtnOrderPlay, tsbtnShufflePlay, tsbtnTrackLoop, tsbtnPlaylistLoop, toolStripSeparator2, tsbtnAPRepeat, toolStripSeparator1, tsbtnSettings, tsbtnSoundEffect, tsbtnMediaLibraryForm, tsddbToolbox });
             toolStrip.Location = new Point(0, 0);
             toolStrip.Name = "toolStrip";
             toolStrip.Size = new Size(449, 25);
@@ -356,15 +359,30 @@ namespace PowerAudioPlayer
             tsbtnMediaLibraryForm.Text = "媒体库";
             tsbtnMediaLibraryForm.Click += tsbtnMediaLibraryForm_Click;
             // 
-            // tsbtnAboutPowerAudioPlayer
+            // tsddbToolbox
             // 
-            tsbtnAboutPowerAudioPlayer.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbtnAboutPowerAudioPlayer.Image = Resources.PowerAudioPlayer;
-            tsbtnAboutPowerAudioPlayer.Name = "tsbtnAboutPowerAudioPlayer";
-            tsbtnAboutPowerAudioPlayer.Size = new Size(23, 22);
-            tsbtnAboutPowerAudioPlayer.Tag = "IgnoreColorize";
-            tsbtnAboutPowerAudioPlayer.Text = "关于";
-            tsbtnAboutPowerAudioPlayer.Click += tsbtnAboutPowerAudioPlayer_Click;
+            tsddbToolbox.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsddbToolbox.DropDownItems.AddRange(new ToolStripItem[] { tsmiSupportedFormat, tsmiCreateDesktopShortcut, tsmiAbout });
+            tsddbToolbox.Image = Resources.Toolbox;
+            tsddbToolbox.ImageTransparentColor = Color.Magenta;
+            tsddbToolbox.Name = "tsddbToolbox";
+            tsddbToolbox.Size = new Size(29, 22);
+            tsddbToolbox.Text = "工具";
+            // 
+            // tsmiSupportedFormat
+            // 
+            tsmiSupportedFormat.Name = "tsmiSupportedFormat";
+            tsmiSupportedFormat.Size = new Size(209, 22);
+            tsmiSupportedFormat.Text = "支持的格式列表";
+            tsmiSupportedFormat.Click += tsmiSupportedFormat_Click;
+            // 
+            // tsmiAbout
+            // 
+            tsmiAbout.Image = Resources.PowerAudioPlayer;
+            tsmiAbout.Name = "tsmiAbout";
+            tsmiAbout.Size = new Size(209, 22);
+            tsmiAbout.Text = "关于 PowerAudioPlayer";
+            tsmiAbout.Click += tsmiAbout_Click;
             // 
             // lblTitle
             // 
@@ -589,6 +607,13 @@ namespace PowerAudioPlayer
             splitContainer1.SplitterDistance = 449;
             splitContainer1.TabIndex = 75;
             // 
+            // tsmiCreateDesktopShortcut
+            // 
+            tsmiCreateDesktopShortcut.Name = "tsmiCreateDesktopShortcut";
+            tsmiCreateDesktopShortcut.Size = new Size(209, 22);
+            tsmiCreateDesktopShortcut.Text = "创建快捷方式到桌面";
+            tsmiCreateDesktopShortcut.Click += tsmiCreateDesktopShortcut_Click;
+            // 
             // PlayerForm
             // 
             AllowDrop = true;
@@ -675,10 +700,13 @@ namespace PowerAudioPlayer
         private TrackBar trbVolume;
         private WinFormsExtendedControls.SelRangeTrackBar trbPosition;
         private System.Windows.Forms.Timer tmrSpectrum;
-        private ToolStripButton tsbtnAboutPowerAudioPlayer;
         private SplitContainer splitContainer1;
         private Panel plLyrics;
         private ToolStripSeparator toolStripSeparator1;
         private WinFormsExtendedControls.PeakMeterCtrl peakMeterCtrl;
+        private ToolStripDropDownButton tsddbToolbox;
+        private ToolStripMenuItem tsmiAbout;
+        private ToolStripMenuItem tsmiSupportedFormat;
+        private ToolStripMenuItem tsmiCreateDesktopShortcut;
     }
 }

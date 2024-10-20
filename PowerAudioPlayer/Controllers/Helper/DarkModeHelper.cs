@@ -8,6 +8,8 @@ namespace PowerAudioPlayer.Controllers.Helper
     {
         public Form OwnerForm { get; set; }
 
+        public bool IsDarkMode { get; set; } = false;
+
         public bool forceProcessing = true;
 
         public DarkIconHelper(Form form)
@@ -19,8 +21,8 @@ namespace PowerAudioPlayer.Controllers.Helper
         public void ApplyTheme(bool pIsDarkMode = true)
         {
             if (!forceProcessing)
-                return;
-
+               return;
+            IsDarkMode = pIsDarkMode;
             try
             {
 
@@ -53,31 +55,61 @@ namespace PowerAudioPlayer.Controllers.Helper
             {
                 ThemeControl(e.Control);
             };
-            if (control is MenuStrip)
+            if (IsDarkMode)
             {
-                (control as MenuStrip).RenderMode = ToolStripRenderMode.Professional;
-                (control as MenuStrip).Renderer = new MyRenderer();
+                if (control is MenuStrip)
+                {
+                    (control as MenuStrip).RenderMode = ToolStripRenderMode.Professional;
+                    (control as MenuStrip).Renderer = new MyRenderer();
+                }
+                if (control is ToolStrip)
+                {
+                    (control as ToolStrip).RenderMode = ToolStripRenderMode.Professional;
+                    (control as ToolStrip).Renderer = new MyRenderer();
+                }
+                if (control is ToolStripDropDown)
+                {
+                    (control as ToolStripDropDown).Opening += Tsdd_Opening;
+                }
+                if (control is ToolStripDropDownMenu)
+                {
+                    (control as ToolStripDropDownMenu).Opening += Tsdd_Opening;
+                }
+                if (control is ContextMenuStrip)
+                {
+                    (control as ContextMenuStrip).RenderMode = ToolStripRenderMode.Professional;
+                    (control as ContextMenuStrip).Renderer = new MyRenderer();
+                    (control as ContextMenuStrip).Opening += Tsdd_Opening;
+                }
             }
-            if (control is ToolStrip)
+            else
             {
-                (control as ToolStrip).RenderMode = ToolStripRenderMode.Professional;
-                (control as ToolStrip).Renderer = new MyRenderer();
+                if (control is MenuStrip)
+                {
+                    //(control as MenuStrip).RenderMode = ToolStripRenderMode.ManagerRenderMode;
+                    (control as MenuStrip).Renderer = null;
+                }
+                if (control is ToolStrip)
+                {
+                    //(control as MenuStrip).RenderMode = ToolStripRenderMode.ManagerRenderMode;
+                    (control as ToolStrip).Renderer = null;
+                }
+                if (control is ToolStripDropDown)
+                {
+                    (control as ToolStripDropDown).Opening -= Tsdd_Opening;
+                }
+                if (control is ToolStripDropDownMenu)
+                {
+                    (control as ToolStripDropDownMenu).Opening -= Tsdd_Opening;
+                }
+                if (control is ContextMenuStrip)
+                {
+                    //(control as MenuStrip).RenderMode = ToolStripRenderMode.ManagerRenderMode;
+                    (control as ContextMenuStrip).Renderer = null;
+                    (control as ContextMenuStrip).Opening -= Tsdd_Opening;
+                }
             }
-            if (control is ToolStripDropDown)
-            {
-                (control as ToolStripDropDown).Opening += Tsdd_Opening;
-            }
-            if (control is ToolStripDropDownMenu)
-            {
-                (control as ToolStripDropDownMenu).Opening += Tsdd_Opening;
-            }
-            if (control is ContextMenuStrip)
-            {
-                (control as ContextMenuStrip).RenderMode = ToolStripRenderMode.Professional;
-                (control as ContextMenuStrip).Renderer = new MyRenderer();
-                (control as ContextMenuStrip).Opening += Tsdd_Opening;
-            }
-            Debug.Print(string.Format("{0}: {1}", control.Name, control.GetType().Name));
+            //Debug.WriteLine(string.Format("{0}: {1}", control.Name, control.GetType().Name));
 
             if (control.ContextMenuStrip != null)
                 ThemeControl(control.ContextMenuStrip);
@@ -86,8 +118,6 @@ namespace PowerAudioPlayer.Controllers.Helper
             {
                 ThemeControl(childControl);
             }
-
-
         }
 
         public static Bitmap ChangeToColor(Bitmap bmp)
@@ -95,10 +125,6 @@ namespace PowerAudioPlayer.Controllers.Helper
             Bitmap bmp2 = new Bitmap(bmp.Width, bmp.Height);
             using (Graphics g = Graphics.FromImage(bmp2))
             {
-                g.InterpolationMode = InterpolationMode.HighQualityBilinear;
-                g.CompositingQuality = CompositingQuality.HighQuality;
-                g.SmoothingMode = SmoothingMode.HighQuality;
-
                 System.Drawing.Imaging.ColorMatrix colorMatrix = new System.Drawing.Imaging.ColorMatrix(new float[][]
                 {
                     [-1, 0, 0, 0, 0],
@@ -107,12 +133,10 @@ namespace PowerAudioPlayer.Controllers.Helper
                     [0, 0, 0, 1, 0],
                     [1, 1, 1, 0, 1]
                 });
-
                 System.Drawing.Imaging.ImageAttributes attributes = new System.Drawing.Imaging.ImageAttributes();
                 attributes.SetColorMatrix(colorMatrix);
-
-                g.DrawImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height),
-                  0, 0, bmp.Width, bmp.Height, GraphicsUnit.Pixel, attributes);
+                g.DrawImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, bmp.Width, bmp.Height, GraphicsUnit.Pixel, attributes);
+                g.DrawString("RENDER", new Font("SimSun", 9), Brushes.Red, 0, 0);
             }
             return bmp2;
         }
@@ -156,9 +180,6 @@ namespace PowerAudioPlayer.Controllers.Helper
                 Image? image = e.Image;
                 using (Image adjustedImage = DarkIconHelper.ChangeToColor(image))
                 {
-                    e.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
-                    e.Graphics.CompositingQuality = CompositingQuality.AssumeLinear;
-                    e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
                     e.Graphics.DrawImage(adjustedImage, e.ImageRectangle);
                 }
 
@@ -170,9 +191,6 @@ namespace PowerAudioPlayer.Controllers.Helper
                 Image image = e.Image;
                 using (Image adjustedImage = DarkIconHelper.ChangeToColor(image))
                 {
-                    e.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
-                    e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
                     e.Graphics.DrawImage(adjustedImage, e.ImageRectangle);
                 }
             }
