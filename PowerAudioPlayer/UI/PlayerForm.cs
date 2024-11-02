@@ -422,7 +422,7 @@ namespace PowerAudioPlayer
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (((PlayMode)Settings.Default.PlayMode) == PlayMode.ShufflePlay)
+            if (Settings.Default.PlayMode == PlayMode.ShufflePlay)
                 Play(new Random().Next(0, PlaylistHelper.ActivePlaylist.Count));
             else
                 Play(Player.playIndex - 1);
@@ -675,10 +675,13 @@ namespace PowerAudioPlayer
 
         private void PlayerForm_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                e.Effect = DragDropEffects.All;
-            else
-                e.Effect = DragDropEffects.None;
+            if (e.Data != null)
+            {
+                if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                    e.Effect = DragDropEffects.All;
+                else
+                    e.Effect = DragDropEffects.None;
+            }
         }
 
         private void tsbtnAPRepeat_Click(object sender, EventArgs e)

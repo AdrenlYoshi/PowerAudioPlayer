@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using IWshRuntimeLibrary;
 using File = System.IO.File;
 
 namespace PowerAudioPlayer.Controllers
@@ -48,35 +47,6 @@ namespace PowerAudioPlayer.Controllers
             }
             return potentialSubdirectory.StartsWith(directory, StringComparison.OrdinalIgnoreCase);
         }
-
-        public static void SetPropertyValue(object obj, string propertyName, object sValue)
-        {
-            PropertyInfo? p = obj.GetType().GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
-            if (p != null)
-            {
-                object? dynmicValue;
-                if (p.PropertyType.IsArray)
-                {
-                    p.SetValue(obj, sValue, null);
-                }
-                else
-                {
-                    if (string.IsNullOrEmpty(sValue.ToString()))
-                        dynmicValue = p.PropertyType.IsValueType ? Activator.CreateInstance(p.PropertyType) : null;
-                    else
-                        dynmicValue = TypeDescriptor.GetConverter(p.PropertyType).ConvertFromString(sValue.ToString());
-                    p.SetValue(obj, dynmicValue, null);
-                }
-            }
-        }
-
-        public static object GetPropertyValue(object obj, string propertyName)
-        {
-            Type type = obj.GetType();
-            PropertyInfo propertyInfo = type.GetProperty(propertyName);
-            return propertyInfo.GetValue(obj, null);
-        }
-
         public static bool IsDesignMode()
         {
             bool returnFlag = false;
@@ -381,12 +351,15 @@ namespace PowerAudioPlayer.Controllers
         public static void CreateShortcut(string lnkFilePath, string targetPath, string workDir, string args = "")
         {
             var shellType = Type.GetTypeFromProgID("WScript.Shell");
-            dynamic shell = Activator.CreateInstance(shellType);
-            var shortcut = shell.CreateShortcut(lnkFilePath);
-            shortcut.TargetPath = targetPath;
-            shortcut.Arguments = args;
-            shortcut.WorkingDirectory = workDir;
-            shortcut.Save();
+            if (shellType != null)
+            {
+                dynamic shell = Activator.CreateInstance(shellType);
+                var shortcut = shell.CreateShortcut(lnkFilePath);
+                shortcut.TargetPath = targetPath;
+                shortcut.Arguments = args;
+                shortcut.WorkingDirectory = workDir;
+                shortcut.Save();
+            }
         }
     }
 }

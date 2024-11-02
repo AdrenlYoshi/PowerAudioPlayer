@@ -99,14 +99,14 @@
             // tsmiPlay
             // 
             tsmiPlay.Name = "tsmiPlay";
-            tsmiPlay.Size = new Size(115, 22);
+            tsmiPlay.Size = new Size(180, 22);
             tsmiPlay.Text = "播放(&P)";
             tsmiPlay.Click += tsmiPlay_Click;
             // 
             // tsmilu
             // 
             tsmilu.Name = "tsmilu";
-            tsmilu.Size = new Size(115, 22);
+            tsmilu.Size = new Size(180, 22);
             tsmilu.Text = "排队(&L)";
             tsmilu.Click += tsmilu_Click;
             // 
@@ -120,7 +120,7 @@
             // tsmiSendToMediaLibrary
             // 
             tsmiSendToMediaLibrary.Name = "tsmiSendToMediaLibrary";
-            tsmiSendToMediaLibrary.Size = new Size(132, 22);
+            tsmiSendToMediaLibrary.Size = new Size(180, 22);
             tsmiSendToMediaLibrary.Text = "媒体库(&M)";
             tsmiSendToMediaLibrary.Click += tsmiSendToMediaLibrary_Click;
             // 
@@ -134,25 +134,22 @@
             // 
             // tsmiAddFile
             // 
-            tsmiAddFile.Image = Resources.AddFile;
             tsmiAddFile.Name = "tsmiAddFile";
-            tsmiAddFile.Size = new Size(150, 22);
+            tsmiAddFile.Size = new Size(180, 22);
             tsmiAddFile.Text = "添加文件(&A)";
             tsmiAddFile.Click += tsmiAddFile_Click;
             // 
             // tsmiAddFolder
             // 
-            tsmiAddFolder.Image = Resources.AddFolder;
             tsmiAddFolder.Name = "tsmiAddFolder";
-            tsmiAddFolder.Size = new Size(150, 22);
+            tsmiAddFolder.Size = new Size(180, 22);
             tsmiAddFolder.Text = "添加文件夹(&F)";
             tsmiAddFolder.Click += tsmiAddFolder_Click;
             // 
             // tsmiAddURL
             // 
-            tsmiAddURL.Image = Resources.AddUrl;
             tsmiAddURL.Name = "tsmiAddURL";
-            tsmiAddURL.Size = new Size(150, 22);
+            tsmiAddURL.Size = new Size(180, 22);
             tsmiAddURL.Text = "添加URL(&U)";
             tsmiAddURL.Click += tsmiAddURL_Click;
             // 
@@ -166,7 +163,6 @@
             // 
             // tsmiRemoveSelected
             // 
-            tsmiRemoveSelected.Image = Resources.RemoveFile;
             tsmiRemoveSelected.Name = "tsmiRemoveSelected";
             tsmiRemoveSelected.Size = new Size(164, 22);
             tsmiRemoveSelected.Text = "移除选中项目(&R)";
@@ -174,7 +170,6 @@
             // 
             // tsmiClear
             // 
-            tsmiClear.Image = Resources.ClearPlaylist;
             tsmiClear.Name = "tsmiClear";
             tsmiClear.Size = new Size(164, 22);
             tsmiClear.Text = "清空(&C)";
@@ -198,9 +193,8 @@
             // tsmiImport
             // 
             tsmiImport.DropDownItems.AddRange(new ToolStripItem[] { tsmiImportFromFile, tsmiImportFormActivePlaylist });
-            tsmiImport.Image = Resources.Import;
             tsmiImport.Name = "tsmiImport";
-            tsmiImport.Size = new Size(163, 22);
+            tsmiImport.Size = new Size(180, 22);
             tsmiImport.Text = "导入播放列表(&I)";
             // 
             // tsmiImportFromFile
@@ -219,9 +213,8 @@
             // 
             // tsmiExport
             // 
-            tsmiExport.Image = Resources.Export;
             tsmiExport.Name = "tsmiExport";
-            tsmiExport.Size = new Size(163, 22);
+            tsmiExport.Size = new Size(180, 22);
             tsmiExport.Text = "导出播放列表(&E)";
             tsmiExport.Click += tsmiExport_Click;
             // 
@@ -285,6 +278,7 @@
             lvPlaylist.SelectColumnsOnRightClick = false;
             lvPlaylist.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
             lvPlaylist.ShowCommandMenuOnRightClick = true;
+            lvPlaylist.ShowGroups = false;
             lvPlaylist.Size = new Size(560, 456);
             lvPlaylist.TabIndex = 31;
             lvPlaylist.UseFiltering = true;
@@ -349,7 +343,7 @@
             // 
             // tsmiRemoveSelected1
             // 
-            tsmiRemoveSelected1.Image = Resources.RemoveFile;
+            tsmiRemoveSelected1.Image = Resources.Remove;
             tsmiRemoveSelected1.Name = "tsmiRemoveSelected1";
             tsmiRemoveSelected1.Size = new Size(211, 22);
             tsmiRemoveSelected1.Text = "移除选中项目(&R)";
