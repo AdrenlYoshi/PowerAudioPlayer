@@ -36,14 +36,13 @@
             // 
             playlistEditor.AllowDrop = true;
             playlistEditor.Dock = DockStyle.Fill;
-            playlistEditor.EditPlaylistIndex = 0;
-            playlistEditor.IsEditActivePlaylist = true;
             playlistEditor.Location = new Point(0, 0);
             playlistEditor.Margin = new Padding(4, 3, 4, 3);
             playlistEditor.Name = "playlistEditor";
             playlistEditor.Size = new Size(508, 465);
             playlistEditor.TabIndex = 0;
             playlistEditor.PlayItem += playlistEditor_PlayItem;
+            playlistEditor.IsEditActivePlaylist = true;
             // 
             // PlaylistEditorForm
             // 

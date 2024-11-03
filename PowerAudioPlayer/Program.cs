@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Resources;
 using System.Text;
+using Microsoft.Win32;
 using PowerAudioPlayer.Controllers;
 using PowerAudioPlayer.UI;
 
@@ -30,13 +31,28 @@ namespace PowerAudioPlayer
             Process? instance = RunningInstance();
             if (instance == null)
             {
+                SystemEvents.UserPreferenceChanged += SystemEvents_UserPreferenceChanged;
                 Player.Init();
                 Application.Run(new PlayerForm());
                 Player.UnInit();
+                SystemEvents.UserPreferenceChanged -= SystemEvents_UserPreferenceChanged;
             }
             else
             {
                 HandleRunningInstance(instance);
+            }
+
+        }
+
+        private static void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
+        {
+            if (e.Category == UserPreferenceCategory.Color)
+            {
+                //Application.SetColorMode(SystemColorMode.System);
+                if (Utils.IsDarkMode())
+                    Application.SetColorMode(SystemColorMode.Dark);
+                else
+                    Application.SetColorMode(SystemColorMode.Classic);
             }
         }
 

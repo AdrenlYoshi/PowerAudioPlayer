@@ -169,8 +169,6 @@
             // 
             playlistEditor.AllowDrop = true;
             playlistEditor.Dock = DockStyle.Fill;
-            playlistEditor.EditPlaylistIndex = 0;
-            playlistEditor.IsEditActivePlaylist = false;
             playlistEditor.Location = new Point(0, 0);
             playlistEditor.Margin = new Padding(4, 3, 4, 3);
             playlistEditor.Name = "playlistEditor";

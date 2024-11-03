@@ -54,6 +54,7 @@ namespace PowerAudioPlayer.UI.CustomControls
                     tsmPlay.Visible = true;
                 }
                 _isEditActivePlaylist = value;
+                RefreshStatus();
             }
         }
 

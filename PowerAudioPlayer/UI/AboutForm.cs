@@ -13,7 +13,7 @@ namespace PowerAudioPlayer.UI
             InitializeComponent();
             rtbAcknowledgement.Text = Resources.Acknowledgement;
             Text = string.Format(Player.GetString("MsgAbout"), Application.ProductName);
-            llblProductName.Text = Application.ProductName;
+            lblProductName.Text = Application.ProductName;
             lblVersion.Text = string.Format(Player.GetString("MsgVersion"), Assembly.GetExecutingAssembly().GetName().Version);
             lblCompany.Text = Application.CompanyName;
             lbldotNETVersion.Text = Player.GetString("DotNETVersion", Environment.Version.ToString());
@@ -25,7 +25,7 @@ namespace PowerAudioPlayer.UI
             Process.Start(new ProcessStartInfo(e.LinkText) { UseShellExecute = true });
         }
 
-        private void llblProgramName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblProductName_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo(Player.GetString("ProjectPageURL")) { UseShellExecute = true });
         }
