@@ -80,7 +80,7 @@
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="echo Copying files to $(OutDir).&#xD;&#xA;if not exist &quot;$(OutDir)Lib\Plugins&quot; (&#xD;&#xA; mkdir &quot;$(OutDir)Plugins&quot;&#xD;&#xA;)&#xD;&#xA;xcopy Lib\Plugins &quot;$(OutDir)Plugins&quot; /Y /Q&#xD;&#xA;copy Lib\bass.dll &quot;$(OutDir)&quot; /Y&#xD;&#xA;copy Lib\Plugins\OptimFROG.dll &quot;$(OutDir)&quot; /Y&#xD;&#xA;echo Success." />
+        <Exec Command="set libarch=AMD64&#xD;&#xA;echo Copying files to $(OutDir).&#xD;&#xA;echo Libraries architecture: %25libarch%25&#xD;&#xA;if not exist &quot;$(OutDir)Lib\Plugins&quot; (&#xD;&#xA; mkdir &quot;$(OutDir)Plugins&quot;&#xD;&#xA;)&#xD;&#xA;xcopy Lib\%25libarch%25\%25Plugins &quot;$(OutDir)Plugins&quot; /Y /Q&#xD;&#xA;copy Lib\%25libarch%25\bass.dll &quot;$(OutDir)&quot; /Y&#xD;&#xA;copy Lib\%25libarch%25\Plugins\OptimFROG.dll &quot;$(OutDir)&quot; /Y&#xD;&#xA;echo Success." />
     </Target>
 
     <ItemGroup>

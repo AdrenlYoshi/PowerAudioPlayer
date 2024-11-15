@@ -7,9 +7,6 @@ namespace PowerAudioPlayer.UI
 {
     public partial class PlaylistEditorForm : BaseForm
     {
-
-        private DoWorkEventHandler doWorkEvent = (object? sender, DoWorkEventArgs e) => { };
-
         public PlaylistEditorForm()
         {
             InitializeComponent();

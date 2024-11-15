@@ -3,6 +3,7 @@ using PowerAudioPlayer.Controllers.Helper;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace PowerAudioPlayer.UI
 {
@@ -13,6 +14,7 @@ namespace PowerAudioPlayer.UI
             InitializeComponent();
             rtbAcknowledgement.Text = Resources.Acknowledgement;
             Text = string.Format(Player.GetString("MsgAbout"), Application.ProductName);
+            lblArchitecture.Text = RuntimeInformation.ProcessArchitecture.ToString();
             lblProductName.Text = Application.ProductName;
             lblVersion.Text = string.Format(Player.GetString("MsgVersion"), Assembly.GetExecutingAssembly().GetName().Version);
             lblCompany.Text = Application.CompanyName;

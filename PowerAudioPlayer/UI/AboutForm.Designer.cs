@@ -36,6 +36,7 @@ namespace PowerAudioPlayer.UI
             lbldotNETVersion = new Label();
             lblLastCompileTime = new Label();
             lblProductName = new Label();
+            lblArchitecture = new Label();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -61,10 +62,10 @@ namespace PowerAudioPlayer.UI
             // 
             // rtbAcknowledgement
             // 
-            rtbAcknowledgement.Location = new Point(12, 130);
+            rtbAcknowledgement.Location = new Point(12, 148);
             rtbAcknowledgement.Name = "rtbAcknowledgement";
             rtbAcknowledgement.ReadOnly = true;
-            rtbAcknowledgement.Size = new Size(375, 201);
+            rtbAcknowledgement.Size = new Size(375, 183);
             rtbAcknowledgement.TabIndex = 32;
             rtbAcknowledgement.Text = "";
             rtbAcknowledgement.LinkClicked += rtbAcknowledgement_LinkClicked;
@@ -99,7 +100,7 @@ namespace PowerAudioPlayer.UI
             // lblLastCompileTime
             // 
             lblLastCompileTime.AutoSize = true;
-            lblLastCompileTime.Location = new Point(12, 111);
+            lblLastCompileTime.Location = new Point(12, 128);
             lblLastCompileTime.Name = "lblLastCompileTime";
             lblLastCompileTime.Size = new Size(121, 17);
             lblLastCompileTime.TabIndex = 38;
@@ -117,11 +118,21 @@ namespace PowerAudioPlayer.UI
             lblProductName.Text = "PowerAudioPlayer";
             lblProductName.Click += lblProductName_Click;
             // 
+            // lblArchitecture
+            // 
+            lblArchitecture.AutoSize = true;
+            lblArchitecture.Location = new Point(12, 111);
+            lblArchitecture.Name = "lblArchitecture";
+            lblArchitecture.Size = new Size(91, 17);
+            lblArchitecture.TabIndex = 40;
+            lblArchitecture.Text = "lblArchitecture";
+            // 
             // AboutForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(399, 378);
+            Controls.Add(lblArchitecture);
             Controls.Add(lblProductName);
             Controls.Add(rtbAcknowledgement);
             Controls.Add(lblLastCompileTime);
@@ -154,5 +165,6 @@ namespace PowerAudioPlayer.UI
         private Label lbldotNETVersion;
         private Label lblLastCompileTime;
         private Label lblProductName;
+        private Label lblArchitecture;
     }
 }

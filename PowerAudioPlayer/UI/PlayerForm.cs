@@ -253,7 +253,7 @@ namespace PowerAudioPlayer
             }
             else
             {
-                lblPosition.Text = string.Format("{0} / {1}", Utils.FormatTimeSecond(Player.Core.GetPositionSecond()), Utils.FormatTimeSecond(Player.Core.GetLengthSecond()));
+                lblPosition.Text = string.Format("{0} / {1} ({2})", Utils.FormatTimeSecond(Player.Core.GetPositionSecond()), Utils.FormatTimeSecond(Player.Core.GetLengthSecond()), ((double)Player.Core.GetPositionMillisecond() / Player.Core.GetLengthMillisecond()).ToString("P3"));
                 trbPosition.Maximum = Player.Core.GetLengthMillisecond();
                 if (Player.Core.GetChannelStatus() == PlayerChannelStatus.Playing)
                 {
