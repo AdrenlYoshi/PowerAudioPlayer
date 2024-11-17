@@ -76,6 +76,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="Lib\ARM64\" />
+        <Folder Include="Lib\Intel32\Plugins\" />
         <Folder Include="Properties\" />
     </ItemGroup>
 

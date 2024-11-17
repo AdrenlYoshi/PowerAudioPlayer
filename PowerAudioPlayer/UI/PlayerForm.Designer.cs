@@ -33,9 +33,6 @@ namespace PowerAudioPlayer
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerForm));
-            statusStrip = new StatusStrip();
-            lblStatus = new ToolStripStatusLabel();
-            lblStatus1 = new ToolStripStatusLabel();
             tmrPlayer = new System.Windows.Forms.Timer(components);
             tmrLyrics = new System.Windows.Forms.Timer(components);
             toolTip = new ToolTip(components);
@@ -61,6 +58,7 @@ namespace PowerAudioPlayer
             tsbtnMediaLibraryForm = new ToolStripButton();
             tsddbToolbox = new ToolStripDropDownButton();
             tsmiSupportedFormat = new ToolStripMenuItem();
+            tsmiCreateDesktopShortcut = new ToolStripMenuItem();
             tsmiAbout = new ToolStripMenuItem();
             lblTitle = new Label();
             lblAlbum = new Label();
@@ -75,12 +73,11 @@ namespace PowerAudioPlayer
             tableLayoutPanel2 = new TableLayoutPanel();
             panel2 = new Panel();
             panel1 = new Panel();
-            peakMeterCtrl = new WinFormsExtendedControls.PeakMeterCtrl();
             plLyrics = new Panel();
-            tmrSpectrum = new System.Windows.Forms.Timer(components);
             splitContainer1 = new SplitContainer();
-            tsmiCreateDesktopShortcut = new ToolStripMenuItem();
-            statusStrip.SuspendLayout();
+            statusStrip = new StatusStrip();
+            lblStatus = new ToolStripStatusLabel();
+            lblStatus1 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)picAlbum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trbPosition).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trbVolume).BeginInit();
@@ -95,34 +92,8 @@ namespace PowerAudioPlayer
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.SuspendLayout();
+            statusStrip.SuspendLayout();
             SuspendLayout();
-            // 
-            // statusStrip
-            // 
-            statusStrip.Items.AddRange(new ToolStripItem[] { lblStatus, lblStatus1 });
-            statusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            statusStrip.Location = new Point(0, 362);
-            statusStrip.Name = "statusStrip";
-            statusStrip.ShowItemToolTips = true;
-            statusStrip.Size = new Size(449, 26);
-            statusStrip.SizingGrip = false;
-            statusStrip.TabIndex = 1;
-            statusStrip.Text = "statusStrip";
-            // 
-            // lblStatus
-            // 
-            lblStatus.ImageScaling = ToolStripItemImageScaling.None;
-            lblStatus.Margin = new Padding(3, 3, 3, 2);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(32, 21);
-            lblStatus.Text = "停止";
-            // 
-            // lblStatus1
-            // 
-            lblStatus1.BorderSides = ToolStripStatusLabelBorderSides.Left;
-            lblStatus1.Name = "lblStatus1";
-            lblStatus1.Size = new Size(36, 21);
-            lblStatus1.Text = "就绪";
             // 
             // tmrPlayer
             // 
@@ -376,6 +347,13 @@ namespace PowerAudioPlayer
             tsmiSupportedFormat.Text = "支持的格式列表";
             tsmiSupportedFormat.Click += tsmiSupportedFormat_Click;
             // 
+            // tsmiCreateDesktopShortcut
+            // 
+            tsmiCreateDesktopShortcut.Name = "tsmiCreateDesktopShortcut";
+            tsmiCreateDesktopShortcut.Size = new Size(209, 22);
+            tsmiCreateDesktopShortcut.Text = "创建快捷方式到桌面";
+            tsmiCreateDesktopShortcut.Click += tsmiCreateDesktopShortcut_Click;
+            // 
             // tsmiAbout
             // 
             tsmiAbout.Image = Resources.PowerAudioPlayer;
@@ -542,39 +520,20 @@ namespace PowerAudioPlayer
             panel2.AutoSize = true;
             panel2.Controls.Add(tableLayoutPanel3);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(218, 3);
+            panel2.Location = new Point(112, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(222, 103);
+            panel2.Size = new Size(328, 103);
             panel2.TabIndex = 75;
             // 
             // panel1
             // 
             panel1.AutoSize = true;
-            panel1.Controls.Add(peakMeterCtrl);
             panel1.Controls.Add(picAlbum);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(209, 103);
+            panel1.Size = new Size(103, 103);
             panel1.TabIndex = 1;
-            // 
-            // peakMeterCtrl
-            // 
-            peakMeterCtrl.BandsCount = 33;
-            peakMeterCtrl.ColorHigh = Color.Red;
-            peakMeterCtrl.ColorHighBack = Color.Transparent;
-            peakMeterCtrl.ColorMedium = Color.Yellow;
-            peakMeterCtrl.ColorMediumBack = Color.Transparent;
-            peakMeterCtrl.ColorNormal = Color.Green;
-            peakMeterCtrl.ColorNormalBack = Color.Transparent;
-            peakMeterCtrl.FalloffColor = Color.Gray;
-            peakMeterCtrl.GridColor = Color.Gainsboro;
-            peakMeterCtrl.LEDCount = 20;
-            peakMeterCtrl.Location = new Point(106, 0);
-            peakMeterCtrl.Name = "peakMeterCtrl";
-            peakMeterCtrl.ShowGrid = false;
-            peakMeterCtrl.Size = new Size(100, 100);
-            peakMeterCtrl.TabIndex = 64;
             // 
             // plLyrics
             // 
@@ -584,11 +543,6 @@ namespace PowerAudioPlayer
             plLyrics.Name = "plLyrics";
             plLyrics.Size = new Size(443, 121);
             plLyrics.TabIndex = 76;
-            // 
-            // tmrSpectrum
-            // 
-            tmrSpectrum.Interval = 30;
-            tmrSpectrum.Tick += tmrSpectrum_Tick;
             // 
             // splitContainer1
             // 
@@ -601,18 +555,37 @@ namespace PowerAudioPlayer
             splitContainer1.Panel1.AutoScroll = true;
             splitContainer1.Panel1.Controls.Add(tableLayoutPanel1);
             splitContainer1.Panel1.Controls.Add(toolStrip);
-            splitContainer1.Panel1.Controls.Add(statusStrip);
             splitContainer1.Panel1MinSize = 449;
-            splitContainer1.Size = new Size(880, 388);
+            splitContainer1.Size = new Size(880, 362);
             splitContainer1.SplitterDistance = 449;
             splitContainer1.TabIndex = 75;
             // 
-            // tsmiCreateDesktopShortcut
+            // statusStrip
             // 
-            tsmiCreateDesktopShortcut.Name = "tsmiCreateDesktopShortcut";
-            tsmiCreateDesktopShortcut.Size = new Size(209, 22);
-            tsmiCreateDesktopShortcut.Text = "创建快捷方式到桌面";
-            tsmiCreateDesktopShortcut.Click += tsmiCreateDesktopShortcut_Click;
+            statusStrip.Items.AddRange(new ToolStripItem[] { lblStatus, lblStatus1 });
+            statusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            statusStrip.Location = new Point(0, 362);
+            statusStrip.Name = "statusStrip";
+            statusStrip.ShowItemToolTips = true;
+            statusStrip.Size = new Size(880, 26);
+            statusStrip.SizingGrip = false;
+            statusStrip.TabIndex = 76;
+            statusStrip.Text = "statusStrip";
+            // 
+            // lblStatus
+            // 
+            lblStatus.ImageScaling = ToolStripItemImageScaling.None;
+            lblStatus.Margin = new Padding(3, 3, 3, 2);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(32, 21);
+            lblStatus.Text = "停止";
+            // 
+            // lblStatus1
+            // 
+            lblStatus1.BorderSides = ToolStripStatusLabelBorderSides.Left;
+            lblStatus1.Name = "lblStatus1";
+            lblStatus1.Size = new Size(36, 21);
+            lblStatus1.Text = "就绪";
             // 
             // PlayerForm
             // 
@@ -622,6 +595,7 @@ namespace PowerAudioPlayer
             AutoSize = true;
             ClientSize = new Size(880, 388);
             Controls.Add(splitContainer1);
+            Controls.Add(statusStrip);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(896, 427);
             Name = "PlayerForm";
@@ -634,8 +608,6 @@ namespace PowerAudioPlayer
             DragDrop += PlayerForm_DragDrop;
             DragEnter += PlayerForm_DragEnter;
             MouseWheel += PlayerForm_MouseWheel;
-            statusStrip.ResumeLayout(false);
-            statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAlbum).EndInit();
             ((System.ComponentModel.ISupportInitialize)trbPosition).EndInit();
             ((System.ComponentModel.ISupportInitialize)trbVolume).EndInit();
@@ -657,12 +629,13 @@ namespace PowerAudioPlayer
             splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private StatusStrip statusStrip;
-        private ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.Timer tmrPlayer;
         private System.Windows.Forms.Timer tmrLyrics;
         private ToolTip toolTip;
@@ -687,7 +660,6 @@ namespace PowerAudioPlayer
         private Button btnPrevious;
         private Label lblInfo;
         private TableLayoutPanel tableLayoutPanel3;
-        private ToolStripStatusLabel lblStatus1;
         private ToolStripButton tsbtnMediaLibraryForm;
         private TableLayoutPanel tableLayoutPanel1;
         private FlowLayoutPanel flowLayoutPanel1;
@@ -699,14 +671,15 @@ namespace PowerAudioPlayer
         private Label lblVolume;
         private TrackBar trbVolume;
         private WinFormsExtendedControls.SelRangeTrackBar trbPosition;
-        private System.Windows.Forms.Timer tmrSpectrum;
         private SplitContainer splitContainer1;
         private Panel plLyrics;
         private ToolStripSeparator toolStripSeparator1;
-        private WinFormsExtendedControls.PeakMeterCtrl peakMeterCtrl;
         private ToolStripDropDownButton tsddbToolbox;
         private ToolStripMenuItem tsmiAbout;
         private ToolStripMenuItem tsmiSupportedFormat;
         private ToolStripMenuItem tsmiCreateDesktopShortcut;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel lblStatus;
+        private ToolStripStatusLabel lblStatus1;
     }
 }

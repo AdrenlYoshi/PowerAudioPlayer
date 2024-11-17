@@ -12,7 +12,7 @@ namespace PowerAudioPlayer {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -98,19 +98,6 @@ namespace PowerAudioPlayer {
             }
             set {
                 this["OutputDevice"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SpectrumDisable {
-            get {
-                return ((bool)(this["SpectrumDisable"]));
-            }
-            set {
-                this["SpectrumDisable"] = value;
             }
         }
         
@@ -538,97 +525,6 @@ namespace PowerAudioPlayer {
             }
             set {
                 this["PlayerCore"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SpectrumWithGrid {
-            get {
-                return ((bool)(this["SpectrumWithGrid"]));
-            }
-            set {
-                this["SpectrumWithGrid"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
-        public global::System.Drawing.Color SpectrumColorHigh {
-            get {
-                return ((global::System.Drawing.Color)(this["SpectrumColorHigh"]));
-            }
-            set {
-                this["SpectrumColorHigh"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Yellow")]
-        public global::System.Drawing.Color SpectrumColorMedium {
-            get {
-                return ((global::System.Drawing.Color)(this["SpectrumColorMedium"]));
-            }
-            set {
-                this["SpectrumColorMedium"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Green")]
-        public global::System.Drawing.Color SpectrumColorNormal {
-            get {
-                return ((global::System.Drawing.Color)(this["SpectrumColorNormal"]));
-            }
-            set {
-                this["SpectrumColorNormal"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Gainsboro")]
-        public global::System.Drawing.Color SpectrumColorGrid {
-            get {
-                return ((global::System.Drawing.Color)(this["SpectrumColorGrid"]));
-            }
-            set {
-                this["SpectrumColorGrid"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SpectrumFalloff {
-            get {
-                return ((bool)(this["SpectrumFalloff"]));
-            }
-            set {
-                this["SpectrumFalloff"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Gray")]
-        public global::System.Drawing.Color SpectrumColorFalloff {
-            get {
-                return ((global::System.Drawing.Color)(this["SpectrumColorFalloff"]));
-            }
-            set {
-                this["SpectrumColorFalloff"] = value;
             }
         }
     }

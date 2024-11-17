@@ -46,13 +46,18 @@ namespace PowerAudioPlayer
             playlistEditorForm.TopLevel = false;
             playlistEditorForm.Dock = DockStyle.Fill;
             playlistEditorForm.FormBorderStyle = FormBorderStyle.None;
-            splitContainer1.Panel2.Controls.Add(playlistEditorForm);
-            playlistEditorForm.Show();
+            
+            
+
             lyricsForm.Owner = this;
             lyricsForm.TopLevel = false;
             lyricsForm.Dock = DockStyle.Fill;
             lyricsForm.FormBorderStyle = FormBorderStyle.None;
-            plLyrics.Controls.Add(lyricsForm);
+
+            splitContainer1.Panel2.Controls.Add(lyricsForm);
+            plLyrics.Controls.Add(playlistEditorForm);
+
+            playlistEditorForm.Show();
             lyricsForm.Show();
             mediaLibraryForm.Owner = this;
             if (Settings.Default.MediaLibraryStartUpUpdate && mediaLibraryForm != null)
@@ -121,8 +126,6 @@ namespace PowerAudioPlayer
             lblDisplayTitle.Text = PlaylistHelper.ActivePlaylist.Items[index].DisplayTitle;
 
             tmrPlayer.Start();
-            tmrSpectrum.Start();
-            peakMeterCtrl.Start(1000 / 60);
             LoadLyrics();
             UpdateContols();
             if (Settings.Default.RecordPlayHistroy)
@@ -223,14 +226,6 @@ namespace PowerAudioPlayer
             Binding binding = new Binding("Text", Settings.Default, "Volume", true, DataSourceUpdateMode.OnPropertyChanged);
             binding.Format += (object? sender, ConvertEventArgs e) => { e.Value = string.Format("{0}%", e.Value.ToString()); };
             lblVolume.DataBindings.Add(binding);
-
-            peakMeterCtrl.DataBindings.Add("ColorHigh", Settings.Default, "SpectrumColorHigh", true, DataSourceUpdateMode.OnPropertyChanged);
-            peakMeterCtrl.DataBindings.Add("ColorMedium", Settings.Default, "SpectrumColorMedium", true, DataSourceUpdateMode.OnPropertyChanged);
-            peakMeterCtrl.DataBindings.Add("ColorNormal", Settings.Default, "SpectrumColorNormal", true, DataSourceUpdateMode.OnPropertyChanged);
-            peakMeterCtrl.DataBindings.Add("FalloffColor", Settings.Default, "SpectrumColorFalloff", true, DataSourceUpdateMode.OnPropertyChanged);
-            peakMeterCtrl.DataBindings.Add("GridColor", Settings.Default, "SpectrumColorGrid", true, DataSourceUpdateMode.OnPropertyChanged);
-            peakMeterCtrl.DataBindings.Add("ShowGrid", Settings.Default, "SpectrumWithGrid", true, DataSourceUpdateMode.OnPropertyChanged);
-            peakMeterCtrl.DataBindings.Add("FalloffEffect", Settings.Default, "SpectrumFalloff", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void UpdateContols()
@@ -343,15 +338,6 @@ namespace PowerAudioPlayer
 
         #region Events
 
-        private void tmrSpectrum_Tick(object sender, EventArgs e)
-        {
-            if (Player.Core.GetChannelStatus() == PlayerChannelStatus.Playing && (!Settings.Default.SpectrumDisable && WindowState != FormWindowState.Minimized))
-            {
-                int[] FFTFall = Array.ConvertAll<float, int>(Player.Core.GetFFTData(), delegate (float f) { return (int)Math.Abs(f * 1500); });
-                peakMeterCtrl.SetData(FFTFall, 0, FFTFall.Length);
-            }
-        }
-
         private void tmrPlayer_Tick(object sender, EventArgs e)
         {
             if (Player.Core.IsEnded())
@@ -362,7 +348,6 @@ namespace PowerAudioPlayer
                     return;
                 }
                 tmrPlayer.Stop();
-                tmrSpectrum.Stop();
                 tmrLyrics.Stop();
                 switch (Settings.Default.PlayMode)
                 {

@@ -302,7 +302,7 @@ namespace PowerAudioPlayer.Controllers.PlayerCore
             if (IsOpened())
             {
                 float[] fft = new float[128];
-                Bass.BASS_ChannelGetData(hStream, fft, (int)BASSData.BASS_DATA_FFT256);
+                Bass.BASS_ChannelGetData(hStream, fft, (int)Un4seen.Bass.BASSData.BASS_DATA_FFT256);
                 return fft;
             }
             else

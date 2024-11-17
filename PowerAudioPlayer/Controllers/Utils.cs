@@ -361,5 +361,21 @@ namespace PowerAudioPlayer.Controllers
                 shortcut.Save();
             }
         }
+
+        public static int FFTIndex2Frequency(int index, int length, int samplerate)
+        {
+            return (int)Math.Round((double)index * (double)samplerate / (double)length);
+        }
+
+        public static int FFTFrequency2Index(int frequency, int length, int samplerate)
+        {
+            int num = (int)Math.Round((double)length * (double)frequency / (double)samplerate);
+            if (num > length / 2 - 1)
+            {
+                num = length / 2 - 1;
+            }
+
+            return num;
+        }
     }
 }

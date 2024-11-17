@@ -20,9 +20,6 @@
     <Setting Name="OutputDevice" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">-1</Value>
     </Setting>
-    <Setting Name="SpectrumDisable" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="StopPlayingWhenError" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -121,27 +118,6 @@
     </Setting>
     <Setting Name="PlayerCore" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="PowerAudioPlayer.Controllers.PlayerCores" Scope="User">
       <Value Profile="(Default)">BASS</Value>
-    </Setting>
-    <Setting Name="SpectrumWithGrid" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="SpectrumColorHigh" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Red</Value>
-    </Setting>
-    <Setting Name="SpectrumColorMedium" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Yellow</Value>
-    </Setting>
-    <Setting Name="SpectrumColorNormal" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Green</Value>
-    </Setting>
-    <Setting Name="SpectrumColorGrid" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Gainsboro</Value>
-    </Setting>
-    <Setting Name="SpectrumFalloff" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="SpectrumColorFalloff" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Gray</Value>
     </Setting>
   </Settings>
 </SettingsFile>
