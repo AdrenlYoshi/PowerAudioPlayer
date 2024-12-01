@@ -33,7 +33,6 @@ namespace PowerAudioPlayer
         {
             InitializeComponent();
             InitBinding();
-            Size = Settings.Default.PlayerFormSize;
             Location = Settings.Default.PlayerFormLocation;
             //endSync = new SYNCPROC(EndSync);
             //metaSync = new SYNCPROC(MetaSync);
@@ -43,19 +42,19 @@ namespace PowerAudioPlayer
             tbtnStop.Click += (object? sender, ThumbnailButtonClickedEventArgs e) => { btnStop_Click(new object(), new EventArgs()); };
             tbtnNext.Click += (object? sender, ThumbnailButtonClickedEventArgs e) => { btnNext_Click(new object(), new EventArgs()); };
             playlistEditorForm.Owner = this;
-            playlistEditorForm.TopLevel = false;
-            playlistEditorForm.Dock = DockStyle.Fill;
-            playlistEditorForm.FormBorderStyle = FormBorderStyle.None;
+            //playlistEditorForm.TopLevel = false;
+            //playlistEditorForm.Dock = DockStyle.Fill;
+            //playlistEditorForm.FormBorderStyle = FormBorderStyle.None;
             
             
 
             lyricsForm.Owner = this;
-            lyricsForm.TopLevel = false;
-            lyricsForm.Dock = DockStyle.Fill;
-            lyricsForm.FormBorderStyle = FormBorderStyle.None;
+            //lyricsForm.TopLevel = false;
+            //lyricsForm.Dock = DockStyle.Fill;
+            //lyricsForm.FormBorderStyle = FormBorderStyle.None;
 
-            splitContainer1.Panel2.Controls.Add(lyricsForm);
-            plLyrics.Controls.Add(playlistEditorForm);
+            //splitContainer1.Panel2.Controls.Add(lyricsForm);
+            //plPlaylistEditor.Controls.Add(playlistEditorForm);
 
             playlistEditorForm.Show();
             lyricsForm.Show();
@@ -248,7 +247,7 @@ namespace PowerAudioPlayer
             }
             else
             {
-                lblPosition.Text = string.Format("{0} / {1} ({2})", Utils.FormatTimeSecond(Player.Core.GetPositionSecond()), Utils.FormatTimeSecond(Player.Core.GetLengthSecond()), ((double)Player.Core.GetPositionMillisecond() / Player.Core.GetLengthMillisecond()).ToString("P3"));
+                lblPosition.Text = string.Format("{0}/{1}({2})", Utils.FormatTimeSecond(Player.Core.GetPositionSecond()), Utils.FormatTimeSecond(Player.Core.GetLengthSecond()), ((double)Player.Core.GetPositionMillisecond() / Player.Core.GetLengthMillisecond()).ToString("P1"));
                 trbPosition.Maximum = Player.Core.GetLengthMillisecond();
                 if (Player.Core.GetChannelStatus() == PlayerChannelStatus.Playing)
                 {
@@ -699,12 +698,6 @@ namespace PowerAudioPlayer
         {
             if (WindowState == FormWindowState.Normal)
                 Settings.Default.PlayerFormLocation = Location;
-        }
-
-        private void PlayerForm_SizeChanged(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                Settings.Default.PlayerFormSize = Size;
         }
 
         private void lbl_DoubleClick(object sender, EventArgs e)

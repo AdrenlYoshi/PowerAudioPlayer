@@ -19,6 +19,7 @@ namespace PowerAudioPlayer.UI
         public LyricsForm()
         {
             InitializeComponent();
+            Location = Settings.Default.LyricsFormLocation;
             Controls.Add(new ElementHost() { Child = lyricsView, Dock = DockStyle.Fill });
             lyricsView.Foreground = new System.Windows.Media.SolidColorBrush(Utils.GetMediaColorFromDrawingColor(ForeColor));
             lyricsView.DataContext = Settings.Default;
@@ -87,6 +88,12 @@ namespace PowerAudioPlayer.UI
         private void LyricsForm_ForeColorChanged(object sender, EventArgs e)
         {
             lyricsView.Foreground = new System.Windows.Media.SolidColorBrush(Utils.GetMediaColorFromDrawingColor(ForeColor));
+        }
+
+        private void LyricsForm_LocationChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                Settings.Default.LyricsFormLocation = Location;
         }
     }
 

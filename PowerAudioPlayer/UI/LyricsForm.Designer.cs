@@ -35,7 +35,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(422, 450);
+            ClientSize = new Size(442, 311);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
@@ -44,6 +44,7 @@
             Text = "歌词";
             FormClosing += LyricsForm_FormClosing;
             ForeColorChanged += LyricsForm_ForeColorChanged;
+            LocationChanged += LyricsForm_LocationChanged;
             ResumeLayout(false);
         }
 

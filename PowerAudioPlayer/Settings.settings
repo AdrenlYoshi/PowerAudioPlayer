@@ -38,9 +38,6 @@
     <Setting Name="EnableEqualizer" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="PlayerFormSize" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">923, 631</Value>
-    </Setting>
     <Setting Name="PlayerFormLocation" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">100, 100</Value>
     </Setting>
@@ -118,6 +115,12 @@
     </Setting>
     <Setting Name="PlayerCore" Provider="PowerAudioPlayer.PowerSettingsProvider" Type="PowerAudioPlayer.Controllers.PlayerCores" Scope="User">
       <Value Profile="(Default)">BASS</Value>
+    </Setting>
+    <Setting Name="PlaylistEditorFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">100, 100</Value>
+    </Setting>
+    <Setting Name="LyricsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
   </Settings>
 </SettingsFile>

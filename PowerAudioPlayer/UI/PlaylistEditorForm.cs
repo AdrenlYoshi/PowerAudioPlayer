@@ -10,6 +10,7 @@ namespace PowerAudioPlayer.UI
         public PlaylistEditorForm()
         {
             InitializeComponent();
+            Location = Settings.Default.PlaylistEditorFormLocation;
         }
 
         protected override void WndProc(ref Message m)
@@ -42,6 +43,12 @@ namespace PowerAudioPlayer.UI
         {
             Hide();
             e.Cancel = true;
+        }
+
+        private void PlaylistEditorForm_LocationChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                Settings.Default.PlaylistEditorFormLocation = Location;
         }
     }
 }

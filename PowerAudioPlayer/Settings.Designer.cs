@@ -182,19 +182,6 @@ namespace PowerAudioPlayer {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("923, 631")]
-        public global::System.Drawing.Size PlayerFormSize {
-            get {
-                return ((global::System.Drawing.Size)(this["PlayerFormSize"]));
-            }
-            set {
-                this["PlayerFormSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PowerAudioPlayer.PowerSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PlayerFormLocation {
             get {
@@ -525,6 +512,30 @@ namespace PowerAudioPlayer {
             }
             set {
                 this["PlayerCore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
+        public global::System.Drawing.Point PlaylistEditorFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["PlaylistEditorFormLocation"]));
+            }
+            set {
+                this["PlaylistEditorFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
+        public global::System.Drawing.Point LyricsFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["LyricsFormLocation"]));
+            }
+            set {
+                this["LyricsFormLocation"] = value;
             }
         }
     }

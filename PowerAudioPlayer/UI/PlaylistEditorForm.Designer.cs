@@ -42,7 +42,6 @@
             playlistEditor.Size = new Size(508, 465);
             playlistEditor.TabIndex = 0;
             playlistEditor.PlayItem += playlistEditor_PlayItem;
-            playlistEditor.IsEditActivePlaylist = true;
             // 
             // PlaylistEditorForm
             // 
@@ -57,6 +56,7 @@
             ShowInTaskbar = false;
             Text = "播放列表编辑器";
             FormClosing += PlaylistEditorForm_FormClosing;
+            LocationChanged += PlaylistEditorForm_LocationChanged;
             ResumeLayout(false);
         }
 
