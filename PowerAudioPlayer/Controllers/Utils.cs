@@ -160,10 +160,10 @@ namespace PowerAudioPlayer.Controllers
             return hResult > 0;
         }
 
-        public static System.Windows.Media.Color GetMediaColorFromDrawingColor(Color color)
-        {
-            return System.Windows.Media.Color.FromArgb(color.A, color.R, color.G, color.B);
-        }
+        //public static System.Windows.Media.Color GetMediaColorFromDrawingColor(Color color)
+        //{
+        //    return System.Windows.Media.Color.FromArgb(color.A, color.R, color.G, color.B);
+        //}
 
         public static string Windows1254ToGB2312(string input)
         {

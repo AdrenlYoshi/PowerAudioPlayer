@@ -1,6 +1,5 @@
 ﻿using PowerAudioPlayer.Controllers;
 using PowerAudioPlayer.Controllers.Helper;
-using System.ComponentModel;
 
 namespace PowerAudioPlayer.UI
 
@@ -11,6 +10,8 @@ namespace PowerAudioPlayer.UI
         {
             InitializeComponent();
             Location = Settings.Default.PlaylistEditorFormLocation;
+            playlistEditor.IsEditActivePlaylist = true;
+            playlistEditor.RefreshItems();
         }
 
         protected override void WndProc(ref Message m)

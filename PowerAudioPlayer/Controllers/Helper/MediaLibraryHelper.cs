@@ -1,6 +1,8 @@
 ﻿using MemoryPack;
 using PowerAudioPlayer.Model;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text;
 
 namespace PowerAudioPlayer.Controllers.Helper
 {
@@ -46,9 +48,9 @@ namespace PowerAudioPlayer.Controllers.Helper
             FileStream fs = new FileStream(file, FileMode.OpenOrCreate);
             int length = (int)fs.Length;
             byte[] buffer = new byte[length];
-            fs.Read(buffer, 0, length);
             try
             {
+                fs.ReadExactly(buffer);
                 _library = MemoryPackSerializer.Deserialize<Dictionary<string, AudioInfo>>(buffer) ?? [];
             }
             catch

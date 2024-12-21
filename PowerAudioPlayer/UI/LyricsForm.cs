@@ -2,11 +2,6 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Text;
-using System.Windows.Forms.Integration;
-using Utils = PowerAudioPlayer.Controllers.Utils;
-using System.Globalization;
-using System.Windows.Data;
-using Binding = System.Windows.Data.Binding;
 using PowerAudioPlayer.Model;
 using PowerAudioPlayer.Controllers.Helper;
 
@@ -14,18 +9,11 @@ namespace PowerAudioPlayer.UI
 {
     public partial class LyricsForm : BaseForm
     {
-        LyricsView lyricsView = new LyricsView() { ItemsMargin = Settings.Default.LyricsItemsMargin, HighLightColor = new System.Windows.Media.SolidColorBrush(Utils.GetMediaColorFromDrawingColor(Settings.Default.LyricsHighlightColor)) };
-
         public LyricsForm()
         {
             InitializeComponent();
             Location = Settings.Default.LyricsFormLocation;
-            Controls.Add(new ElementHost() { Child = lyricsView, Dock = DockStyle.Fill });
-            lyricsView.Foreground = new System.Windows.Media.SolidColorBrush(Utils.GetMediaColorFromDrawingColor(ForeColor));
-            lyricsView.DataContext = Settings.Default;
-            lyricsView.SetBinding(LyricsView.ItemsMarginProperty, "LyricsItemsMargin");
-            lyricsView.SetBinding(LyricsView.HighLightColorProperty, new Binding("LyricsHighlightColor") { Converter = new SolidColorBrushValueConverter(), Mode = BindingMode.TwoWay });
-            //lyricsView.SetBinding(LyricsView.NormalColorProperty, new Binding("LyricsNormalColor") { Converter = new SolidColorBrushValueConverter(), Mode = BindingMode.TwoWay}); 
+            
         }
 
         protected override void WndProc(ref Message m)
@@ -36,7 +24,7 @@ namespace PowerAudioPlayer.UI
                     LoadLyrics();
                     break;
                 case Player.WM_CLEARLRC:
-                    lyricsView.ClearLrc();
+                    lyricsView1.ClearLyrics();
                     break;
                 case Player.WM_LRCROLL:
                     ScrollLyrics(m.WParam);
@@ -49,14 +37,14 @@ namespace PowerAudioPlayer.UI
 
         private void ScrollLyrics(double nowTime)
         {
-            lyricsView.LrcRoll(nowTime);
+            lyricsView1.RollTo(nowTime);
         }
 
         private void LoadLyrics()
         {
             string lrc = string.Empty;
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            lyricsView.ClearLrc();
+            lyricsView1.ClearLyrics();
             if (Player.Core.GetChannelInfo().type == AudioType.MIDI)
             {
                 lrc = Player.Core.GetMIDILyrics();
@@ -76,7 +64,7 @@ namespace PowerAudioPlayer.UI
                                 lrc += line + "\n\n\n\n";
                 }
             }
-            lyricsView.LoadLrc(lrc);
+            lyricsView1.LoadLyrics(lrc);
         }
 
         private void LyricsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -87,28 +75,13 @@ namespace PowerAudioPlayer.UI
 
         private void LyricsForm_ForeColorChanged(object sender, EventArgs e)
         {
-            lyricsView.Foreground = new System.Windows.Media.SolidColorBrush(Utils.GetMediaColorFromDrawingColor(ForeColor));
+            lyricsView1.ForeColor = ForeColor;
         }
 
         private void LyricsForm_LocationChanged(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
                 Settings.Default.LyricsFormLocation = Location;
-        }
-    }
-
-    public class SolidColorBrushValueConverter : IValueConverter
-    {
-        public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if(value is Color)
-                return new System.Windows.Media.SolidColorBrush(Utils.GetMediaColorFromDrawingColor((Color)value));
-            return null;
-        }
-
-        public object? ConvertBack(object value, Type sourceType, object parameter, CultureInfo culture)
-        {
-            return null;
         }
     }
 }

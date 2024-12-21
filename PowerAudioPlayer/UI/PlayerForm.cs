@@ -42,20 +42,7 @@ namespace PowerAudioPlayer
             tbtnStop.Click += (object? sender, ThumbnailButtonClickedEventArgs e) => { btnStop_Click(new object(), new EventArgs()); };
             tbtnNext.Click += (object? sender, ThumbnailButtonClickedEventArgs e) => { btnNext_Click(new object(), new EventArgs()); };
             playlistEditorForm.Owner = this;
-            //playlistEditorForm.TopLevel = false;
-            //playlistEditorForm.Dock = DockStyle.Fill;
-            //playlistEditorForm.FormBorderStyle = FormBorderStyle.None;
-            
-            
-
             lyricsForm.Owner = this;
-            //lyricsForm.TopLevel = false;
-            //lyricsForm.Dock = DockStyle.Fill;
-            //lyricsForm.FormBorderStyle = FormBorderStyle.None;
-
-            //splitContainer1.Panel2.Controls.Add(lyricsForm);
-            //plPlaylistEditor.Controls.Add(playlistEditorForm);
-
             playlistEditorForm.Show();
             lyricsForm.Show();
             mediaLibraryForm.Owner = this;
@@ -307,7 +294,7 @@ namespace PowerAudioPlayer
 
         private void InitTrackbarControlButton()
         {
-            TaskbarManager.Instance.ThumbnailToolBars?.AddButtons(Handle, tbtnPrevious, tbtnPlay, tbtnPause, tbtnStop, tbtnNext);
+            TaskbarManager.Instance.ThumbnailToolBars.AddButtons(Handle, tbtnPrevious, tbtnPlay, tbtnPause, tbtnStop, tbtnNext);
         }
 
         private void SetTaskbarProgressState(TaskbarProgressBarState state)

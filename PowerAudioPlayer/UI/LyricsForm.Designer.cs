@@ -29,13 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LyricsForm));
+            lyricsView1 = new CustomControls.LyricsView();
             SuspendLayout();
+            // 
+            // lyricsView1
+            // 
+            lyricsView1.Dock = DockStyle.Fill;
+            lyricsView1.Location = new Point(0, 0);
+            lyricsView1.Name = "lyricsView1";
+            lyricsView1.Size = new Size(727, 519);
+            lyricsView1.TabIndex = 0;
             // 
             // LyricsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(442, 311);
+            ClientSize = new Size(727, 519);
+            Controls.Add(lyricsView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
@@ -49,5 +59,7 @@
         }
 
         #endregion
+
+        private CustomControls.LyricsView lyricsView1;
     }
 }
